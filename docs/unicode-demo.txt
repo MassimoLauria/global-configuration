@@ -1,0 +1,40 @@
+-*- coding: utf-8 -*-
+Greek ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ
+Greek αβγδεζηθικλμνξοπρςτυφχψω
+
+math operators ⌈⌉ ⌊⌋ ∏ ∑ ∫ × ⊕ ⊖ ⊗ ⊘ ⊙ ⊚ ⊛ ∙ ∘ ′ ″ ‴ ∼ ∂ √ ≔ × ² ³
+math constants π ℵ ∞
+math misc ± ∎ 
+Geometry ⌅⌆ℓ∟∠∡∢∥∦∶∷
+Logic & Set Theory ∀¬∧∨∃⊦∵∴∅∈∉⊂⊃⊆⊇⊄⋂⋃
+Relations ≠≤≥≮≯≫≪≈≡
+Sets ℕℤℚℝℂ
+Arrows ←→↑↓ ↔ ↖↗↙↘  ⇐⇒⇑⇓ ⇔⇗  ⇦⇨⇧⇩ ◀▶▲▼ ◁▷△▽ ↤↦↥↧ ↞↠↟↡ ⇤⇥ ⇞⇟ ↺↻ ↶↷⇄↵↩ ☞☜☝☟
+
+Matching Pairs «» ‹› “” ‘’ 〖〗【】「」『』〈〉《》〔〕
+currency ¢ € ₠ £ ¥
+common symbols ° © ® ™ § ¶ † ‡ ※
+Bullet-like •◦ ‣ ✓ ●■◆○□◇ ★☆ ♠♣♥♦ ♤♧♡♢ ＊
+stars ✦✸✷✶
+
+phonetic symbols ᴁᴂᴈ
+Music Symbols ♩♪♫♬♭♮♯
+digits ➀➁➂➃➄➅➆➇➈➉
+Cultural Symbols 卐卍✝✚✡⎈☭☪☥☮☺☹♨
+Taoism ☯☰☱☲☳☴☵☶☷
+Industrial Symbols ☠☢☣☤♲♳
+Early Astronomy ☉☼☾☿♁♄♅♆♇☄
+Computing ⌽⌘⌫⌦⏏⌤⌥
+
+dinbats ❦
+hyphen and dashes - ‐ ‑ ‒ – — ― …
+
+Asian Punctuations:　、。！，：
+Chinese phonetics ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦㄧㄨㄩ
+
+林花謝了春紅 太匆匆, 無奈朝來寒雨 晚來風
+胭脂淚 留人醉 幾時重, 自是人生長恨 水長東
+
+(let ((x 913)) (while (/= x 999) (ucs-insert x) (setq x (+ x 1))))
+
+http://xahlee.org/Periodic_dosage_dir/t1/20040505_unicode.html
