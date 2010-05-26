@@ -7,3 +7,6 @@
 [submodule "vimperator"]
 	path = vimperator
 	url = git@github.com:/MassimoLauria/vimperator.git
+[submodule "shell"]
+	path = shell
+	url = git@github.com:/MassimoLauria/shell.git
