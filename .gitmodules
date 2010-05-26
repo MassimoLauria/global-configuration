@@ -10,3 +10,6 @@
 [submodule "shell"]
 	path = shell
 	url = git@github.com:/MassimoLauria/shell.git
+[submodule "emacs"]
+	path = emacs
+	url = git@github.com:/MassimoLauria/dotemacs.git
