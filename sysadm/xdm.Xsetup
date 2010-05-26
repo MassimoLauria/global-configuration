@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $Id$
+#
+# This script is run as root before showing login widget.
+
+BACKGROUND=/etc/X11/xdm/xdm-bg.jpg
+if [ -f $BACKGROUND ]; then
+    display -window root /etc/X11/xdm/xdm-bg.jpg
+fi
+#xsetroot -solid rgb:8/8/8
