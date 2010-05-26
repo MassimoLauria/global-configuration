@@ -1,0 +1,129 @@
+# MPD CONFIG FILEA
+# For a full description of all config parameters,
+# Check the mpd man page, "man mpd".
+
+##################### REQUIRED ###########################
+
+# You can put symlinks in here, if you like.  Make sure
+# user that mpd runs as (see the 'user' config parameter)
+# can read the files in this directory
+
+# You can put symlinks in here, if you like.  Make sure
+# user that mpd runs as (see the 'user' config parameter)
+# can read the files in this directory
+music_directory		"/storage/music/"
+playlist_directory	"~/.mpd/playlists"
+
+db_file			"~/.mpd/tag_cache"
+log_file		"~/.mpd/mpd.log"
+error_file		"~/.mpd/errors.log"
+pid_file		"~/.mpd/pid"
+##########################################################
+
+##########################################################
+# EVERYTHING ELSE IS OPTIONAL
+##########################################################
+
+################## AUDIO OUTPUT ##########################
+audio_output {
+	type		"pulse"
+	name		"default pulse output"
+}
+##########################################################
+
+
+################# FILESYSTEM SETTINGS ####################
+#
+# If the names of files or directories are
+# not correctly displayed then set the
+# following to the filesystem coding.
+#
+#	Usually this is either:
+#	ISO-8859-1 or UTF-8
+#
+# After changing the filesystem_charset
+# you will need to recreate the db:
+#	mpd --create-db
+#
+filesystem_charset "UTF-8"
+#
+##########################################################
+
+
+#################### OPTIONAL FILES ######################
+#
+# The state file (if set) will be a file
+# for storing all current information
+# (playlist, playing/paused, etc...) from
+# the last MPD session. This will be used
+# to recreate your last MPD session after
+# restart.
+#
+state_file         "~/.mpd/state"
+#
+##########################################################
+
+
+################# SECURITY SETTINGS ######################
+#
+# It is encouraged to run MPD as
+# non-superuser.  If you start mpd as root
+# (for example, in an init script), set
+# this value, then  mpd will drop root priveleges
+# and runs as the user specified.
+#
+# user               "mpd"
+#
+# Set this value if you only have one
+# address you want to allow connection to.
+#
+bind_to_address	"127.0.0.1"
+#
+# If you want to setup MPD to use
+# passwords set them here
+#
+#password		"password1@read,add,control,admin"
+#password		"password2@read"
+#
+# Specify permissions used by default when no password is
+# given by for a connection/client.
+#
+#default_permissions	"read,add,control,admin"
+#
+##########################################
+
+
+################ MISCELLANEOUS OPTIONS ###################
+#
+port	"6600"
+#
+# This sets the metadata mpd will use, to disable all metadata, set to "none"
+# NOTE: comments are disabled by default
+#
+#metadata_to_use "artist,album,title,genre,date,track,composer,performer,comment"
+#
+# This setting exists as precaution against attacks.
+#
+#max_playlist_length	"16384"
+#
+# Valid options are "default", "secure" or "verbose".
+#log_level		"default"
+#
+#connection_timeout	"60"
+#
+# This should be fine for 2-3 people using clients
+# at the same time.
+#
+#max_connections	"5"
+#
+# No need to change these unless you know better.
+#
+#max_command_list_size	"2048"
+#max_output_buffer_size "8192"
+#
+# This will make playlists compatible with normal music
+# players.
+#
+#save_absolute_paths_in_playlists "no"
+#
+##########################################################
