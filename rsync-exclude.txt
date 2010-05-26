@@ -1,0 +1,54 @@
+# File to exclude from rsync'ing
+
+# This path contains temp files which are downloaded or 
+# not yet archived. Such volatile files are often very large.
+- queue/*
+
+
+# Media files: too large for backup.
+- library/comics
+- /storage/music/ 
+- /storage/video/ 
+
+# Dropbox mirror folder: it is already backed up online, and usually contains
+# things already present elsewhere.
+- Dropbox/
+
+# Virtual Machines hard drives: too large for backup.
+- .VirtualBox/VDI
+- .VirtualBox/HardDisks
+- .wine
+- /storage/vmware-machines/
+
+
+# Various browsers' cache (you don't want to backup your browser history forever, right?)
+- .macromedia/Flash_Player/
+- .mozilla/**/Cache
+- .conkeror.mozdev.org/**/Cache
+- .ie4linux/ie6/drive_c/windows/profiles
+- .java/**/cache
+- .opera/cache
+- .opera/opcache
+
+
+# LaTeX processing cache 
+- .tex.cache
+- .texmf-var
+
+
+# Elmo cache (.elmo is wanderlust mail client cache)
+- .elmo/
+
+
+# Other hidden volatile files it is useless to backup
+- .aMule/Temp
+- .aMule/Incoming
+- .cache/
+- .comix/menu_thumbnails
+- .dropbox/cache
+- .gftp/cache/
+- .googleearth/
+- .local/share/Trash
+- .miro
+- .transmission/cache
+- .thumbnails
