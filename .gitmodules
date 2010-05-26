@@ -1,6 +1,6 @@
 [submodule "awesome"]
 	path = awesome
-	url = git@github.com:/MassimoLauria/awesome-config.git
+	url = git@github.com:/MassimoLauria/awesome.git
 [submodule "xsession"]
 	path = xsession
 	url = git@github.com:/MassimoLauria/xsession.git
