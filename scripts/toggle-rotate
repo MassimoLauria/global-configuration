@@ -1,0 +1,16 @@
+#!/bin/sh
+# Massimo Lauria, 2009-2010.
+
+STATUS=`xrandr -q|grep normal|cut -d' ' -f4`
+
+`which xrandr` >> /dev/null || exit -1
+
+if [ "$STATUS" = "(normal" ]; then
+    xrandr -o left
+    echo "Vertical monitor orientation"
+else
+    xrandr -o normal
+    echo "Horizontal monitor orientation"
+fi
+
+
