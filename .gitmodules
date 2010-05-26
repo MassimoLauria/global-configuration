@@ -4,3 +4,6 @@
 [submodule "xsession"]
 	path = xsession
 	url = git@github.com:/MassimoLauria/xsession.git
+[submodule "vimperator"]
+	path = vimperator
+	url = git@github.com:/MassimoLauria/vimperator.git
