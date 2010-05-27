@@ -2,4 +2,4 @@
 # Fonts cannot be redistributed so easily,
 # better avoid to put the on github
 
-fonts/
+fonts/*.*
