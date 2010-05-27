@@ -6,6 +6,6 @@
 
 BACKGROUND=/etc/X11/xdm/xdm-bg.jpg
 if [ -f $BACKGROUND ]; then
-    display -window root /etc/X11/xdm/xdm-bg.jpg
+    display -window root $BACKGROUND
 fi
 #xsetroot -solid rgb:8/8/8
