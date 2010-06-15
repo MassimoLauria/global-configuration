@@ -1,3 +1,7 @@
+# This zshrc file can be used (or added) to the zshrc of the root
+# user. In this way Emacs TrampMode will work flawlessly with "sudo"
+
+
 
 if [[ $TERM == "dumb" ]]; then   # in emacs
     PS1='%(?..[%?])%!:%~%# '

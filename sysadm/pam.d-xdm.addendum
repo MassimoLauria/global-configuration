@@ -1,0 +1,6 @@
+# Add this two lines to /etc/pam.d/xdm to avoid the gnome-keyring-daemon to
+# bother you with a password request. This only works if the default keyring
+# password is the same of the user password.
+
+auth    optional        pam_gnome_keyring.so
+session optional        pam_gnome_keyring.so  auto_start
