@@ -1,0 +1,7 @@
+# Rc file for saving incoming mail addresses
+
+# Append to testfile
+:0hc
+| lbdb-fetchaddr
+
+# vim: ft=procmail

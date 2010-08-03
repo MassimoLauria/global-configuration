@@ -1,0 +1,11 @@
+# Rc file for testing  procmail
+
+TESTFILE = test
+
+
+# Append to testfile
+:0 : 
+* ^Subject:.*PROVA
+test
+
+# vim: ft=procmail

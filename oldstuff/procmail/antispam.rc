@@ -1,0 +1,18 @@
+
+SPAM=spam-mail
+
+# give a spam score...
+:0fw
+| spamassassin 
+
+
+# ...and forget junk!
+:0:
+* ^X-Spam-Flag: YES
+${SPAM}
+
+:0:
+* ^X-Advertisement:.*
+${SPAM}
+
+# vim: ft=procmail

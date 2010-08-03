@@ -1,0 +1,13 @@
+# Questo file deve essere incluso prima di una serie di regole
+# ancora da testare.
+# In sostanza esegue una copia della mail da processare e poi la sottopone
+# alle regole successive.
+
+
+BACKUPFILES=backup/msg
+
+# Backup Rule
+:0 c :
+| gzip >> $BACKUPFILES-`date +%Y-%m`.gz
+
+# vim: ft=procmail

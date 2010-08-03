@@ -1,0 +1,37 @@
+######## Standard Environment #############
+
+PATH=/bin:/usr/bin:/usr/local/bin
+
+# You must set a value for $MAILDIR
+#MAILDIR  = $HOME/Mail
+
+LOGFILE  = $MAILDIR/.from
+LOCKFILE = $MAILDIR/.lockmail
+
+PROCDIR	 = $MAILDIR/procmail
+
+INBOX =   inbox
+UNSORTED= $MAILDIR/unsorted/
+
+NULL	= /dev/null
+SPAM    = spam
+VIRDIR  = virus
+
+#INCLUDERC= $PROCDIR/test.rc
+
+INCLUDERC= $PROCDIR/antispam.rc
+
+### Bad PGP formatting
+INCLUDERC= $PROCDIR/cleaner.rc
+
+### Make a backup of most mails
+INCLUDERC= $PROCDIR/backup.rc
+
+### Save discontinuous address
+INCLUDERC= $PROCDIR/lbdb_inmail.rc
+
+# Default rule
+:0:
+${INBOX}
+
+# vim: ft=procmail

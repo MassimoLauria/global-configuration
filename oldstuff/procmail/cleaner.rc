@@ -1,0 +1,36 @@
+
+# Remove annoying report from cron.hour
+:0:
+* ^Subject.*run-parts.*cron.hour
+${NULL}
+
+
+# Not PGP/MIME --> application/pgp
+:0
+* !^Content-Type: message/
+* !^Content-Type: multipart/
+* !^Content-Type: application/pgp
+{
+    :0 fBw
+	* ^-----BEGIN PGP MESSAGE-----
+	* ^-----END PGP MESSAGE-----
+	   | formail \
+	        -i "Content-Type: application/pgp; format=text; x-action=encrypt"
+
+	:0 fBw
+	* ^-----BEGIN PGP SIGNED MESSAGE-----
+	* ^-----BEGIN PGP SIGNATURE-----
+	* ^-----END PGP SIGNATURE-----
+	   | formail \
+			-i "Content-Type: application/pgp; format=text; x-action=sign"
+}
+
+													
+#:0 fBw
+#	* ^-----BEGIN PGP PUBLIC KEY BLOCK-----
+#	* ^-----END PGP PUBLIC KEY BLOCK-----
+#	   | formail -i "Content-Type: application/pgp-keys; format=text;"
+
+				
+
+# vim: ft=procmail
