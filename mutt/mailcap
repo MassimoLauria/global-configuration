@@ -1,0 +1,37 @@
+# Mailcap file for muttrc
+
+
+# Html view
+
+#Firefox 
+text/html;		firefox  %s; test=test -n "$DISPLAY"; nametemplate=%s.html 
+
+text/html;      lynx -dump %s; copiousoutput; nametemplate=%s.html
+
+text/x-vcard;	vcard-filter %s; copiousoutput; nametempleate=%s.vcf
+
+application/pgp-signature;	cat %s; copiousoutput;
+
+text/enriched;  cat %s; copiousoutput
+
+image/gif;	eog %s; test=test -n "$DISPLAY"
+image/gif;	anytopnm %s|pnmscale -xsize 80|ppmtopgm|pgmtopbm|pbmtoascii; copiousoutput
+
+image/jpeg;	eog %s; test=test -n "$DISPLAY"
+image/jpeg;	convert %s pnm:-|pnmscale -xsize 80|ppmtopgm|pgmtopbm|pbmtoascii; copiousoutput
+
+image/*;	eog %s; test=test -n "$DISPLAY"
+image/*;	convert %s pnm:-|pnmscale -xsize 80|ppmtopgm|pgmtopbm|pbmtoascii; copiousoutput
+
+application/x-gunzip;   gzcat %s  ; copiousoutput 
+application/x-tar-gz; gunzip -c %s | tar -tf - ; copiousoutput
+
+# Postscript (for X and Ascii in mutt)
+application/postscript; gv %s; test=test -n "$DISPLAY"
+application/postscript; ps2ascii %s; copiousoutput
+
+# Postscript (for X and Ascii in mutt)
+application/pdf; xpdf %s; test=test -n "$DISPLAY"
+application/pdf; pdftotext %s -; copiousoutput
+
+# vim: ft=conf

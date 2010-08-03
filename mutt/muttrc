@@ -1,0 +1,85 @@
+# -*-muttrc-*-
+
+# Temporary
+set help			# show the help lines
+
+
+# Settings regarding the Mail accout are in a local file.
+source $HOME/personal/conf/mutt-personal.rc
+
+
+# Header fields
+ignore *		# this means "ignore all lines by default"
+unignore	from: subject to cc mail-followup-to date 
+unhdr_order *				# forget any previous setting about field order
+hdr_order date from subject to cc
+
+# Sort messages and folders
+set sort=threads		# primary sorting method
+set sort_aux=reverse-last-date	# date of the last message in thread
+set sort_browser=reverse-date	# how to sort files in the dir browser
+
+
+
+# Cache folders
+set header_cache=~/.mutt/cache/headers
+set message_cachedir=~/.mutt/cache/bodies
+set certificate_file=~/.mutt/certificates
+
+
+# Composing and replying
+set editor ="emacsclient -t"
+set attribution="On %d, %n wrote:"      # how to attribute replies
+set autoedit		                    # go to the editor right away when composing
+set sig_dashes                          # put a line with "-- " in front of a signature
+
+
+set move=no             # Do not move message from spool
+set copy=yes			# always save a copy of outgoing messages
+set use_from			# always generate the `From:' header field
+
+#---------------------------------------------------
+# Various options
+set fcc_attach			# keep attachments in copies of sent messages?
+set folder_format="%2C %t %N %-30f %10d"
+set hdr_format="%4C %Z %{%m/%d} %-15.15F (%4c) %s" # format of the index
+set hdrs			# include `my_hdr' lines in outgoing messages
+set menu_scroll			 # no implicit next-page/prev-page
+set read_inc=25			# show progress when reading a mailbox
+set write_inc=25
+
+set recall=no			# prompt to recall postponed messages
+#set record=+sent		# default location to save outgoing mail
+
+set reply_to			# always use reply-to if present
+#set reply_regexp="^(re:[ \t]*)+"# how to identify replies in the subject:
+#set resolve		    # move to the next message when an action is performed
+#set reverse_alias		# attempt to look up my names for people
+
+set reverse_name=yes    # use my address as it appears in the message
+     	                # i am replying to
+set reverse_realname=no	# use my address as it appears in the message
+     	                # i am replying to
+
+set shell="/bin/sh"		# program to use for shell escapes
+
+
+
+
+# Handle filetypes
+set mailcap_path="$HOME/config/mutt/mailcap:~/.mailcap:/etc/mailcap"
+auto_view text/html text/enriched application/x-gunzip application/postscript image/gif image/jpeg  image/* application/x-tar-gz text/x-vcard application/pgp-signature
+
+
+
+# Color theme
+source $HOME/config/mutt/zenburn.rc
+
+# GnuPG for encrypting mails
+source $HOME/config/mutt/pgp.rc
+
+# Locale and Text encoding settings
+source $HOME/config/mutt/charset.rc
+
+# Macro and keybindings
+source $HOME/config/mutt/macro.rc

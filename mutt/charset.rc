@@ -1,0 +1,38 @@
+# -*-muttrc-*-
+
+
+set locale = "it_IT.UTF-8"
+set charset = "utf-8"
+set allow_8bit
+
+set send_charset="utf-8:iso-8859-15:iso-8859-1:us-ascii"
+#set send_charset="iso-8859-15"
+
+charset-hook ISO-8859-15	iso-8859-15
+charset-hook ISO8859-15		iso-8859-15
+charset-hook iso8859-15		iso-8859-15
+charset-hook latin9			iso-8859-15
+charset-hook latin0			iso-8859-15
+
+charset-hook ISO-8859-2		iso-8859-2
+charset-hook ISO8859-2		iso-8859-2
+charset-hook iso8859-2		iso-8859-2
+charset-hook latin2			iso-8859-2
+
+charset-hook ISO-8859-1		iso-8859-1
+charset-hook ISO8859-1		iso-8859-1
+charset-hook iso8859-1		iso-8859-1
+charset-hook latin1			iso-8859-1
+
+charset-hook US-ASCII ISO-8859-1
+charset-hook x-unknown ISO-8859-1
+charset-hook windows-1250 CP1250
+charset-hook windows-1251 CP1251
+charset-hook windows-1252 CP1252
+charset-hook windows-1253 CP1253
+charset-hook windows-1254 CP1254
+charset-hook windows-1255 CP1255
+charset-hook windows-1256 CP1256
+charset-hook windows-1257 CP1257
+charset-hook windows-1258 CP1258 
+# vim: ft=muttrc

@@ -1,0 +1,15 @@
+#-*-muttrc-*-
+
+macro index .r "T.*\n;WN^t.*\n" "Mark all read"
+
+# I like to start in browser and to quit from browser
+macro index <backspace> "<change-folder>?<toggle-mailboxes>" "Torna alle Mailbox"
+macro browser <backspace> "qq" "Esci dal Browser e dal programma"
+
+
+# Threads 
+macro index + "<collapse-thread>"  "Expand/Collapse this thread" 
+macro index <esc>+ "<collapse-all>" "Expand/Collapse all threads"
+
+macro index m "<mail>" "Compose new mail"
+# vim: ft=muttrc

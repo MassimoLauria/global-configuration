@@ -1,0 +1,26 @@
+# -*-muttrc-*-
+#
+# Handle pgp stuff
+#
+
+# Signed/Encrypted replies to signed/encrypted messages
+set crypt_autosign=yes
+set pgp_autosign=yes
+set pgp_replysign=yes
+set pgp_replyencrypt=yes
+set pgp_replysignencrypted=yes
+
+
+
+# Something about formats, encoding, ecc...
+set pgp_strict_enc=yes #Q-P text only
+set pgp_create_traditional=no
+
+set pgp_timeout=1200
+set pgp_verify_sig=yes
+
+
+# Version dependant item
+source $HOME/config/mutt/gpg-client.rc
+
+# vim: ft=muttrc
