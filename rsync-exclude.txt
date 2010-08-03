@@ -20,6 +20,10 @@
 - .wine
 - /storage/vmware-machines/
 
+# Sourcecode of various program. No need to back them up if I’m not changing
+# them.
+- library/sourcecode
+
 
 # Various browsers' cache (you don't want to backup your browser history forever, right?)
 - .macromedia/Flash_Player/
