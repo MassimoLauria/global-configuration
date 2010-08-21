@@ -6,7 +6,6 @@
 
 
 # Media files: too large for backup.
-- library/comics
 - /storage/music/ 
 - /storage/video/ 
 
@@ -33,7 +32,7 @@
 - .java/**/cache
 - .opera/cache
 - .opera/opcache
-
+- .googleearth/Cache
 
 # LaTeX processing cache 
 - .tex.cache
