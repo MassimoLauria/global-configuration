@@ -7,3 +7,6 @@ FALLBACK_THEME="New Wave Dark Menus"
 
 env GTK2_RC_FILES="/usr/share/themes/$FALLBACK_THEME/gtk-2.0/gtkrc" firefox "$@"
 
+
+
+
