@@ -1,0 +1,44 @@
+- ./queue/*
+
+
+- ./music/
+- /storage/music/
+- /storage/video/
+
+- ./Dropbox/
+
+- ./.VirtualBox/VDI
+- ./.VirtualBox/HardDisks
+- ./.wine
+- /storage/vmware-machines/
+
+- ./library/sourcecode
+
+
+- ./.macromedia/Flash_Player/
+- ./.mozilla/**/Cache
+- ./.conkeror.mozdev.org/**/Cache
+- ./.ie4linux/ie6/drive_c/windows/profiles
+- ./.java/**/cache
+- ./.opera/cache
+- ./.opera/opcache
+- ./.googleearth/Cache
+
+- ./.tex.cache
+- ./.texmf-var
+
+
+- ./.elmo/
+
+
+- ./.aMule/Temp
+- ./.aMule/Incoming
+- ./.cache/
+- ./.comix/menu_thumbnails
+- ./.dropbox/cache
+- ./.gftp/cache/
+- ./.googleearth/
+- ./.local/share/Trash
+- ./.miro
+- ./.transmission/cache
+- ./.thumbnails
