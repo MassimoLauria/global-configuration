@@ -1,19 +1,14 @@
 - queue/*
 
-
 - music/
-- /storage/music/
-- /storage/video/
 
 - Dropbox/
 
 - .VirtualBox/VDI
 - .VirtualBox/HardDisks
 - .wine
-- /storage/vmware-machines/
 
 - ./library/sourcecode
-
 
 - .macromedia/Flash_Player/
 - .mozilla/**/Cache
@@ -27,9 +22,7 @@
 - .tex.cache
 - .texmf-var
 
-
 - .elmo/
-
 
 - .aMule/Temp
 - .aMule/Incoming

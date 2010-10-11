@@ -4,11 +4,11 @@
 
 RDIFF="rdiff-backup"
 DRYRUN="--compare"  #No dry run for rdiff-backup
-AUXOPT="-v9"
+OPT=""
 
 BACKUPSRCS=""
 HOSTNAME=""
-BACKUPTRGT="/media/disk-1/"`hostname`"-backup.rdiff"
+BACKUPTRGT="/media/disk/"`hostname`"-backup.rdiff"
 INCLUDE_FILE=".rdiff-backup-include"
 
 USAGE="\n
@@ -50,12 +50,12 @@ for src_dir in $BACKUPSRCS; do
     echo "START-----<$n>--------------------"
 
     if [ -f $src_dir/$INCLUDE_FILE ]; then
-        AUXOPT=$AUXOPT" --include-globbing-filelist $src_dir/$INCLUDE_FILE"
-        echo $AUXOPT
+        INCOPT=" --include-globbing-filelist $src_dir/$INCLUDE_FILE"
+    else
+        INCOPT=""
     fi
 
-    sudo $RDIFF $DRYRUN $OPT $AUXOPT $src_dir $BACKUPTRGT/$n
+    $RDIFF $DRYRUN $OPT $INCOPT $src_dir $BACKUPTRGT/$n
 
     echo "END------<$n>--------------------"
-    AUXOPT=""
 done
