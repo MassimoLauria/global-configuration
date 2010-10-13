@@ -4,7 +4,7 @@
 
 RDIFF="rdiff-backup"
 DRYRUN="--compare"  #No dry run for rdiff-backup
-OPT=""
+OPT="-v9"
 
 BACKUPSRCS=""
 HOSTNAME=""
