@@ -15,7 +15,7 @@ histfile = os.path.join(os.environ['HOME'], ".pythonhistory")
 try:
     import readline
 except ImportError:
-    print "Readline not available"
+    print("Readline not available")
 else:
     # Tab completion
     import rlcompleter
