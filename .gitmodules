@@ -13,3 +13,6 @@
 [submodule "emacs"]
 	path = emacs
 	url = git@github.com:/MassimoLauria/dotemacs.git
+[submodule "pentadactyl"]
+	path = pentadactyl
+	url = git@github.com:MassimoLauria/pentadactyl.git
