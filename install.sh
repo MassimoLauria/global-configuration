@@ -3,13 +3,13 @@
 # Copyright (C) 2010, 2011 by Massimo Lauria <lauria.massimo@gmail.com>
 #
 # Created   : "2011-03-05, sabato 01:03 (CET) Massimo Lauria"
-# Time-stamp: "2011-03-05, sabato 15:53 (CET) Massimo Lauria"
+# Time-stamp: "2011-03-05, sabato 16:01 (CET) Massimo Lauria"
 
 # Description::
 #
 # My configuration files are rich and require some software to be
 # present.  In some cases the configuration would gracefully ignore
-# the missing software, or it is useless and imappropriate to
+# the missing software. Sometimes it is useless and inappropriate to
 # force the installation of a software.
 #
 # This file will try to setup the configuration in a usable status.
