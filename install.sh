@@ -3,7 +3,7 @@
 # Copyright (C) 2010, 2011 by Massimo Lauria <lauria.massimo@gmail.com>
 #
 # Created   : "2011-03-05, sabato 01:03 (CET) Massimo Lauria"
-# Time-stamp: "2011-03-05, sabato 15:38 (CET) Massimo Lauria"
+# Time-stamp: "2011-03-05, sabato 15:53 (CET) Massimo Lauria"
 
 # Description::
 #
@@ -131,6 +131,7 @@ echo ""
 echo "# 5. Install other config files"
 echo -n "# 5. backing up old config files..."
 backup_maybe $HOME/.gnupg/gpg.conf
+backup_maybe $HOME/.ipython/ipy_user_conf.py
 backup_maybe $HOME/.mpdconf
 backup_maybe $HOME/.muttrc
 backup_maybe $HOME/.rsync-exclude
@@ -142,6 +143,9 @@ echo -n "# 5. installing new config files.."
 
 $RM -f $HOME/.gnupg/gpg.conf
 $LN -s $PWD/gpg.conf $HOME/.gnupg/gpg.conf
+
+$RM -f $HOME/.ipython/ipy_user_conf.py
+$LN -s $PWD/pythonrc/ipy_user_conf.py $HOME/.ipython/ipy_user_conf.py
 
 $RM -f $HOME/.mpdconf
 $LN -s $PWD/mpdconf $HOME/.mpdconf
