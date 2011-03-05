@@ -3,7 +3,7 @@
 # Copyright (C) 2010, 2011 by Massimo Lauria <lauria.massimo@gmail.com>
 #
 # Created   : "2011-03-05, sabato 01:03 (CET) Massimo Lauria"
-# Time-stamp: "2011-03-05, sabato 15:16 (CET) Massimo Lauria"
+# Time-stamp: "2011-03-05, sabato 15:38 (CET) Massimo Lauria"
 
 # Description::
 #
@@ -20,6 +20,7 @@ GIT=git
 CUT=cut
 CP=cp
 LN=ln
+RM=rm
 FILE_NOT_FOUND=127
 
 
@@ -79,6 +80,7 @@ require_program $GIT
 require_program $CUT
 require_program $CP
 require_program $LN
+require_program $RM
 echo ""
 echo ""
 
@@ -125,6 +127,35 @@ for SUBM in $SUBMODULES; do
 done
 echo ""
 echo ""
+
+echo "# 5. Install other config files"
+echo -n "# 5. backing up old config files..."
+backup_maybe $HOME/.gnupg/gpg.conf
+backup_maybe $HOME/.mpdconf
+backup_maybe $HOME/.muttrc
+backup_maybe $HOME/.rsync-exclude
+backup_maybe $HOME/.vimrc
+echo "OK."
+
+# Do install
+echo -n "# 5. installing new config files.."
+
+$RM -f $HOME/.gnupg/gpg.conf
+$LN -s $PWD/gpg.conf $HOME/.gnupg/gpg.conf
+
+$RM -f $HOME/.mpdconf
+$LN -s $PWD/mpdconf $HOME/.mpdconf
+
+$RM -f $HOME/.muttrc
+$LN -s $PWD/mutt/muttrc $HOME/.muttrc
+
+$RM -f $HOME/.rsync-exclude
+$LN -s $PWD/rsync-exclude.txt $HOME/.rsync-exclude
+
+$RM -f $HOME/.vimrc
+$LN -s $PWD/vimrc $HOME/.vimrc
+
+echo "OK"
 
 
 
