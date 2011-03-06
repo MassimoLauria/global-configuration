@@ -24,6 +24,7 @@ ip = IPython.ipapi.get()
 # You probably want to uncomment this if you did %upgrade -nolegacy
 # import ipy_defaults
 
+
 def main():
     # Handy tab-completers for %cd, %run, import etc.
     # Try commenting this out if you have completion problems/slowness
