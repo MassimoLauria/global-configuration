@@ -3,7 +3,7 @@
 # Copyright (C) 2010, 2011 by Massimo Lauria <lauria.massimo@gmail.com>
 #
 # Created   : "2011-03-05, sabato 01:03 (CET) Massimo Lauria"
-# Time-stamp: "2011-03-05, sabato 16:01 (CET) Massimo Lauria"
+# Time-stamp: "2011-03-07, Monday 20:30 (CET) Massimo Lauria"
 
 # Description::
 #
@@ -21,6 +21,7 @@ CUT=cut
 CP=cp
 LN=ln
 RM=rm
+MKDIR=mkdir
 FILE_NOT_FOUND=127
 
 
@@ -81,6 +82,7 @@ require_program $CUT
 require_program $CP
 require_program $LN
 require_program $RM
+require_program $MKDIR
 echo ""
 echo ""
 
@@ -145,6 +147,7 @@ $RM -f $HOME/.gnupg/gpg.conf
 $LN -s $PWD/gpg.conf $HOME/.gnupg/gpg.conf
 
 $RM -f $HOME/.ipython/ipy_user_conf.py
+$MKDIR -p $HOME/.ipython/
 $LN -s $PWD/pythonrc/ipy_user_conf.py $HOME/.ipython/ipy_user_conf.py
 
 $RM -f $HOME/.mpdconf
