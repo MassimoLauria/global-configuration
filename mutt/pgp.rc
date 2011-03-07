@@ -5,7 +5,7 @@
 
 # Signed/Encrypted replies to signed/encrypted messages
 set crypt_autosign=yes
-set pgp_autosign=yes
+set pgp_autosign=no
 set pgp_replysign=yes
 set pgp_replyencrypt=yes
 set pgp_replysignencrypted=yes
