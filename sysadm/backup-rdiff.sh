@@ -3,8 +3,8 @@
 # Script for regular backups on disk
 
 RDIFF="rdiff-backup"
-DRYRUN="--compare"  #No dry run for rdiff-backup
-OPT="-v3"
+# DRYRUN="--compare"  #No dry run for rdiff-backup
+OPT="-v5 --create-full-path"
 
 BACKUPSRCS=""
 BACKUPTRGT=""
