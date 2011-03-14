@@ -4,11 +4,12 @@
 
 RDIFF="rdiff-backup"
 DRYRUN="--compare"  #No dry run for rdiff-backup
-OPT="-v9"
+OPT="-v3"
 
 BACKUPSRCS=""
+BACKUPTRGT=""
 HOSTNAME=""
-BACKUPTRGT="/media/disk/"`hostname`"-backup.rdiff"
+#BACKUPTRGT="/media/disk/"`hostname`"-backup.rdiff"
 INCLUDE_FILE=".rdiff-backup-include"
 
 USAGE="\n
@@ -35,10 +36,18 @@ fi
 
 if [ "x$BACKUPSRCS" = "x" ]; then
     echo ""
-    echo "Sorry, no directory configured for backup in BACKUPSRCS env. variable."
+    echo "Sorry, no backup sources configured in BACKUPSRCS env. variable."
     echo ""
     exit 1
 fi
+
+if [ "x$BACKUPTRGT" = "x" ]; then
+    echo ""
+    echo "Sorry, no backup target directory configured BACKUPTRGT env. variable."
+    echo ""
+    exit 1
+fi
+
 
 ###### Actual backup
 
@@ -55,7 +64,7 @@ for src_dir in $BACKUPSRCS; do
         INCOPT=""
     fi
 
-    $RDIFF $DRYRUN $OPT $INCOPT $src_dir $BACKUPTRGT/$n
+    $RDIFF $DRYRUN $OPT $INCOPT $src_dir $BACKUPTRGT/`hostname`/$n
 
     echo "END------<$n>--------------------"
 done
