@@ -74,7 +74,7 @@ auto_view text/html text/enriched application/x-gunzip application/postscript im
 
 
 # Color theme
-# source $HOME/config/mutt/zenburn.rc
+source $HOME/config/mutt/zenburn.rc
 
 # GnuPG for encrypting mails
 source $HOME/config/mutt/pgp.rc
