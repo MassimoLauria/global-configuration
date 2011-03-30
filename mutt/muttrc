@@ -10,7 +10,7 @@ source $HOME/personal/conf/mutt-personal.rc
 
 # Header fields
 ignore *		# this means "ignore all lines by default"
-unignore	from: subject to cc mail-followup-to date 
+unignore	from: subject to cc mail-followup-to date
 unhdr_order *				# forget any previous setting about field order
 hdr_order date from subject to cc
 set edit_headers = yes
@@ -74,7 +74,7 @@ auto_view text/html text/enriched application/x-gunzip application/postscript im
 
 
 # Color theme
-source $HOME/config/mutt/zenburn.rc
+# source $HOME/config/mutt/zenburn.rc
 
 # GnuPG for encrypting mails
 source $HOME/config/mutt/pgp.rc
