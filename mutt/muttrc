@@ -30,6 +30,8 @@ set certificate_file=~/.mutt/certificates
 
 # Composing and replying
 set editor ="emacsclient -t"
+set query_command="$HOME/config/mutt/bbdb-query"  # Mutt will query my BBDB database.
+
 set attribution="On %d, %n wrote:"      # how to attribute replies
 set autoedit		                    # go to the editor right away when composing
 set sig_dashes                          # put a line with "-- " in front of a signature
