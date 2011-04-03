@@ -1,7 +1,0 @@
-#!/bin/sh
-#
-# This scripts allow to use BBDB and Emacs as an address book integrated with Mutt.
-#
-
-
-emacs --batch -l bbdb-query.el -eval "(bbdb-query \"$1\" nil)" 2>/dev/null

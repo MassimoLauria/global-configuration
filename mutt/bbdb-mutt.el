@@ -1,4 +1,4 @@
-;;
+;; -*- mode: lisp-interaction -*-
 ;; Massimo Lauria,  2011
 ;;
 ;; This bbdb-query allows to quert BBDB and to obtain output which is useful for
@@ -11,14 +11,15 @@
 (require 'bbdb)
 (setq bbdb-file "~/personal/agenda/contacts.bbdb")
 
-(defun bbdb-query (string elidep)
+(setq bbdb-no-duplicates-p t)
+
+(defun bbdb-mutt-query (string)
   "Print all entries in the BBDB matching the regexp STRING
 in either the name(s), company, network address, or notes."
   (interactive
    (list (bbdb-search-prompt "Search records %m regexp: ")
          current-prefix-arg))
-  (let* ((bbdb-display-layout (bbdb-grovel-elide-arg elidep))
-         (notes (cons '* string))
+  (let* ((notes (cons '* string))
          (records
           (bbdb-search (bbdb-records) string string string notes
                        nil)))
@@ -41,3 +42,10 @@ in either the name(s), company, network address, or notes."
                            )
             )))
   ))
+
+
+(defun bbdb-mutt-add (name address)
+  (interactive "sContact name: \nsContact Email: ")
+  (bbdb-create-internal name nil (list address) nil nil nil)
+  (call-interactively 'bbdb-save-db)
+)
