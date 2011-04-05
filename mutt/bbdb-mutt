@@ -6,6 +6,7 @@
 print_usage() {
     echo "Usage: $0 --query <string> to find contacts"
     echo "       $0 --add <name> <address> to add a contact"
+    echo "       $0 --collect to sniff addresses from stabdard input"
     echo ""
     echo "Duplicate contacts are not added."
 }
@@ -28,6 +29,21 @@ elif [ "$1" = "--add" ]; then
     fi
 
     emacs --batch -l bbdb-mutt.el -eval "(bbdb-mutt-add \"$2\" \"$3\")" 2>/dev/null
+
+elif [ "$1" = "--collect" ]; then
+
+    if [ $# -ne 1 ]; then
+        print_usage
+        exit 1
+    fi
+
+    TMP_FILE=$(mktemp)
+
+    cat > $TMP_FILE
+
+    emacs --batch -l bbdb-mutt.el --file $TMP_FILE -eval "(bbdb-mutt-collect)" 2>/dev/null
+
+    rm $TMP_FILE
 
 else
 
