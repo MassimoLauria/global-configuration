@@ -102,7 +102,9 @@ in either the name(s), company, network address, or notes."
 	    (or bbdb-user-mail-names
 		"$^") ;; Regexp matching nothing (?)
 	    rcp))
-      (bbdb-annotate-message-sender rcp nil t nil )))
+      (if (bbdb-annotate-message-sender rcp nil t nil )
+          (princ (format "Address %s added" rcp))
+          )))
 
 
 ;; Copyright (C) 2002, 2011  Free Software Foundation, Inc.
