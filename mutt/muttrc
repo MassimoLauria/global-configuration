@@ -31,7 +31,7 @@ set certificate_file=~/.mutt/certificates
 
 
 # Composing and replying
-set editor ="emacsclient -t"
+set editor ="emacsclient"
 set query_command="$HOME/config/mutt/bbdb-mutt --query"  # Mutt will query my BBDB database.
 macro index,pager C "<pipe-message>$HOME/config/mutt/bbdb-mutt --collect<return>" # Send mail message to BBDB collecting function (BROKEN)
 

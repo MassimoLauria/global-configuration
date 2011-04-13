@@ -3,10 +3,11 @@
 
 # Html view
 
-#Firefox 
-text/html;		firefox  %s; test=test -n "$DISPLAY"; nametemplate=%s.html 
+#Firefox
+text/html;		firefox  %s; test=test -n "$DISPLAY"; nametemplate=%s.html
 
-text/html;      lynx -dump %s; copiousoutput; nametemplate=%s.html
+#text/html;      lynx -dump %s; copiousoutput; nametemplate=%s.html
+text/html; w3m -I %{charset} -T text/html -dump; copiousoutput
 
 text/x-vcard;	vcard-filter %s; copiousoutput; nametempleate=%s.vcf
 
@@ -23,7 +24,7 @@ image/jpeg;	convert %s pnm:-|pnmscale -xsize 80|ppmtopgm|pgmtopbm|pbmtoascii; co
 image/*;	eog %s; test=test -n "$DISPLAY"
 image/*;	convert %s pnm:-|pnmscale -xsize 80|ppmtopgm|pgmtopbm|pbmtoascii; copiousoutput
 
-application/x-gunzip;   gzcat %s  ; copiousoutput 
+application/x-gunzip;   gzcat %s  ; copiousoutput
 application/x-tar-gz; gunzip -c %s | tar -tf - ; copiousoutput
 
 # Postscript (for X and Ascii in mutt)
