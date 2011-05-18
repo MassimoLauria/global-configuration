@@ -106,7 +106,7 @@ for SUBM in $SUBMODULES; do
     else
         echo "# 3. checking out $SUBM master branch"
         cd $SUBM
-        $GIT co master
+        $GIT checkout master
         cd ..
         echo "# 3. $SUBM master branch cheched out"
         echo ""
