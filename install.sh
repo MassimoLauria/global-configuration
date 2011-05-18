@@ -106,7 +106,7 @@ for SUBM in $SUBMODULES; do
     else
         echo "# 3. checking out $SUBM master branch"
         cd $SUBM
-        $GIT co master
+        $GIT checkout master
         cd ..
         echo "# 3. $SUBM master branch cheched out"
         echo ""
@@ -144,6 +144,7 @@ echo "OK."
 echo -n "# 5. installing new config files.."
 
 $RM -f $HOME/.gnupg/gpg.conf
+$MKDIR -p $HOME/.gnupg/
 $LN -s $PWD/gpg.conf $HOME/.gnupg/gpg.conf
 
 $RM -f $HOME/.ipython/ipy_user_conf.py
