@@ -144,6 +144,7 @@ echo "OK."
 echo -n "# 5. installing new config files.."
 
 $RM -f $HOME/.gnupg/gpg.conf
+$MKDIR -p $HOME/.gnupg/
 $LN -s $PWD/gpg.conf $HOME/.gnupg/gpg.conf
 
 $RM -f $HOME/.ipython/ipy_user_conf.py
