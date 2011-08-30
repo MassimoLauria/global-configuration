@@ -3,7 +3,7 @@
 # Copyright (C) 2010, 2011 by Massimo Lauria <lauria.massimo@gmail.com>
 #
 # Created   : "2011-03-05, sabato 01:03 (CET) Massimo Lauria"
-# Time-stamp: "2011-03-07, Monday 20:30 (CET) Massimo Lauria"
+# Time-stamp: "2011-08-30, Tuesday 09:23 (CEST) Massimo Lauria"
 
 # Description::
 #
@@ -53,7 +53,7 @@ backup_maybe() {
 # Check backup possibility.
     if [ $# -ne 1 ]; then echo "Wrong argument number."; exit 1; fi
     if [ -e $1 ]; then
-        cp -arb $1 $1.bak.`date +%Y-%m-%d.%H.%M.%S`
+        cp -ar $1 $1.bak.`date +%Y-%m-%d.%H.%M.%S`
     fi
 }
 
