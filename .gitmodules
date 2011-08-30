@@ -1,15 +1,15 @@
 [submodule "awesome"]
 	path = awesome
-	url = git@github.com:/MassimoLauria/awesome.git
+	url = git://github.com/MassimoLauria/awesome.git
 [submodule "xsession"]
 	path = xsession
-	url = git@github.com:/MassimoLauria/xsession.git
+	url = git://github.com/MassimoLauria/xsession.git
 [submodule "shell"]
 	path = shell
-	url = git@github.com:/MassimoLauria/shell.git
+	url = git://github.com/MassimoLauria/shell.git
 [submodule "emacs"]
 	path = emacs
-	url = git@github.com:/MassimoLauria/dotemacs.git
+	url = git://github.com/MassimoLauria/dotemacs.git
 [submodule "pentadactyl"]
 	path = pentadactyl
-	url = git@github.com:MassimoLauria/pentadactyl.git
+	url = git://github.com/MassimoLauria/pentadactyl.git
