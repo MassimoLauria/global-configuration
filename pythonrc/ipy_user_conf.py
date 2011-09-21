@@ -38,10 +38,14 @@ def main():
 
     # import ipy_profile_sh
 
+    # setup editors
+    import ipy_editors
+    ipy_editors.install_editor('emacsclient +$line "$file"')
 
     o = ip.options
     # An example on how to set options
     #o.autocall = 1
     o.system_verbose = 0
+    o.autoexec.append('%colors Linux')
 
 main()

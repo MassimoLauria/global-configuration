@@ -26,7 +26,11 @@ c = get_config()
 
 # Pre-load matplotlib and numpy for interactive use, selecting a particular
 # matplotlib backend and loop integration.
-c.TerminalIPythonApp.pylab = 'auto'
+import sys
+if sys.platform == 'darwin':
+    c.TerminalIPythonApp.pylab = 'osx'
+else:
+    c.TerminalIPythonApp.pylab = 'auto'
 
 # Suppress warning messages about legacy config files
 c.TerminalIPythonApp.ignore_old_config = True
