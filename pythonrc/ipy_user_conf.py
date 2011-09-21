@@ -45,6 +45,7 @@ def main():
     o = ip.options
     # An example on how to set options
     #o.autocall = 1
+    o.banner = 0
     o.system_verbose = 0
     o.autoexec.append('%colors Linux')
 

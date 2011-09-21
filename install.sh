@@ -3,7 +3,7 @@
 # Copyright (C) 2010, 2011 by Massimo Lauria <lauria.massimo@gmail.com>
 #
 # Created   : "2011-03-05, sabato 01:03 (CET) Massimo Lauria"
-# Time-stamp: "2011-09-21, mercoledì 17:45 (CEST) Massimo Lauria"
+# Time-stamp: "2011-09-22, Thursday 01:22 (CEST) Massimo Lauria"
 
 # Description::
 #
@@ -136,6 +136,9 @@ echo -n "# 5. backing up old config files..."
 # GNUPG config file
 backup_maybe $HOME/.gnupg/gpg.conf
 # Python config files
+backup_maybe $HOME/.sage/ipython/ipythonrc
+backup_maybe $HOME/.sage/ipython/ipy_user_conf.py
+backup_maybe $HOME/.ipython/ipythonrc
 backup_maybe $HOME/.ipython/ipy_user_conf.py
 backup_maybe $HOME/.ipython/profile_default/ipython_config.py
 backup_maybe $HOME/.ipython/profile_default/ipython_qtconsole_config.py
@@ -156,13 +159,20 @@ $RM -f $HOME/.gnupg/gpg.conf
 $MKDIR -p $HOME/.gnupg/
 $LN -s $PWD/gpg.conf $HOME/.gnupg/gpg.conf
 
-# (I)PYTHON
+# (I)PYTHON AND SAGEMATH
+$RM -f $HOME/.ipython/ipythonrc
 $RM -f $HOME/.ipython/ipy_user_conf.py
+$RM -f $HOME/.sage/ipython/ipythonrc
+$RM -f $HOME/.sage/ipython/ipy_user_conf.py
 $RM -f $HOME/.ipython/profile_default/ipython_config.py
 $RM -f $HOME/.ipython/profile_default/ipython_qtconsole_config.py
 
 $MKDIR -p $HOME/.ipython/profile_default/
+$MKDIR -p $HOME/.sage/ipython/
+$LN -s $PWD/pythonrc/ipythonrc $HOME/.ipython/ipythonrc
 $LN -s $PWD/pythonrc/ipy_user_conf.py $HOME/.ipython/ipy_user_conf.py
+$LN -s $PWD/pythonrc/ipythonrc $HOME/.sage/ipython/ipythonrc
+$LN -s $PWD/pythonrc/ipy_user_conf.py $HOME/.sage/ipython/ipy_user_conf.py
 $LN -s $PWD/pythonrc/ipython_config.py $HOME/.ipython/profile_default/ipython_config.py
 $LN -s $PWD/pythonrc/ipython_qtconsole_config.py $HOME/.ipython/profile_default/ipython_qtconfig_config.py
 
