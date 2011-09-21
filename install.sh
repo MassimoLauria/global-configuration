@@ -3,7 +3,7 @@
 # Copyright (C) 2010, 2011 by Massimo Lauria <lauria.massimo@gmail.com>
 #
 # Created   : "2011-03-05, sabato 01:03 (CET) Massimo Lauria"
-# Time-stamp: "2011-08-30, Tuesday 09:23 (CEST) Massimo Lauria"
+# Time-stamp: "2011-09-21, mercoledì 17:45 (CEST) Massimo Lauria"
 
 # Description::
 #
@@ -132,8 +132,16 @@ echo ""
 
 echo "# 5. Install other config files"
 echo -n "# 5. backing up old config files..."
+
+# GNUPG config file
 backup_maybe $HOME/.gnupg/gpg.conf
+# Python config files
 backup_maybe $HOME/.ipython/ipy_user_conf.py
+backup_maybe $HOME/.ipython/profile_default/ipython_config.py
+backup_maybe $HOME/.ipython/profile_default/ipython_qtconsole_config.py
+# Matplotlib
+backup_maybe $HOME/.matplotlib/matplotlibrc
+# Other config files
 backup_maybe $HOME/.mpdconf
 backup_maybe $HOME/.muttrc
 backup_maybe $HOME/.rsync-exclude
@@ -143,13 +151,28 @@ echo "OK."
 # Do install
 echo -n "# 5. installing new config files.."
 
+# GNUPG
 $RM -f $HOME/.gnupg/gpg.conf
 $MKDIR -p $HOME/.gnupg/
 $LN -s $PWD/gpg.conf $HOME/.gnupg/gpg.conf
 
+# (I)PYTHON
 $RM -f $HOME/.ipython/ipy_user_conf.py
-$MKDIR -p $HOME/.ipython/
+$RM -f $HOME/.ipython/profile_default/ipython_config.py
+$RM -f $HOME/.ipython/profile_default/ipython_qtconsole_config.py
+
+$MKDIR -p $HOME/.ipython/profile_default/
 $LN -s $PWD/pythonrc/ipy_user_conf.py $HOME/.ipython/ipy_user_conf.py
+$LN -s $PWD/pythonrc/ipython_config.py $HOME/.ipython/profile_default/ipython_config.py
+$LN -s $PWD/pythonrc/ipython_qtconsole_config.py $HOME/.ipython/profile_default/ipython_qtconfig_config.py
+
+# MATPLOTLIB
+$RM -f $HOME/.matplotlib/matplotlibrc
+$MKDIR -p $HOME/.matplotlib/
+$LN -s $PWD/pythonrc/matplotlibrc $HOME/.matplotlib/matplotlibrc
+
+
+# OTHERS
 
 $RM -f $HOME/.mpdconf
 $LN -s $PWD/mpdconf $HOME/.mpdconf
