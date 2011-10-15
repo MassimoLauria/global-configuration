@@ -150,6 +150,7 @@ backup_maybe $HOME/.mpdconf
 backup_maybe $HOME/.muttrc
 backup_maybe $HOME/.rsync-exclude
 backup_maybe $HOME/.vimrc
+backup_maybe $HOME/.jedrc
 echo "OK."
 
 # Do install
@@ -198,6 +199,9 @@ $LN -s $PWD/rsync-exclude.txt $HOME/.rsync-exclude
 
 $RM -f $HOME/.vimrc
 $LN -s $PWD/vimrc $HOME/.vimrc
+
+$RM -f $HOME/.jedrc
+$LN -s $PWD/jedrc $HOME/.jedrc
 
 echo "OK"
 
