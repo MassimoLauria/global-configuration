@@ -3,7 +3,7 @@
 # Copyright (C) 2010, 2011 by Massimo Lauria <lauria.massimo@gmail.com>
 #
 # Created   : "2011-03-05, sabato 01:03 (CET) Massimo Lauria"
-# Time-stamp: "2011-11-06, Sunday 01:04 (CET) Massimo Lauria"
+# Time-stamp: "2011-11-06, Sunday 03:17 (CET) Massimo Lauria"
 
 # Description::
 #
@@ -149,6 +149,7 @@ backup_maybe $HOME/.matplotlib/matplotlibrc
 backup_maybe $HOME/.mpdconf
 backup_maybe $HOME/.muttrc
 backup_maybe $HOME/.offlineimaprc
+backup_maybe $HOME/.msmtprc
 backup_maybe $HOME/.rsync-exclude
 backup_maybe $HOME/.vimrc
 backup_maybe $HOME/.jedrc
@@ -198,6 +199,8 @@ $LN -s $PWD/mutt/muttrc $HOME/.muttrc
 $RM -f $HOME/.offlineimaprc
 $LN -s $PWD/mail/offlineimaprc $HOME/.offlineimaprc
 
+$RM -f $HOME/.msmtprc
+$LN -s $PWD/mail/msmtprc $HOME/.msmtprc
 
 $RM -f $HOME/.rsync-exclude
 $LN -s $PWD/rsync-exclude.txt $HOME/.rsync-exclude
