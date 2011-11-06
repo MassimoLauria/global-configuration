@@ -1,0 +1,49 @@
+# Copyright (C) 2010, 2011 by Massimo Lauria <lauria.massimo@gmail.com>
+#
+# Created   : "2010-10-11, lunedì 09:53 (CEST) Massimo Lauria"
+# Time-stamp: "2011-11-06, Sunday 01:02 (CET) Massimo Lauria"
+
+[general]
+accounts = GMail
+
+metadata = %(basemaildir)s/offlineimap-metadata/
+pythonfile = %(baseconfdir)s/offlineimap_helper.py
+
+maxsyncaccounts = 1
+ui = basic
+
+[Account GMail]
+localrepository = Local
+remoterepository = Remote
+autorefresh = 5
+quick = 10
+
+[Repository Local]
+type = Maildir
+localfolders = %(basemaildir)s/gmail-mirror/
+
+[Repository Remote]
+type = Gmail
+remoteuser = lauria.massimo@gmail.com
+remotepasseval = get_password("imap.gmail.com")
+keepalive = 60
+maxconnections = 1
+realdelete = no
+# Setting for Italian folder names
+trashfolder = [Gmail]/Cestino
+spamfolder = [Gmail]/Spam
+# trashfolder = [Gmail]/Trash
+# spamfolder = [Gmail]/Spam
+
+# Mutt helper
+[mbnames]
+enabled = yes
+filename = %(basemaildir)s/mutt-mailboxes
+header = "mailboxes "
+peritem = "=%(foldername)s"
+sep = " "
+footer = "\n"
+
+[DEFAULT]
+basemaildir = ~/personal/mail
+baseconfdir = ~/config/mail
