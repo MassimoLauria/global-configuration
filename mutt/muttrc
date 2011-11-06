@@ -82,7 +82,7 @@ auto_view text/html text/enriched application/x-gunzip application/postscript im
 source $HOME/config/mutt/zenburn.rc
 
 # GnuPG for encrypting mails
-source $HOME/config/mutt/pgp.rc
+source $HOME/config/mutt/crypt.rc
 
 # Locale and Text encoding settings
 source $HOME/config/mutt/charset.rc
