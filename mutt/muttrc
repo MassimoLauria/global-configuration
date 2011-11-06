@@ -31,7 +31,7 @@ set certificate_file=~/.mutt/certificates
 
 
 # Composing and replying
-set editor ="emacsclient"
+set editor ="emacsclient %s"
 set query_command="$HOME/config/mutt/bbdb-mutt --query"  # Mutt will query my BBDB database.
 macro index,pager C "<pipe-message>$HOME/config/mutt/bbdb-mutt --collect<return>" # Send mail message to BBDB collecting function (BROKEN)
 
@@ -68,7 +68,7 @@ set reverse_realname=no	# use my address as it appears in the message
      	                # i am replying to
 
 set shell="/bin/sh"		# program to use for shell escapes
-
+set sendmail="msmtp"
 
 
 
