@@ -3,7 +3,7 @@
 # Copyright (C) 2010, 2011 by Massimo Lauria <lauria.massimo@gmail.com>
 #
 # Created   : "2011-03-05, sabato 01:03 (CET) Massimo Lauria"
-# Time-stamp: "2011-11-06, Sunday 03:17 (CET) Massimo Lauria"
+# Time-stamp: "2011-11-06, Sunday 12:12 (CET) Massimo Lauria"
 
 # Description::
 #
@@ -198,6 +198,11 @@ $LN -s $PWD/mutt/muttrc $HOME/.muttrc
 
 $RM -f $HOME/.offlineimaprc
 $LN -s $PWD/mail/offlineimaprc $HOME/.offlineimaprc
+
+if [ -d $HOME/Library/LaunchAgents/ ]; then
+    $RM $HOME/Library/LaunchAgents/offlineimap.daemon.plist
+    $LN $PWD/mail/offlineimap.daemon.plist $HOME/Library/LaunchAgents/
+fi
 
 $RM -f $HOME/.msmtprc
 $LN -s $PWD/mail/msmtprc $HOME/.msmtprc
