@@ -1,7 +1,7 @@
 # Copyright (C) 2010, 2011 by Massimo Lauria <lauria.massimo@gmail.com>
 #
 # Created   : "2010-10-11, lunedì 09:53 (CEST) Massimo Lauria"
-# Time-stamp: "2011-11-06, Sunday 01:02 (CET) Massimo Lauria"
+# Time-stamp: "2011-11-07, lunedì 14:02 (CET) Massimo Lauria"
 
 [general]
 accounts = GMail
@@ -10,7 +10,9 @@ metadata = %(basemaildir)s/offlineimap-metadata/
 pythonfile = %(baseconfdir)s/offlineimap_helper.py
 
 maxsyncaccounts = 1
-ui = basic
+
+ui = Noninteractive.Basic # Deprecated but retro-compatible.
+#ui = basic
 
 [Account GMail]
 localrepository = Local
