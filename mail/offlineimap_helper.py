@@ -16,24 +16,28 @@ def get_password(server):
     try:
 
         import keyring
-        pwd = keyring.get_password(server,"")
+        pwd = keyring.get_password(server, "")
         if not pwd:
-            raise ValueError("Unable to load password.")
+            raise ValueError("No password in keyring.")
         else:
             return pwd
 
     except ImportError:
         print install_keyring_message
     except ValueError:
-        pass
-
-    print "Unable to load password from keyring."
-    print "We try with user input, if possible."
+        print "No password found in the keyring."
+    except:
+        print "Problem in accessing the keyring. Is it loaded?"
 
     if os.isatty(sys.stdout.fileno()):
-        return getpass.getpass(prompt="Password: ")
+        print "We fallback to manual input."
+        try:
+            return getpass.getpass(prompt="Password: ")
+        except:
+            print "\nYou don't want to cooperate, I see. Bye bye."
+            sys.exit(-1)
     else:
-        print "Not in interactive shell. Can't read password."
+        print "Non-interactive shell. Can't ask to input password, sorry."
         sys.exit(-1)
 
 
