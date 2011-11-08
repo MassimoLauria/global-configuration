@@ -1,48 +1,49 @@
 # -*-muttrc-*-
 
-# Temporary
-set help			# show the help lines
-
-
-# Settings regarding the Mail accout are in a local file.
+# account setup (private)
 source $HOME/personal/conf/mutt-personal.rc
-set mail_check=60
-set timeout=10
 
-
-# Header fields
-ignore *		# this means "ignore all lines by default"
-unignore	from: subject to cc mail-followup-to date
-unhdr_order *				# forget any previous setting about field order
-hdr_order date from subject to cc
-set edit_headers = yes
-
-# Sort messages and folders
-set sort=threads		# primary sorting method
-set sort_aux=reverse-last-date	# date of the last message in thread
+# index appearance
+set sort=threads                          # as gmail
+set sort_aux=reverse-last-date-received   # as gmail
 set sort_browser=reverse-date	# how to sort files in the dir browser
 
+#
+set mail_check=0
+set timeout=10
 
+# message appearence
+ignore *
+unhdr_order *
+unignore  from: to: cc: date: subject:
+hdr_order from: to: cc: date: subject:
+set smart_wrap
 
-# Cache folders
+# caching
 set header_cache=~/.mutt/cache/headers
 set message_cachedir=~/.mutt/cache/bodies
 set certificate_file=~/.mutt/certificates
 
+# mail composition
+set editor ="emacsclient -t %s"
+set edit_headers = yes
 
-# Composing and replying
-set editor ="emacsclient %s"
-set query_command="$HOME/config/mutt/bbdb-mutt --query"  # Mutt will query my BBDB database.
-macro index,pager C "<pipe-message>$HOME/config/mutt/bbdb-mutt --collect<return>" # Send mail message to BBDB collecting function (BROKEN)
+# Mutt + BBDB interface, Broken.
+#set query_command="$HOME/config/mutt/bbdb-mutt --query"  # Mutt will query my BBDB database.
+#macro index,pager C "<pipe-message>$HOME/config/mutt/bbdb-mutt --collect<return>" # Send mail message to BBDB collecting function (BROKEN)
+
 
 set attribution="On %d, %n wrote:"      # how to attribute replies
 set autoedit		                    # go to the editor right away when composing
 set sig_dashes                          # put a line with "-- " in front of a signature
 
 
-set move=no             # Do not move message from spool
-set copy=yes			# always save a copy of outgoing messages
+unset move              # Do not move message from spool
+unset copy  			# Gmail already saves a copy of outgoing messages
 set use_from			# always generate the `From:' header field
+folder-hook INBOX unset mark_old          # Keep unread message marked as new.
+set mark_old
+unset record
 
 #---------------------------------------------------
 # Various options
@@ -76,16 +77,8 @@ set sendmail="msmtp"
 set mailcap_path="$HOME/config/mutt/mailcap:~/.mailcap:/etc/mailcap"
 auto_view text/html text/enriched application/x-gunzip application/postscript image/gif image/jpeg  image/* application/x-tar-gz text/x-vcard application/pgp-signature
 
-
-
-# Color theme
-source $HOME/config/mutt/zenburn.rc
-
-# GnuPG for encrypting mails
-source $HOME/config/mutt/crypt.rc
-
-# Locale and Text encoding settings
-source $HOME/config/mutt/charset.rc
-
-# Macro and keybindings
-source $HOME/config/mutt/macro.rc
+# extra configuration modules
+source $HOME/config/mutt/zenburn.rc   # color theme zenburn
+source $HOME/config/mutt/crypt.rc     # gnupg setup
+source $HOME/config/mutt/charset.rc   # charsets and encoding aliases
+source $HOME/config/mutt/macro.rc     # keyboard commands
