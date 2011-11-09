@@ -3,7 +3,7 @@
 # GMAIL
 
 #mark message as Spam/Ham
-macro index,pager .s "<save-message>=[Gmail]/Spam<enter>"
+macro index,pager S "<save-message>=[Gmail].Spam<enter>"
 macro index,pager .h "<save-message>=INBOX<enter>"
 
 
