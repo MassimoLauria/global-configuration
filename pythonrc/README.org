@@ -12,7 +12,7 @@ The following files are used to initialize python shell environments.
 
 * =ipython_config.py= AND =ipython_qtconsole_config.py= (ipython >= 0.11)
 
-  Since ipython 0.11 more features are in configuration files. These
+  Since ipython 0.11 there more features in configuration files. These
   are  configuration  for  "default"  profile  in  both  terminal  and
   qtconsole command line.
 
@@ -31,15 +31,26 @@ The following files are used to initialize python shell environments.
 
 
 
-OLDER IPYTHON'S
-
-
-* =ipythonrc= AND  =ipy_user_conf.py= (ipython 0.10)
+* =ipythonrc= AND  =ipy_user_conf.py= (ipython <= 0.10)
 
   Full featured configuration python program for ipython up to version
   0.10 . Located in =$IPYTHON_DIR=.
 
   Ipython 0.10 is default in Ubuntu 11.04 and Ipython 0.9 is in SageMath
 
-  Use the  latter as much  as possible, and  the former only  to setup
-  thing which need to be set up BEFORE ipython starts.
+  Use  the latter  configuration file  as  much as  possible, and  the
+  former only  to setup thing which  need to be set  up BEFORE ipython
+  starts.
+
+
+* =init.sage= AND =ipythonrc-sage= (SageMath 4.6-4.7)
+
+  SageMath  4.6-4.7 contain ipython  0.9.1, and  =ipy_user_conf.py= is
+  enough for it. The =ipythonrc= file is instead substituted by a Sage
+  specific version.
+
+  The actual meat is in  =init.sage=, which sets up LaTeX properly for
+  drawing graphs and loads packages from my own directory.
+
+  It also sets  up JSMath to pass some LaTeX environments to the LaTeX
+  rendering backend (i.e. does not try to typeset them on its own).
