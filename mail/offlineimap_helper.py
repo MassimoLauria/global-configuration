@@ -12,11 +12,11 @@ Please run `sudo pip install keyring'
 """
 
 
-def get_password(server):
+def get_password(server, user=""):
     try:
 
         import keyring
-        pwd = keyring.get_password(server, "")
+        pwd = keyring.get_password(server, user)
         if not pwd:
             raise ValueError("No password in keyring.")
         else:

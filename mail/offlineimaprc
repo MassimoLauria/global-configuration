@@ -1,7 +1,7 @@
 # Copyright (C) 2010, 2011 by Massimo Lauria <lauria.massimo@gmail.com>
 #
 # Created   : "2010-10-11, lunedì 09:53 (CEST) Massimo Lauria"
-# Time-stamp: "2011-11-11, Friday 17:34 (CET) Massimo Lauria"
+# Time-stamp: "2011-12-19, 21:46 (CET) Massimo Lauria"
 
 [general]
 accounts = GMail
@@ -12,7 +12,7 @@ pythonfile = %(baseconfdir)s/offlineimap_helper.py
 maxsyncaccounts = 1
 
 #ui = Noninteractive.Basic # Deprecated but retro-compatible.
-#ui = basic
+ui = basic
 
 [Account GMail]
 localrepository = Local
@@ -27,7 +27,7 @@ localfolders = %(basemaildir)s/gmail-mirror/
 [Repository Remote]
 type = Gmail
 remoteuser = lauria.massimo@gmail.com
-remotepasseval = get_password("imap.gmail.com")
+remotepasseval = get_password("imap.gmail.com","lauria.massimo@gmail.com")
 keepalive = 60
 maxconnections = 1
 realdelete = no
