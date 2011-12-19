@@ -48,10 +48,15 @@ if __name__ == '__main__':
         print install_keyring_message
         sys.exit(-1)
 
-    print "We memorize credential for the imap servers."
+    print "We memorize credential for the servers."
+    print ""
+    print " + imap server item is <servername> (e.g. imap.gmail.com)"
+    print " + smtp server item is smtp://<servername> (e.g. smtp.gmail.com)"
+    print ""
+    print "N.B. in Ubuntu remember to install msmtp with gnome support."
 
-    server = raw_input("Imap server: ")
-    username = raw_input("Username: ")
+    server = raw_input("Item: ")
+    username = raw_input("Account: ")
     # Query/verify password cycle
     while True:
         password = getpass.getpass(prompt="Insert password: ")
