@@ -14,9 +14,8 @@
 music_directory		"/storage/music/"
 playlist_directory	"~/.mpd/playlists"
 
-db_file			"~/.mpd/tag_cache"
+db_file			"~/.mpd/mpd.db"
 log_file		"~/.mpd/mpd.log"
-error_file		"~/.mpd/errors.log"
 pid_file		"~/.mpd/pid"
 ##########################################################
 
