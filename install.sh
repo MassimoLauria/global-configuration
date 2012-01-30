@@ -3,7 +3,7 @@
 # Copyright (C) 2010, 2011, 2012 by Massimo Lauria <lauria.massimo@gmail.com>
 #
 # Created   : "2011-03-05, sabato 01:03 (CET) Massimo Lauria"
-# Time-stamp: "2012-01-30, 00:17 (CET) Massimo Lauria"
+# Time-stamp: "2012-01-30, 02:06 (CET) Massimo Lauria"
 
 # Description::
 #
@@ -22,6 +22,7 @@ CP=cp
 LN=ln
 RM=rm
 MKDIR=mkdir
+CAT=cat
 FILE_NOT_FOUND=127
 
 
@@ -69,14 +70,35 @@ issue_warning_on_pwd() {
     fi
 }
 
+# First we define the function
+ConfirmOrExit() {
+    while true
+    do
+        echo -n "Please confirm (y or n) : "
+        read CONFIRM
+        case $CONFIRM in
+            y|Y|YES|yes|Yes) break ;;
+            n|N|no|NO|No)
+                echo Aborting - you entered $CONFIRM
+                exit 1
+                ;;
+            *)
+        esac
+    done
+    echo You entered $CONFIRM. Continuing ...
+}
+
+
 # ------------------- Installation -------------------------
+clear 2>/dev/null
 
 # Goto config folder.
 cd $(dirname $0)
 
 issue_warning_on_pwd "config"
 
-echo "# 1. Check for the present of basic programs"
+
+echo "# 1. Check for the presence of basic programs"
 require_program $GIT
 require_program $CUT
 require_program $CP
@@ -85,6 +107,25 @@ require_program $RM
 require_program $MKDIR
 echo ""
 echo ""
+
+# Query for the optional programs
+echo "The following list of optional program are required to install"
+echo "all the features of this configuration.  Even if none of  them"
+echo "is present a basic configuration will be installed anyway."
+echo ""
+echo "Many  other  programs  may be needed  to effectively  use this"
+echo "configuration.  Nevertheless such  programs are  not needed to"
+echo "complete the setup."
+echo ""
+echo "Please check whether the programs are present before proceeding."
+
+echo "------------------------------------------------------------------------"
+$CAT docs/optional_conf_requirements.txt
+echo "------------------------------------------------------------------------"
+
+echo "\nDo you want to proceed with the setup of the configuration? [y/n] "
+
+ConfirmOrExit
 
 
 
