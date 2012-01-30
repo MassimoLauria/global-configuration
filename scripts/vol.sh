@@ -77,7 +77,7 @@ if [ "$icon_name" = "" ]; then
         fi
     fi
 fi
-#notify-send "$text_string" -i $icon_name -h int:value:$display_volume -h string:synchronous:volume
-awesome-client <<EOF
-naughty.notify({ title="$command", text="Volume $display_volume", timeout=1});
-EOF
+notify-send "$text_string" -i $icon_name -h int:value:$display_volume -h string:synchronous:volume
+#awesome-client <<EOF
+#naughty.notify({ title="$command", text="Volume $display_volume", timeout=1});
+#EOF
