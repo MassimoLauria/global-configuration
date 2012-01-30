@@ -221,7 +221,7 @@ $LN -s $PWD/pythonrc/init.sage        $HOME/.sage/init.sage
 $LN -s $PWD/pythonrc/ipythonrc-sage   $HOME/.sage/ipython/ipythonrc
 $LN -s $PWD/pythonrc/ipy_user_conf.py $HOME/.sage/ipython/ipy_user_conf.py
 $LN -s $PWD/pythonrc/ipython_config.py $HOME/.ipython/profile_default/ipython_config.py
-$LN -s $PWD/pythonrc/ipython_qtconsole_config.py $HOME/.ipython/profile_default/ipython_qtconfig_config.py
+$LN -s $PWD/pythonrc/ipython_qtconsole_config.py $HOME/.ipython/profile_default/ipython_qtconsole_config.py
 
 # MATPLOTLIB
 $RM -f $HOME/.matplotlib/matplotlibrc

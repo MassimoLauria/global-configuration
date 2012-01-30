@@ -5,10 +5,10 @@
 
 (emacs)     wget, tar, gzip --- alternative way to setup auto-completion for LaTeX
 
-(emacs)     python, make --- setup of a virtual python environment to be used in Emacs
+(emacs)     libncurses-dev, python-dev, make --- setup of a virtual python environment to be used in Emacs
 
 (emacs)     Apple development tools --- idem, additional requirements for MacOSX
 
-(emacs)     python ---integration of Python documentation in Emacs
+(emacs)     python --- integration of Python documentation in Emacs
 
 (emacs)     python, BeautifulSoup --- integration of C/C++ documentation in Emacs
