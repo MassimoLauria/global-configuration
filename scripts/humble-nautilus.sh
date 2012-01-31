@@ -6,11 +6,17 @@
 
 # Run this once for all!
 
+if [ -x /usr/bin/gconftool-2 ]; then
 # Disable Nautilus desktop, because we really really do not want it!
-gconftool-2 -s -t bool /apps/nautilus/preferences/show_desktop false 
+    gconftool-2 -s -t bool /apps/nautilus/preferences/show_desktop false
 # Do not let Nautilus set the background, because we really really do not want this either.
-gconftool-2 -s -t bool /desktop/gnome/background/draw_background false 
-# Make Nautilus use spatial mode, this should make start-up quicker.
-gconftool-2 -s -t bool /apps/nautilus/preferences/always_use_browser false 
-# Make Nautilus show the advanced permissions dialog -- if it has to start, lets at least make it usable :) 
-gconftool-2 -s -t bool /apps/nautilus/preferences/show_advanced_permissions true 
+    gconftool-2 -s -t bool /desktop/gnome/background/draw_background false
+# Make Nautilus use spatial mode, this should make start-up quicker (not enforced).
+    gconftool-2 -s -t bool /apps/nautilus/preferences/always_use_browser true
+# Make Nautilus show the advanced permissions dialog -- if it has to start, lets at least make it usable :)
+    gconftool-2 -s -t bool /apps/nautilus/preferences/show_advanced_permissions true
+fi
+
+if [ -f /usr/bin/gsettings ]; then
+    gsettings set org.gnome.desktop.background show-desktop-icons false
+fi
