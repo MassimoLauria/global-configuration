@@ -1,7 +1,8 @@
-# Copyright (C) 2010, 2011 by Massimo Lauria <lauria.massimo@gmail.com>
+# -*- mode: sh -*-
+# Copyright (C) 2010, 2011, 2012 by Massimo Lauria <lauria.massimo@gmail.com>
 #
 # Created   : "2010-10-11, lunedì 09:53 (CEST) Massimo Lauria"
-# Time-stamp: "2011-12-19, 21:46 (CET) Massimo Lauria"
+# Time-stamp: "2012-01-31, 11:43 (CET) Massimo Lauria"
 
 [general]
 accounts = GMail
@@ -11,7 +12,9 @@ pythonfile = %(baseconfdir)s/offlineimap_helper.py
 
 maxsyncaccounts = 1
 
-#ui = Noninteractive.Basic # Deprecated but retro-compatible.
+# This setting does not work with older versions of offlineimap. I do
+# not have such versions hanging around, but it is quite possible that
+# some distro still have it.
 ui = basic
 
 [Account GMail]
