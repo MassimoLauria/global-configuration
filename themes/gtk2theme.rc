@@ -34,7 +34,8 @@ gtk-menu-images = 1
 gtk-can-change-accels=1 # to change shortcuts in menu
 
 ## Icon theme
+gtk-icon-theme-name = "Human"
 # gtk-icon-theme-name="Humanity"
 # gtk-icon-theme-name="hicolor"
-gtk-icon-theme-name="Humanity-Dark"
+# gtk-icon-theme-name="Humanity-Dark"
 # gtk-icon-theme-name="Tango"
