@@ -12,16 +12,16 @@ body {
 }
 
 input {
-  border: 2px inset white;
+  border: 1px solid #7f7f7f;
   background-color: white;
-  color: black;
+  color: #2f2f2f;
   -moz-appearance: none !important;
 }
 
 textarea {
-  border: 2px inset white;
+  border: 1px solid #7f7f7f;
   background-color: white;
-  color: black;
+  color: #2f2f2f;
   -moz-appearance: none !important;
 }
 
@@ -44,12 +44,12 @@ textarea {
 /*   -moz-appearance: none !important; */
 /* } */
 
-/* button, input[type="reset"], input[type="button"], input[type="submit"] { */
-/*   border: 2px outset white; */
-/*   background-color: #eeeeee; */
-/*   color: black; */
-/*   -moz-appearance: none !important; */
-/* } */
+button, input[type="reset"], input[type="button"], input[type="submit"] {
+  border: 1px outset #7f7f7f;
+  background-color: #dddddd;
+  color: #2f2f2f;
+  -moz-appearance: none !important;
+}
 
 /* body { */
 /*   background-color: white; */
