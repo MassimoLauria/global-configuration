@@ -23,6 +23,12 @@ mute_mixer=Master
  vol_mixer=PCM
 hdmi_mixer=IEC958
 
+# Determine if I should use 'Master' or 'PCM' to control volume
+# it is an heuristic working on my machines.
+amixer get $vol_mixer >|dev/null || vol_mixer="Master"
+
+
+
 # Output text patterns
 text_vol__change=' Volume %3d '
 text_snd___muted=' Sound  OFF '
@@ -47,6 +53,7 @@ if [ "$command" = "" ]; then
     echo "usage: $0 {up|down|mute|hdmi} [increment]"
     exit 0;
 fi
+
 
 display_volume=0
 icon_name=""
