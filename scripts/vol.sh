@@ -25,8 +25,7 @@ hdmi_mixer=IEC958
 
 # Determine if I should use 'Master' or 'PCM' to control volume
 # it is an heuristic working on my machines.
-amixer get $vol_mixer >|dev/null || vol_mixer="Master"
-
+amixer get $vol_mixer >/dev/null || vol_mixer="Master"
 
 
 # Output text patterns
