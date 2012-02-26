@@ -1,0 +1,46 @@
+#-*-muttrc-*-
+
+# Basic actions
+macro index,pager r "<reply>"
+macro index,pager R "<group-reply>"
+macro index,pager p "<recall-message>"
+macro index,pager f "<forward-message>"
+macro index,pager m "<mail>"
+
+# Mark all read
+macro index .r "T.*\n;WN^t.*\n" "Mark all read"
+
+
+# Archive/Delete/Save  (GMail oriented)
+macro index,pager A "unset trash\n<delete-message>"         "Archive"
+macro index,pager d "<save-message>=[Gmail].Cestino<enter>" "Move to trash"
+macro index,pager u "<undelete-message>"                    "Undelete message"
+macro index,pager s "<copy-message>"                        "Save the message"
+
+
+# Spam/Ham  (GMail oriented)
+macro index,pager S "<save-message>=[Gmail].Spam<enter>"  "Mark as Spam"
+macro index,pager H "<save-message>=INBOX<enter>" "Mark as Ham (non Spam)"
+
+
+# Goto mailboxes (GMail oriented)
+bind editor <space> noop
+macro index,pager gg "<change-folder>?<toggle-mailboxes>" "Torna alle Mailbox"
+macro index,pager gi "<change-folder>=INBOX<enter>" "Posta in arrivo"
+macro index,pager ga "<change-folder>=[Gmail].Tutti i messaggi<enter>" "Tutti i messaggi"
+macro index,pager gs "<change-folder>=[Gmail].Posta inviata<enter>"    "Posta Inviata"
+macro index,pager gd "<change-folder>=[Gmail].Bozze<enter>"            "Bozze"
+macro index,pager g* "<change-folder>=[Gmail].Speciali<enter>"         "Speciali"
+
+
+
+# I like to quit from browser
+macro   browser q       '<exit><quit>'
+# macro   index   q       '<change-folder>?<toggle-mailboxes>'
+
+
+# Threads
+macro index + "<collapse-thread>"  "Expand/Collapse this thread"
+macro index <esc>+ "<collapse-all>" "Expand/Collapse all threads"
+
+# vim: ft=muttrc

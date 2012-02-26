@@ -48,7 +48,7 @@ unset record
 #---------------------------------------------------
 # Various options
 set fcc_attach			# keep attachments in copies of sent messages?
-set folder_format="%2C %t %N %-30f %10d"
+set folder_format="%10d %t %N %-30f "
 set hdr_format="%4C %Z %{%m/%d} %-15.15F (%4c) %s" # format of the index
 set hdrs			# include `my_hdr' lines in outgoing messages
 set menu_scroll			 # no implicit next-page/prev-page
@@ -78,7 +78,7 @@ set mailcap_path="$HOME/config/mutt/mailcap:~/.mailcap:/etc/mailcap"
 auto_view text/html text/enriched application/x-gunzip application/postscript image/gif image/jpeg  image/* application/x-tar-gz text/x-vcard application/pgp-signature
 
 # extra configuration modules
-source $HOME/config/mutt/zenburn.rc   # color theme zenburn
-source $HOME/config/mutt/crypt.rc     # gnupg setup
-source $HOME/config/mutt/charset.rc   # charsets and encoding aliases
-source $HOME/config/mutt/macro.rc     # keyboard commands
+source $HOME/config/mutt/zenburn.rc    # color theme zenburn
+source $HOME/config/mutt/crypt.rc      # gnupg setup
+source $HOME/config/mutt/charset.rc    # charsets and encoding aliases
+source $HOME/config/mutt/keycommand.rc # keyboard commands
