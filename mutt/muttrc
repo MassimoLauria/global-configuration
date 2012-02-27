@@ -9,6 +9,7 @@ set sort_aux=reverse-last-date-received   # as gmail
 set sort_browser=reverse-date	# how to sort files in the dir browser
 
 #
+unset trash
 set mail_check=0
 set timeout=10
 
