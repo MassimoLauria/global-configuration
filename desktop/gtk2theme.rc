@@ -6,7 +6,7 @@
 #include "/usr/share/themes/New Wave Dark Menus/gtk-2.0/gtkrc"
 
 # Darklooks (Gnome 2 dark theme)
-include "./config/themes/darklooks-gtk2theme.rc"
+include "./config/desktop/darklooks-gtk2theme.rc"
 
 
 
