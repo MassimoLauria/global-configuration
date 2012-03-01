@@ -1,0 +1,60 @@
+#!/bin/sh
+
+# Massimo Lauria, 2010
+#
+# Common enviroment variables to be loaded in bash, zsh, X11, ...
+#
+
+# {{{ Aliases ------------------------------------------------------------------
+
+if [ "$TERM" != "dumb" -a -f `which dircolors` ]; then
+    eval "`dircolors -b`"
+    alias ls='ls --color=auto'
+fi
+alias rm="rm -iv"
+
+# }}} --------------------------------------------------------------------------
+
+
+# {{{ Pager --------------------------------------------------------------------
+if [[ -f `which most 2>&1 /dev/null` ]]; then
+    PAGER=most
+elif [[ -f `which less 2>&1 /dev/null` ]]; then
+    PAGER=less
+else
+    PAGER=more
+fi
+export PAGER
+# }}} --------------------------------------------------------------------------
+
+# {{{ Editor -------------------------------------------------------------------
+
+EDITOR="emacsclient"
+
+if [[ -f `which qemacs 2>&1 /dev/null` ]]; then
+    ALTERNATE_EDITOR="qemacs"
+elif [[ -f `which jed 2>&1 /dev/null` ]]; then
+    ALTERNATE_EDITOR="jed"
+elif [[ -f `which zile 2>&1 /dev/null` ]]; then
+    ALTERNATE_EDITOR="zile"
+elif [[ -f `which mg 2>&1 /dev/null` ]]; then
+    ALTERNATE_EDITOR="mg"
+elif [[ -f `which vim 2>&1 /dev/null` ]]; then
+    ALTERNATE_EDITOR="vim"
+else
+    ALTERNATE_EDITOR="vi"
+fi
+
+export EDITOR
+export ALTERNATE_EDITOR
+alias ec="emacsclient -t"
+
+# LaTeX enviroment variables
+export TEXEDIT='emacsclient -t +%d %s'
+
+## Umask
+umask 0077
+
+## We don't need start/stop terminal
+stty stop  '^q'
+stty start '^q'
