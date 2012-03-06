@@ -116,6 +116,12 @@ macro index + "<collapse-thread>"  "Expand/Collapse this thread"
 macro index <esc>+ "<collapse-all>" "Expand/Collapse all threads"
 macro index m "<mail>" "Compose new mail"
 
+macro index U "<undelete-message>"                    "Undelete message"
+macro index s "<copy-message>"                        "Save the message"
+macro pager U "<undelete-message>"                    "Undelete message"
+macro pager s "<copy-message>"                        "Save the message"
+
+
 # Moving around in pager
 set pager_stop=yes
 

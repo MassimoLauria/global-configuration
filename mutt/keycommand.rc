@@ -66,7 +66,7 @@ macro index .r "T.*\n;WN^t.*\n" "Mark all read"
 # Archive/Delete/Save  (GMail oriented)
 macro index,pager A "<delete-message>"         "Archive"
 macro index,pager d "<save-message>=[Gmail].Cestino<enter>" "Move to trash"
-macro index,pager u "<undelete-message>"                    "Undelete message"
+macro index,pager U "<undelete-message>"                    "Undelete message"
 macro index,pager s "<copy-message>"                        "Save the message"
 
 
