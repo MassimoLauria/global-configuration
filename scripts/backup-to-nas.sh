@@ -7,7 +7,7 @@ RDIFF="rdiff-backup"
 OPT="-v5 --create-full-path"
 INCLUDE_FILE="$HOME/.rdiff-backup-include"
 RTEMPDIR="--remote-tempdir backup/tmp"
-LOG_FILE="$HOME/.rdiff-backup.log"
+
 
 
 USAGE="\n
@@ -35,5 +35,5 @@ else
     INCOPT=""
 fi
 
-echo "#############< "`date` ">############" | tee -a $LOG_FILE
-$RDIFF $DRYRUN $OPT $RTEMPDIR $INCOPT $HOME "nas::backup/`hostname`/$USER" | tee -a $LOG_FILE
+echo "#############< "`date` ">############"
+$RDIFF $DRYRUN $OPT $RTEMPDIR $INCOPT $HOME "nas::backup/`hostname`/$USER"
