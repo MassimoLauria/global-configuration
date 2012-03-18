@@ -3,11 +3,10 @@
 # Script for regular backups on disk
 
 RDIFF="rdiff-backup"
-#DRYRUN="--compare"  #No dry run for rdiff-backup
+DRYRUN="--compare"  #No dry run for rdiff-backup
 OPT="-v5 --create-full-path"
 INCLUDE_FILE="$HOME/.rdiff-backup-include"
 RTEMPDIR="--remote-tempdir backup/tmp"
-
 
 
 USAGE="\n
@@ -17,7 +16,7 @@ Usage: $0\n
 This will backup the home directory in the backup location by\n
 using \`rdiff-backup\' copying method.\n
 \n
-      <home> --> NAS:~/backup/<hostname>/<home>\n
+      <home> --> NAS:~/backup/<hostname>/<username>\n
 \n
 No argument required, just call the command from anywhere.\n"
 
@@ -36,4 +35,4 @@ else
 fi
 
 echo "#############< "`date` ">############"
-$RDIFF $DRYRUN $OPT $RTEMPDIR $INCOPT $HOME "nas::backup/`hostname`/$USER"
+$RDIFF $DRYRUN $OPT $RTEMPDIR $INCOPT $HOME "nas::backup/`hostname`/$(basename $HOME)"
