@@ -5,8 +5,10 @@
 RDIFF="rdiff-backup"
 #DRYRUN="--compare"  #No dry run for rdiff-backup
 OPT="-v5 --create-full-path"
+INCLUDE_FILE="$HOME/.rdiff-backup-include"
+RTEMPDIR="--remote-tempdir backup/tmp"
+LOG_FILE="$HOME/.rdiff-backup.log"
 
-INCLUDE_FILE="~/.rdiff-backup-include"
 
 USAGE="\n
 \n
@@ -27,9 +29,11 @@ if [ $# -gt 0 ]; then
 fi
 
 if [ -f "$INCLUDE_FILE" ]; then
-    INCOPT=" --include-globbing-filelist \"$INCLUDE_FILE\""
+    INCOPT=" --include-globbing-filelist $INCLUDE_FILE"
 else
+    echo Include/Exclude file: "$INCLUDE_FILE" not found.
     INCOPT=""
 fi
 
-$RDIFF $DRYRUN $OPT $INCOPT $HOME nas::backup/`hostname`/$USER
+echo "#############< "`date` ">############" | tee -a $LOG_FILE
+$RDIFF $DRYRUN $OPT $RTEMPDIR $INCOPT $HOME "nas::backup/`hostname`/$USER" | tee -a $LOG_FILE
