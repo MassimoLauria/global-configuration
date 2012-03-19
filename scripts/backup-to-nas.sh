@@ -4,7 +4,7 @@
 
 RDIFF="rdiff-backup"
 #DRYRUN="--compare"  #No dry run for rdiff-backup
-OPT="-v5 --create-full-path"
+OPT="--create-full-path"
 INCLUDE_FILE="$HOME/.rdiff-backup-include"
 RTEMPDIR="--remote-tempdir backup/tmp"
 
