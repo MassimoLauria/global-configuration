@@ -3,7 +3,6 @@
 # Script for regular backups on disk
 
 RDIFF="rdiff-backup"
-#DRYRUN="--compare"  #No dry run for rdiff-backup
 OPT="--create-full-path"
 INCLUDE_FILE="$HOME/.rdiff-backup-include"
 RTEMPDIR="--remote-tempdir backup/tmp"
@@ -34,5 +33,6 @@ else
     INCOPT=""
 fi
 
-echo "#############< "`date` ">############"
-$RDIFF $DRYRUN $OPT $RTEMPDIR $INCOPT $HOME "nas::backup/`hostname`/$(basename $HOME)"
+echo "#############<S "`date` ">############"
+$RDIFF $OPT $RTEMPDIR $INCOPT $HOME "nas::backup/`hostname`/$(basename $HOME)"
+echo "#############<F "`date` ">############"
