@@ -1,3 +1,4 @@
+# -*- mode:python -*-
 ### MATPLOTLIBRC FORMAT
 
 # This is a sample matplotlib configuration file - you can find a copy
@@ -33,10 +34,10 @@ backend : TkAgg
 # if you are runing pyplot inside a GUI and your backend choice
 # conflicts, we will automatically try and find a compatible one for
 # you if backend_fallback is True
-#backend_fallback: True
+backend_fallback: True
 #interactive  : False
-#toolbar      : toolbar2   # None | classic | toolbar2
-#timezone     : UTC        # a pytz timezone string, eg US/Central or Europe/Paris
+toolbar      : toolbar2   # None | classic | toolbar2
+timezone     : UTC        # a pytz timezone string, eg US/Central or Europe/Paris
 
 # Where your matplotlib data lives if you installed to a non-default
 # location.  This is where the matplotlib fonts, bitmaps, etc reside
@@ -46,7 +47,7 @@ backend : TkAgg
 ### LINES
 # See http://matplotlib.sourceforge.net/api/artist_api.html#module-matplotlib.lines for more
 # information on line properties.
-#lines.linewidth   : 1.0     # line width in points
+lines.linewidth   : 1.0     # line width in points
 #lines.linestyle   : -       # solid line
 #lines.color       : blue
 #lines.marker      : None    # the default marker
@@ -56,17 +57,17 @@ backend : TkAgg
 #lines.dash_capstyle : butt          # butt|round|projecting
 #lines.solid_joinstyle : miter       # miter|round|bevel
 #lines.solid_capstyle : projecting   # butt|round|projecting
-#lines.antialiased : True         # render lines in antialised (no jaggies)
+lines.antialiased : True         # render lines in antialised (no jaggies)
 
 ### PATCHES
 # Patches are graphical objects that fill 2D space, like polygons or
 # circles.  See
 # http://matplotlib.sourceforge.net/api/artist_api.html#module-matplotlib.patches
 # information on patch properties
-#patch.linewidth   	: 1.0     # edge width in points
-#patch.facecolor  	: blue
-#patch.edgecolor  	: black
-#patch.antialiased 	: True    # render patches in antialised (no jaggies)
+patch.linewidth   	: 0.5     # edge width in points
+patch.facecolor  	: 348ABD  # blue
+patch.edgecolor  	: eeeeee
+patch.antialiased 	: True    # render patches in antialised (no jaggies)
 
 ### FONT
 #
@@ -113,12 +114,12 @@ backend : TkAgg
 # settings for axes and ticks. Special text sizes can be defined
 # relative to font.size, using the following values: xx-small, x-small,
 # small, medium, large, x-large, xx-large, larger, or smaller
-#font.size           : 12.0
+font.size           : 10.0
 #font.serif          : Bitstream Vera Serif, New Century Schoolbook, Century Schoolbook L, Utopia, ITC Bookman, Bookman, Nimbus Roman No9 L, Times New Roman, Times, Palatino, Charter, serif
 #font.sans-serif     : Bitstream Vera Sans, Lucida Grande, Verdana, Geneva, Lucid, Arial, Helvetica, Avant Garde, sans-serif
 #font.cursive        : Apple Chancery, Textile, Zapf Chancery, Sand, cursive
 #font.fantasy        : Comic Sans MS, Chicago, Charcoal, Impact, Western, fantasy
-#font.monospace      : Bitstream Vera Sans Mono, Andale Mono, Nimbus Mono L, Courier New, Courier, Fixed, Terminal, monospace
+font.monospace      : DejaVu Sans Mono, Andale Mono, Nimbus Mono L, Courier New, Courier, Fixed, Terminal, monospace
 
 ### TEXT
 # text properties used by text.Text.  See
@@ -194,14 +195,14 @@ backend : TkAgg
 # default fontsizes for ticklabels, and so on.  See
 # http://matplotlib.sourceforge.net/api/axes_api.html#module-matplotlib.axes
 #axes.hold           : True    # whether to clear the axes by default on
-#axes.facecolor      : white   # axes background color
-#axes.edgecolor      : black   # axes edge color
-#axes.linewidth      : 1.0     # edge linewidth
-#axes.grid           : False   # display grid or not
-#axes.titlesize      : large   # fontsize of the axes title
-#axes.labelsize      : medium  # fontsize of the x any y labels
-#axes.labelcolor     : black
-#axes.axisbelow      : False   # whether axis gridlines and ticks are below
+axes.facecolor      : eeeeee   # axes background color
+axes.edgecolor      : bcbcbc   # axes edge color
+axes.linewidth      : 1.0      # edge linewidth
+axes.grid           : True     # display grid or not
+axes.titlesize      : x-large  # fontsize of the axes title
+axes.labelsize      : large    # fontsize of the x any y labels
+axes.labelcolor     : 555555
+axes.axisbelow      : True    # whether axis gridlines and ticks are below
                               # the axes elements (lines, text, etc)
 #axes.formatter.limits : -7, 7 # use scientific notation if log10
                                # of the axis range is smaller than the
@@ -209,26 +210,35 @@ backend : TkAgg
 #axes.unicode_minus  : True    # use unicode for the minus symbol
                                # rather than hypen.  See http://en.wikipedia.org/wiki/Plus_sign#Plus_sign
 
+axes.color_cycle : 348ABD, 7A68A6, A60628, 467821, CF4457, 188487, E24A33
+                      # E24A33 : orange
+                      # 7A68A6 : purple
+                      # 348ABD : blue
+                      # 188487 : turquoise
+                      # A60628 : red
+                      # CF4457 : pink
+                      # 467821 : green
+
 #polaraxes.grid      : True    # display grid on polar axes
 #axes3d.grid         : True    # display grid on 3d axes
 
 ### TICKS
 # see http://matplotlib.sourceforge.net/api/axis_api.html#matplotlib.axis.Tick
-#xtick.major.size     : 4      # major tick size in points
-#xtick.minor.size     : 2      # minor tick size in points
-#xtick.major.pad      : 4      # distance to major tick label in points
-#xtick.minor.pad      : 4      # distance to the minor tick label in points
-#xtick.color          : k      # color of the tick labels
+xtick.major.size     : 0      # major tick size in points
+xtick.minor.size     : 0      # minor tick size in points
+xtick.major.pad      : 6      # distance to major tick label in points
+xtick.minor.pad      : 6      # distance to the minor tick label in points
+xtick.color          : 555555      # color of the tick labels
 #xtick.labelsize      : medium # fontsize of the tick labels
-#xtick.direction      : in     # direction: in or out
+xtick.direction      : in     # direction: in or out
 
-#ytick.major.size     : 4      # major tick size in points
-#ytick.minor.size     : 2      # minor tick size in points
-#ytick.major.pad      : 4      # distance to major tick label in points
-#ytick.minor.pad      : 4      # distance to the minor tick label in points
-#ytick.color          : k      # color of the tick labels
+ytick.major.size     : 0      # major tick size in points
+ytick.minor.size     : 0      # minor tick size in points
+ytick.major.pad      : 6      # distance to major tick label in points
+ytick.minor.pad      : 6      # distance to the minor tick label in points
+ytick.color          : 555555      # color of the tick labels
 #ytick.labelsize      : medium # fontsize of the tick labels
-#ytick.direction      : in     # direction: in or out
+ytick.direction      : in     # direction: in or out
 
 
 ### GRIDS
@@ -237,8 +247,8 @@ backend : TkAgg
 #grid.linewidth   :   0.5     # in points
 
 ### Legend
-#legend.fancybox      : False  # if True, use a rounded box for the
-                               # legend, else a rectangle
+legend.fancybox      : True   # if True, use a rounded box for the
+                              # legend, else a rectangle
 #legend.isaxes        : True
 #legend.numpoints     : 2      # the number of points in the legend line
 #legend.fontsize      : large
@@ -254,10 +264,10 @@ backend : TkAgg
 
 ### FIGURE
 # See http://matplotlib.sourceforge.net/api/figure_api.html#matplotlib.figure.Figure
-#figure.figsize   : 8, 6    # figure size in inches
+figure.figsize   : 11, 8    # figure size in inches
 #figure.dpi       : 80      # figure dots per inch
-#figure.facecolor : 0.75    # figure facecolor; 0.75 is scalar gray
-#figure.edgecolor : white   # figure edgecolor
+figure.facecolor : 0.85    # figure facecolor; 0.75 is scalar gray
+figure.edgecolor : 0.50    # figure edgecolor
 
 # The figure subplot parameters.  All dimensions are fraction of the
 # figure width or height
@@ -266,7 +276,7 @@ backend : TkAgg
 #figure.subplot.bottom	: 0.1    # the bottom of the subplots of the figure
 #figure.subplot.top	: 0.9    # the top of the subplots of the figure
 #figure.subplot.wspace	: 0.2    # the amount of width reserved for blank space between subplots
-#figure.subplot.hspace	: 0.2    # the amount of height reserved for white space between subplots
+figure.subplot.hspace	: 0.5    # the amount of height reserved for white space between subplots
 
 ### IMAGES
 #image.aspect : equal             # equal | auto | a number
@@ -352,3 +362,19 @@ backend : TkAgg
 #   from matplotlib import verbose.
 #verbose.level  : silent      # one of silent, helpful, debug, debug-annoying
 #verbose.fileo  : sys.stdout  # a log filename, sys.stdout or sys.stderr
+
+# Event keys to interact with figures/plots via keyboard.
+# Customize these settings according to your needs.
+# Leave the field(s) empty if you don't need a key-map. (i.e., fullscreen : '')
+
+keymap.fullscreen : f # toggling
+keymap.home : h, r, home # home or reset mnemonic
+keymap.back : left, c, backspace # forward / backward keys to enable
+keymap.forward : right, v # left handed quick navigation
+keymap.pan : p # pan mnemonic
+keymap.zoom : o # zoom mnemonic
+keymap.save : s # saving current figure
+keymap.grid : g # switching on/off a grid in current axes
+keymap.yscale : l # toggle scaling of y-axes ('log'/'linear')
+keymap.xscale : L, k # toggle scaling of x-axes ('log'/'linear')
+keymap.all_axes : a # enable all axes

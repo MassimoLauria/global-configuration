@@ -116,6 +116,60 @@ macro index + "<collapse-thread>"  "Expand/Collapse this thread"
 macro index <esc>+ "<collapse-all>" "Expand/Collapse all threads"
 macro index m "<mail>" "Compose new mail"
 
+macro index U "<undelete-message>"                    "Undelete message"
+macro index s "<copy-message>"                        "Save the message"
+macro pager U "<undelete-message>"                    "Undelete message"
+macro pager s "<copy-message>"                        "Save the message"
+
+
+# Moving around in pager
+set pager_stop=yes
+
+macro pager <Up>    "<previous-line>"
+macro pager <Down>  "<next-line>"
+macro pager <Left>  "<previous-entry>"
+macro pager <Right> "<next-entry>"
+macro pager <PageDown> "<next-page>"
+macro pager <PageUp>   "<previous-page>"
+
+macro pager i    "<previous-line>"
+macro pager k    "<next-line>"
+macro pager j    "<previous-entry>"
+macro pager l    "<next-entry>"
+macro pager u    "<previous-thread>"
+macro pager o    "<next-thread>"
+
+macro pager <Esc>i  "<previous-page>"
+macro pager <Esc>k  "<next-page>"
+macro pager <Esc>j  "<previous-thread>"
+macro pager <Esc>l  "<next-thread>"
+macro pager <Esc>u  "<previous-thread>"
+macro pager <Esc>o  "<next-thread>"
+
+# Moving around in Index
+macro index <Up>    "<previous-entry>"
+macro index <Down>  "<next-entry>"
+macro index <Left>  "<previous-entry>"
+macro index <Right> "<next-entry>"
+macro index <PageDown> "<next-page>"
+macro index <PageUp>   "<previous-page>"
+
+macro index i    "<previous-entry>"
+macro index k    "<next-entry>"
+macro index j    "<previous-entry>"
+macro index l    "<next-entry>"
+macro index u    "<previous-thread>"
+macro index o    "<next-thread>"
+
+macro index <Esc>i  "<previous-page>"
+macro index <Esc>k  "<next-page>"
+macro index <Esc>j  "<previous-page>"
+macro index <Esc>l  "<next-page>"
+macro index <Esc>u  "<previous-thread>"
+macro index <Esc>o  "<next-thread>"
+
+
+
 
 # Color theme (requires 256 color terminal)
 

@@ -5,12 +5,14 @@
 # Common enviroment variables to be loaded in bash, zsh, X11, ...
 #
 
-# {{{ Aliases ------------------------------------------------------------------
-
-if [ "$TERM" != "dumb" -a -f `which dircolors` ]; then
-    eval "`dircolors -b`"
+# {{{ Dumb terminal needs to get it simple 
+if [ "x$TERM" != "xdumb" ]; then
     alias ls='ls --color=auto'
+else
+    PS1='$ '
+    alias ls='ls --color=never'
 fi
+
 alias rm="rm -iv"
 
 # }}} --------------------------------------------------------------------------

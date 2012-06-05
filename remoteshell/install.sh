@@ -3,6 +3,9 @@
 # Shell
 rm -f ~/.bashrc
 ln -s ~/remoteshell/bashrc ~/.bashrc
+rm -f ~/.bash_profile
+ln -s ~/remoteshell/bash_profile ~/.bash_profile
+
 
 # Mutt files
 rm -f ~/.muttrc
