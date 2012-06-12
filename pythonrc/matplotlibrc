@@ -371,10 +371,10 @@ keymap.fullscreen : f # toggling
 keymap.home : h, r, home # home or reset mnemonic
 keymap.back : left, c, backspace # forward / backward keys to enable
 keymap.forward : right, v # left handed quick navigation
-keymap.pan : p # pan mnemonic
-keymap.zoom : o # zoom mnemonic
+keymap.pan : p  # pan mnemonic
+keymap.zoom : z # zoom mnemonic
 keymap.save : s # saving current figure
 keymap.grid : g # switching on/off a grid in current axes
-keymap.yscale : l # toggle scaling of y-axes ('log'/'linear')
-keymap.xscale : L, k # toggle scaling of x-axes ('log'/'linear')
+keymap.yscale : y # toggle scaling of y-axes ('log'/'linear')
+keymap.xscale : x # toggle scaling of x-axes ('log'/'linear')
 keymap.all_axes : a # enable all axes
