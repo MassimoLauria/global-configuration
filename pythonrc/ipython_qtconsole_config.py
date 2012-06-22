@@ -46,7 +46,8 @@ c = get_config()
 
 # Set to display confirmation dialog on exit. You can always use 'exit' or
 # 'quit', to force a direct exit without any confirmation.
-# c.IPythonQtConsoleApp.confirm_exit = True
+c.IPythonQtConsoleApp.confirm_exit = False
+
 
 # Whether to install the default config files into the profile dir. If a new
 # profile is being created, and IPython contains config files for that profile,

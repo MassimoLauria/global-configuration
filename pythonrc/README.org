@@ -36,18 +36,20 @@ The following files are used to initialize python shell environments.
   Full featured configuration python program for ipython up to version
   0.10 . Located in =$IPYTHON_DIR=.
 
-  Ipython 0.10 is default in Ubuntu 11.04 and Ipython 0.9 is in SageMath
+  Ipython 0.10 is default in Ubuntu 11.04 and in SageMath 5.0
+
+  Ipython 0.9 is in older SageMath
 
   Use  the latter  configuration file  as  much as  possible, and  the
   former only  to setup thing which  need to be set  up BEFORE ipython
   starts.
 
 
-* =init.sage= AND =ipythonrc-sage= (SageMath 4.6-4.7)
+* =init.sage= AND =ipythonrc-sage= (SageMath 4.6-5.0)
 
-  SageMath  4.6-4.7 contain ipython  0.9.1, and  =ipy_user_conf.py= is
-  enough for it. The =ipythonrc= file is instead substituted by a Sage
-  specific version.
+  SageMath 4.6-4.7  contain ipython  0.9.1, and SageMath  5.0 contains
+  Ipython  0.10.  File  =ipy_user_conf.py=  is enough  for  both.  The
+  =ipythonrc= file is instead substituted by a Sage specific version.
 
   The actual meat is in  =init.sage=, which sets up LaTeX properly for
   drawing graphs and loads packages from my own directory.
