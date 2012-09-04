@@ -1,14 +1,8 @@
 # -*- mode: sh -*-
 
-## Main theme is choosen among well known dark themes
 
-#New Wave Dark Menus (Ubuntu gtk2)
-#include "/usr/share/themes/New Wave Dark Menus/gtk-2.0/gtkrc"
-
-# Darklooks (Gnome 2 dark theme)
-include "./config/desktop/darklooks-gtk2theme.rc"
-
-
+# Classic, no more dark themes
+include "/usr/share/themes/Clearlooks/gtk-2.0/gtkrc"
 
 ## Main font choices
 
@@ -34,8 +28,4 @@ gtk-menu-images = 1
 gtk-can-change-accels=1 # to change shortcuts in menu
 
 ## Icon theme
-gtk-icon-theme-name = "Human"
-# gtk-icon-theme-name="Humanity"
-# gtk-icon-theme-name="hicolor"
-# gtk-icon-theme-name="Humanity-Dark"
-# gtk-icon-theme-name="Tango"
+gtk-icon-theme-name = "ubuntu-mono-light"
