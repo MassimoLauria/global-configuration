@@ -1,0 +1,9 @@
+# -*- mode: conf -*-
+#
+# Unfortunately Ubuntu people hardwired xdg-open to mailcap, which is
+# ridiculous. So I have to keep a mailcap configuration around.
+#
+
+text/html; /usr/bin/google-chrome '%s'; test=test "$DISPLAY" != ""; description=HTML Text; nametemplate=%s.html
+application/pdf; /usr/bin/evince '%s'; test=test "$DISPLAY" != ""; description=Portable Document Format; nametemplate=%s.pdf
+application/x-pdf; /usr/bin/evince '%s'; test=test "$DISPLAY" != ""; description=Portable Document Format; nametemplate=%s.pdf
