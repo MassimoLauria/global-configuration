@@ -183,7 +183,14 @@ c.IPKernelApp.pylab_import_all = True
 # c.IPythonWidget.font_size = 0
 
 # Use a list widget instead of plain text output for tab completion.
-c.IPythonWidget.gui_completion = True
+from distutils import version
+import IPython
+
+if version.LooseVersion(IPython.__version__) <= version.LooseVersion('0.12'):
+    c.IPythonWidget.gui_completion = True
+else:
+    c.IPythonWidget.gui_completion = 'ncurses'
+del version, IPython
 
 #
 # c.IPythonWidget.in_prompt = 'In [<span class="in-prompt-number">%i</span>]: '

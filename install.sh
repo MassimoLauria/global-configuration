@@ -3,7 +3,7 @@
 # Copyright (C) 2010, 2011, 2012 by Massimo Lauria <lauria.massimo@gmail.com>
 #
 # Created   : "2011-03-05, sabato 01:03 (CET) Massimo Lauria"
-# Time-stamp: "2012-01-30, 02:06 (CET) Massimo Lauria"
+# Time-stamp: "2012-10-09, 11:18 (CEST) Massimo Lauria"
 
 # Description::
 #
@@ -215,8 +215,8 @@ $RM -f $HOME/.ipython/profile_default/ipython_qtconsole_config.py
 
 $MKDIR -p $HOME/.ipython/profile_default/
 $MKDIR -p $HOME/.sage/ipython/
-$LN -s $PWD/pythonrc/ipythonrc $HOME/.ipython/ipythonrc
-$LN -s $PWD/pythonrc/ipy_user_conf.py $HOME/.ipython/ipy_user_conf.py
+$LN -s $PWD/pythonrc/ipythonrc $HOME/.ipython/ipythonrc # IPython < 0.11
+$LN -s $PWD/pythonrc/ipy_user_conf.py $HOME/.ipython/ipy_user_conf.py # IPython < 0.11
 $LN -s $PWD/pythonrc/init.sage        $HOME/.sage/init.sage
 $LN -s $PWD/pythonrc/ipythonrc-sage   $HOME/.sage/ipython/ipythonrc
 $LN -s $PWD/pythonrc/ipy_user_conf.py $HOME/.sage/ipython/ipy_user_conf.py
