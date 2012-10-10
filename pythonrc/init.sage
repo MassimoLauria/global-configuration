@@ -25,6 +25,6 @@ latex.add_to_jsmath_avoid_list('xymatrix')
 latex.add_to_jsmath_avoid_list('tikzpicture')
 
 # Packages for Graph Drawings (and tikzpicture)
-latex.add_package_to_preamble_if_available('tikzpicture')
+latex.add_package_to_preamble_if_available('tikz')
 latex.add_package_to_preamble_if_available('tkz-graph')
 latex.add_package_to_preamble_if_available('tkz-berge')
