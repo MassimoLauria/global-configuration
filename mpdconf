@@ -1,4 +1,4 @@
-# MPD CONFIG FILEA
+# MPD CONFIG FILE
 # For a full description of all config parameters,
 # Check the mpd man page, "man mpd".
 
@@ -11,7 +11,7 @@
 # You can put symlinks in here, if you like.  Make sure
 # user that mpd runs as (see the 'user' config parameter)
 # can read the files in this directory
-music_directory		"/storage/music/"
+music_directory		"/media/max2012a/music/"
 playlist_directory	"~/.mpd/playlists"
 
 db_file			"~/.mpd/mpd.db"
