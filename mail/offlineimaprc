@@ -2,7 +2,7 @@
 # Copyright (C) 2010, 2011, 2012, 2013 by Massimo Lauria <lauria.massimo@gmail.com>
 #
 # Created   : "2010-10-11, lunedì 09:53 (CEST) Massimo Lauria"
-# Time-stamp: "2013-03-05, 02:16 (CET) Massimo Lauria"
+# Time-stamp: "2013-03-05, 14:23 (CET) Massimo Lauria"
 
 [general]
 accounts = GMail
@@ -40,6 +40,7 @@ trashfolder = [Gmail]/Cestino
 spamfolder = [Gmail]/Spam
 # trashfolder = [Gmail]/Trash
 # spamfolder = [Gmail]/Spam
+cert_fingerprint=6d1b5b5ee0180ab493b71d3b94534b5ab937d042
 
 # Mutt helper
 [mbnames]
