@@ -3,7 +3,9 @@
 # This script is to control volume
 #
 # Unfortunately the weird behaviour of my system requires two
-# different utilities to control volume.
+# different utilities to control volume.  (now I use the scripts only
+# in my work machine, so most of the quirks below are not needed
+# anymore)
 #
 # `pacmd` is required to toggle mute/unmute
 # `amixer` is required to control the volume (of the 'PCM') channel
@@ -20,11 +22,11 @@ NOTIFICATION_ID_FILE_NAME=~/.id_volume_notification_awesome
 command=
 increment=5%
 mute_mixer=Master
- vol_mixer=PCM
+ vol_mixer=Master # it is PCM in my home machine
 hdmi_mixer=IEC958
 
 # Determine if I should use 'Master' or 'PCM' to control volume
-# it is an heuristic working on my machines.
+# it is an heuristic working on my home machines (but not on my work machine).
 amixer get $vol_mixer >/dev/null || vol_mixer="Master"
 
 
@@ -59,13 +61,13 @@ icon_name=""
 text_string=" "
 
 if [ "$command" = "up" ]; then
-    pacmd set-sink-mute 0 0 >/dev/null
+    # pacmd set-sink-mute 0 0 >/dev/null
     display_volume=$(amixer set $vol_mixer $increment+ unmute | grep -m 1 "%]" | cut -d "[" -f2|cut -d "%" -f1)
     output_string=`printf "$text_vol__change" "$display_volume"`
 fi
 
 if [ "$command" = "down" ]; then
-    pacmd set-sink-mute 0 0 >/dev/null
+    # pacmd set-sink-mute 0 0 >/dev/null
     display_volume=$(amixer set $vol_mixer $increment- unmute | grep -m 1 "%]" | cut -d "[" -f2|cut -d "%" -f1)
     output_string=`printf "$text_vol__change" "$display_volume"`
 fi
@@ -74,12 +76,12 @@ fi
 if [ "$command" = "mute" ]; then
     if amixer get $mute_mixer | grep "\[on\]"; then
         display_volume=0
-        pacmd set-sink-mute 0 1 >/dev/null
-        #amixer set $mute_mixer mute
+        # pacmd set-sink-mute 0 1 >/dev/null
+        amixer set $mute_mixer mute
         output_string=$text_snd___muted
     else
-        pacmd set-sink-mute 0 0 >/dev/null
-        #amixer set $mute_mixer unmute
+        # pacmd set-sink-mute 0 0 >/dev/null
+        amixer set $mute_mixer unmute
         display_volume=$(amixer get $vol_mixer | grep -m 1 "%]" | cut -d "[" -f2|cut -d "%" -f1)
         output_string=$text_snd_unmuted
     fi
