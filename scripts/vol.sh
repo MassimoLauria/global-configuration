@@ -22,7 +22,7 @@ NOTIFICATION_ID_FILE_NAME=~/.id_volume_notification_awesome
 command=
 increment=5%
 mute_mixer=Master
- vol_mixer=PCM # it is PCM in my home machine
+ vol_mixer=Master # it is PCM in my home machine
 hdmi_mixer=IEC958
 
 # Determine if I should use 'Master' or 'PCM' to control volume
@@ -76,12 +76,12 @@ fi
 if [ "$command" = "mute" ]; then
     if amixer get $mute_mixer | grep "\[on\]"; then
         display_volume=0
-        pacmd set-sink-mute 0 1 >/dev/null
-        # amixer set $mute_mixer mute
+        # pacmd set-sink-mute 0 1 >/dev/null
+        amixer set $mute_mixer mute
         output_string=$text_snd___muted
     else
-        pacmd set-sink-mute 0 0 >/dev/null
-        # amixer set $mute_mixer unmute
+        # pacmd set-sink-mute 0 0 >/dev/null
+        amixer set $mute_mixer unmute
         display_volume=$(amixer get $vol_mixer | grep -m 1 "%]" | cut -d "[" -f2|cut -d "%" -f1)
         output_string=$text_snd_unmuted
     fi
