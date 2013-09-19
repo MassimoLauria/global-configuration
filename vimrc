@@ -1,7 +1,6 @@
 
 " --------------- PREFERENCES -----------------"
 :syn on
-:set mouse=a
 :set mousehide
 :set mousemodel=popup
 anoremenu 1.12 PopUp.&Ripristina\ Linea U
