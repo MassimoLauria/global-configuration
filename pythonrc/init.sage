@@ -4,13 +4,15 @@
 import os
 
 binpaths = ['/usr/texbin','/usr/local/bin','/opt/local/bin']
+texmfpaths = ['config/texmf-public','lavori/latex/texmf-private']
 
 for p in binpaths:
     if os.path.isdir(p):
         os.environ["PATH"] += ':'+ p
 
 if not os.environ.has_key("TEXMFHOME"):
-    os.environ["TEXMFHOME"]=os.environ["HOME"]+"/config/texmf"
+    os.environ["TEXMFHOME"]=":".join([os.environ["HOME"]+"/" + p for p in texmfpaths])
+
 
 
 # PDFLaTeX is faster and more powerful for graphics.
