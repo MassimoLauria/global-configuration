@@ -75,3 +75,11 @@ The following files are used to initialize python shell environments.
   =ipythonrc= file is instead substituted by a Sage specific version.
 
 
+
+
+These other configurations files are for various utilities.
+
+* PyLint python checker (=pylintrc=)
+
+  Pylint  is an  utility for  checking the  quality and  the style  of
+  python code, in order to avoid common problems and pitfalls.
