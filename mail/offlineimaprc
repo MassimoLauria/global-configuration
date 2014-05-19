@@ -1,8 +1,8 @@
 # -*- mode: sh -*-
-# Copyright (C) 2010, 2011, 2012, 2013 by Massimo Lauria <lauria.massimo@gmail.com>
+# Copyright (C) 2010, 2011, 2012, 2013, 2014 by Massimo Lauria <lauria.massimo@gmail.com>
 #
 # Created   : "2010-10-11, lunedì 09:53 (CEST) Massimo Lauria"
-# Time-stamp: "2013-12-19, 23:39 (CET) Massimo Lauria"
+# Time-stamp: "2014-05-19, 00:12 (CEST) Massimo Lauria"
 
 [general]
 accounts = GMail
@@ -31,7 +31,7 @@ localfolders = %(basemaildir)s/gmail-mirror/
 [Repository Remote]
 type = Gmail
 remoteuser = lauria.massimo@gmail.com
-remotepasseval = get_password("imap.gmail.com","lauria.massimo@gmail.com")
+remotepasseval = get_password(server="imap.gmail.com",user="lauria.massimo@gmail.com")
 keepalive = 60
 maxconnections = 1
 realdelete = no
@@ -40,9 +40,7 @@ trashfolder = [Gmail]/Cestino
 spamfolder = [Gmail]/Spam
 # trashfolder = [Gmail]/Trash
 # spamfolder = [Gmail]/Spam
-#cert_fingerprint=6d1b5b5ee0180ab493b71d3b94534b5ab937d042
-#cert_fingerprint=b0ba392bba326e6feb1add4d04fa0fb86cd173fa
-cert_fingerprint=89091347184d41768bfc0da9fad94bfe882dd358
+cert_fingerprint=bc9fb09aeb065316c9561d0d91c68ae822261601
 # Mutt helper
 [mbnames]
 enabled = yes
