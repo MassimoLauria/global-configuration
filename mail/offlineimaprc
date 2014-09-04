@@ -2,7 +2,7 @@
 # Copyright (C) 2010, 2011, 2012, 2013, 2014 by Massimo Lauria <lauria.massimo@gmail.com>
 #
 # Created   : "2010-10-11, lunedì 09:53 (CEST) Massimo Lauria"
-# Time-stamp: "2014-05-20, 10:48 (CEST) Massimo Lauria"
+# Time-stamp: "2014-09-04, 23:28 (CEST) Massimo Lauria"
 
 [general]
 accounts = GMail
@@ -40,8 +40,7 @@ trashfolder = [Gmail]/Cestino
 spamfolder = [Gmail]/Spam
 # trashfolder = [Gmail]/Trash
 # spamfolder = [Gmail]/Spam
-sslcacertfile = /etc/ssl/certs/ca-certificates.crt
-cert_fingerprint=bc9fb09aeb065316c9561d0d91c68ae822261601
+sslcacertfile = %(basemaildir)s/ca-bundle.crt
 # Mutt helper
 [mbnames]
 enabled = yes
