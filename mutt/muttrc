@@ -26,7 +26,8 @@ set message_cachedir=~/.mutt/cache/bodies
 set certificate_file=~/.mutt/certificates
 
 # mail composition
-set editor ="emacsclient %s"
+set editor ="emacsclient -c %s"
+#set editor ="emacsclient -e '(save-window-id)'; emacsclient %s; emacsclient -e '(jumpback-window-id)'"
 set edit_headers = yes
 
 # Mutt + BBDB interface, Broken.
