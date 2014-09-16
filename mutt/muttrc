@@ -27,13 +27,12 @@ set certificate_file=~/.mutt/certificates
 
 # mail composition
 set editor ="emacsclient -c %s"
-#set editor ="emacsclient -e '(save-window-id)'; emacsclient %s; emacsclient -e '(jumpback-window-id)'"
 set edit_headers = yes
 
-# Mutt + BBDB interface, Broken.
-#set query_command="$HOME/config/mutt/bbdb-mutt --query"  # Mutt will query my BBDB database.
-#macro index,pager C "<pipe-message>$HOME/config/mutt/bbdb-mutt --collect<return>" # Send mail message to BBDB collecting function (BROKEN)
-
+# uses goobook for contacts (tool to query google contacts)
+set query_command="goobook query '%s'"
+macro index,pager a "<pipe-message>goobook add<return>" # Add to google contacts
+bind editor <Tab> complete-query
 
 set attribution="On %d, %n wrote:"      # how to attribute replies
 set autoedit		                    # go to the editor right away when composing
