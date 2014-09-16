@@ -1,9 +1,9 @@
 #!/bin/sh
 #
-# Copyright (C) 2010, 2011, 2012 by Massimo Lauria <lauria.massimo@gmail.com>
+# Copyright (C) 2010, 2011, 2012, 2014 by Massimo Lauria <lauria.massimo@gmail.com>
 #
 # Created   : "2011-03-05, sabato 01:03 (CET) Massimo Lauria"
-# Time-stamp: "2012-10-09, 11:18 (CEST) Massimo Lauria"
+# Time-stamp: "2014-09-16, 13:46 (CEST) Massimo Lauria"
 
 # Description::
 #
@@ -186,14 +186,17 @@ backup_maybe $HOME/.ipython/profile_default/ipython_config.py
 backup_maybe $HOME/.ipython/profile_default/ipython_qtconsole_config.py
 # Matplotlib
 backup_maybe $HOME/.matplotlib/matplotlibrc
-# Other config files
-backup_maybe $HOME/.mpdconf
-backup_maybe $HOME/.muttrc
+# Email
 backup_maybe $HOME/.offlineimaprc
 backup_maybe $HOME/.msmtprc
-backup_maybe $HOME/.rsync-exclude
+backup_maybe $HOME/.muttrc
+backup_maybe $HOME/.goobookrc
+# Alternative editors
 backup_maybe $HOME/.vimrc
 backup_maybe $HOME/.jedrc
+# Others
+backup_maybe $HOME/.mpdconf
+backup_maybe $HOME/.rsync-exclude
 echo "OK."
 
 # Do install
@@ -229,33 +232,35 @@ $MKDIR -p $HOME/.matplotlib/
 $LN -s $PWD/pythonrc/matplotlibrc $HOME/.matplotlib/matplotlibrc
 
 
+# EMAIL
+$RM -f $HOME/.offlineimaprc
+$LN -s $PWD/mail/offlineimaprc $HOME/.offlineimaprc
+$RM -f $HOME/.msmtprc
+$LN -s $PWD/mail/msmtprc $HOME/.msmtprc
+$RM -f $HOME/.muttrc
+$LN -s $PWD/mutt/muttrc $HOME/.muttrc
+$RM -f $HOME/.goobookrc
+$LN -s $PWD/mail/goobookrc $HOME/.goobookrc
+
+# Alternative editors
+$RM -f $HOME/.vimrc
+$LN -s $PWD/vimrc $HOME/.vimrc
+$RM -f $HOME/.jedrc
+$LN -s $PWD/jedrc $HOME/.jedrc
+
+
 # OTHERS
 
 $RM -f $HOME/.mpdconf
 $LN -s $PWD/mpdconf $HOME/.mpdconf
-
-$RM -f $HOME/.muttrc
-$LN -s $PWD/mutt/muttrc $HOME/.muttrc
-
-$RM -f $HOME/.offlineimaprc
-$LN -s $PWD/mail/offlineimaprc $HOME/.offlineimaprc
 
 if [ -d $HOME/Library/LaunchAgents/ ]; then
     $RM $HOME/Library/LaunchAgents/offlineimap.daemon.plist
     $LN $PWD/mail/offlineimap.daemon.plist $HOME/Library/LaunchAgents/
 fi
 
-$RM -f $HOME/.msmtprc
-$LN -s $PWD/mail/msmtprc $HOME/.msmtprc
-
 $RM -f $HOME/.rsync-exclude
 $LN -s $PWD/rsync-exclude.txt $HOME/.rsync-exclude
-
-$RM -f $HOME/.vimrc
-$LN -s $PWD/vimrc $HOME/.vimrc
-
-$RM -f $HOME/.jedrc
-$LN -s $PWD/jedrc $HOME/.jedrc
 
 echo "OK"
 
