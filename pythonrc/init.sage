@@ -1,4 +1,4 @@
-#!/usr/bin/env sage
+#!/usr/bin/env sage -*- mode:python -*-
 
 # Setup the shell environment for LaTeX
 import os
@@ -22,9 +22,9 @@ latex.engine('pdflatex')
 latex.blackboard_bold(False)
 latex.matrix_delimiters(left='[',right=']')
 
-# Graphics in notebook requires JSMath to move on...
-latex.add_to_jsmath_avoid_list('xymatrix')
-latex.add_to_jsmath_avoid_list('tikzpicture')
+# Graphics in notebook requires Mathjax to move on...
+latex.add_to_mathjax_avoid_list('xymatrix')
+latex.add_to_mathjax_avoid_list('tikzpicture')
 
 # Packages for Graph Drawings (and tikzpicture)
 latex.add_package_to_preamble_if_available('tikz')
