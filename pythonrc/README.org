@@ -13,21 +13,10 @@ The following files are used to initialize python shell environments.
 
 * IPython Shell (=ipython_config.py=) AND (=ipython_qtconsole_config.py=)
 
-  Since  ipython  0.11  there   are  more  features  in  configuration
-  files.  These  are  configuration  for  "default"  profile  in  both
+  These  are  configuration  for  "default"  profile  in  both
   terminal and qtconsole command line.
 
   Located in =$IPYTHONDIR/profile_default/=
-
-** Older versions
-   Note that Sage 5.3 contains  ipython 0.13, and Ubuntu 12.04 contains
-   ipython 0.12. Thus  it is safe to ignore  older configuration files,
-   which are kept for compatibility.
-
-** Environment variable
-   A remark about env variables: from IPython 0.12 the =$IPYTHON_DIR= has
-   been deprecated,  so the  variable now is  =$IPYTHONDIR=. I  wonder if
-   I still have older ipython shells hanging around.
 
 
 * Matplotlib (=matplotlibrc=)
@@ -50,34 +39,8 @@ The following files are used to initialize python shell environments.
   =init.sage=  sets up  LaTeX properly  for drawing  graphs  and loads
   packages from my own directory.
 
-  It also sets  up JSMath to pass some LaTeX environments to the LaTeX
-  rendering backend (i.e. does not try to typeset them on its own).
-
-
-* Older config files
-
-  (=ipythonrc=) very old and only used to setup matplotlib backends.
-  (=ipy_user_conf.py=)
-
-  Full featured configuration python program for ipython up to version
-  0.10 . Located in =$IPYTHONDIR=.
-
-  Ipython 0.10 is default in Ubuntu 11.04 and in SageMath 5.0
-
-  Ipython 0.9 is in older SageMath
-
-  Use  the latter  configuration file  as  much as  possible, and  the
-  former only  to setup thing which  need to be set  up BEFORE ipython
-  starts.
-
-  SageMath 4.6-4.7  contain ipython  0.9.1, and SageMath  5.0 contains
-  Ipython  0.10.  File  =ipy_user_conf.py=  is enough  for  both.  The
-  =ipythonrc= file is instead substituted by a Sage specific version.
-
-
-
-
-These other configurations files are for various utilities.
+  It also sets up MathJax to ignore some complex LaTeX environments so
+  that they are managed by the true LaTeX rendering backend.
 
 * PyLint python checker (=pylintrc=)
 

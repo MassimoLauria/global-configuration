@@ -3,7 +3,7 @@
 # Copyright (C) 2010, 2011, 2012, 2014 by Massimo Lauria <lauria.massimo@gmail.com>
 #
 # Created   : "2011-03-05, sabato 01:03 (CET) Massimo Lauria"
-# Time-stamp: "2014-09-16, 13:46 (CEST) Massimo Lauria"
+# Time-stamp: "2014-12-08, 01:20 (CET) Massimo Lauria"
 
 # Description::
 #
@@ -178,10 +178,6 @@ echo -n "# 5. backing up old config files..."
 backup_maybe $HOME/.gnupg/gpg.conf
 # Python config files
 backup_maybe $HOME/.sage/init.sage
-backup_maybe $HOME/.sage/ipython/ipythonrc
-backup_maybe $HOME/.sage/ipython/ipy_user_conf.py
-backup_maybe $HOME/.ipython/ipythonrc
-backup_maybe $HOME/.ipython/ipy_user_conf.py
 backup_maybe $HOME/.ipython/profile_default/ipython_config.py
 backup_maybe $HOME/.ipython/profile_default/ipython_qtconsole_config.py
 # Matplotlib
@@ -208,21 +204,12 @@ $MKDIR -p $HOME/.gnupg/
 $LN -s $PWD/gpg.conf $HOME/.gnupg/gpg.conf
 
 # (I)PYTHON AND SAGEMATH
-$RM -f $HOME/.ipython/ipythonrc
-$RM -f $HOME/.ipython/ipy_user_conf.py
 $RM -f $HOME/.sage/init.sage
-$RM -f $HOME/.sage/ipython/ipythonrc
-$RM -f $HOME/.sage/ipython/ipy_user_conf.py
 $RM -f $HOME/.ipython/profile_default/ipython_config.py
 $RM -f $HOME/.ipython/profile_default/ipython_qtconsole_config.py
 
 $MKDIR -p $HOME/.ipython/profile_default/
-$MKDIR -p $HOME/.sage/ipython/
-$LN -s $PWD/pythonrc/ipythonrc $HOME/.ipython/ipythonrc # IPython < 0.11
-$LN -s $PWD/pythonrc/ipy_user_conf.py $HOME/.ipython/ipy_user_conf.py # IPython < 0.11
 $LN -s $PWD/pythonrc/init.sage        $HOME/.sage/init.sage
-$LN -s $PWD/pythonrc/ipythonrc-sage   $HOME/.sage/ipython/ipythonrc
-$LN -s $PWD/pythonrc/ipy_user_conf.py $HOME/.sage/ipython/ipy_user_conf.py
 $LN -s $PWD/pythonrc/ipython_config.py $HOME/.ipython/profile_default/ipython_config.py
 $LN -s $PWD/pythonrc/ipython_qtconsole_config.py $HOME/.ipython/profile_default/ipython_qtconsole_config.py
 
