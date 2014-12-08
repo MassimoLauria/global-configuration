@@ -3,7 +3,7 @@
 # Copyright (C) 2010, 2011, 2012, 2014 by Massimo Lauria <lauria.massimo@gmail.com>
 #
 # Created   : "2011-03-05, sabato 01:03 (CET) Massimo Lauria"
-# Time-stamp: "2014-12-08, 01:20 (CET) Massimo Lauria"
+# Time-stamp: "2014-12-08, 01:33 (CET) Massimo Lauria"
 
 # Description::
 #
@@ -208,8 +208,10 @@ $RM -f $HOME/.sage/init.sage
 $RM -f $HOME/.ipython/profile_default/ipython_config.py
 $RM -f $HOME/.ipython/profile_default/ipython_qtconsole_config.py
 
-$MKDIR -p $HOME/.ipython/profile_default/
+$MKDIR -p $HOME/.sage/ipython/
 $LN -s $PWD/pythonrc/init.sage        $HOME/.sage/init.sage
+
+$MKDIR -p $HOME/.ipython/profile_default/
 $LN -s $PWD/pythonrc/ipython_config.py $HOME/.ipython/profile_default/ipython_config.py
 $LN -s $PWD/pythonrc/ipython_qtconsole_config.py $HOME/.ipython/profile_default/ipython_qtconsole_config.py
 
