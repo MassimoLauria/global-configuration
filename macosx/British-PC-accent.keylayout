@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE keyboard PUBLIC "" "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
 <!--Created by Ukelele version 2.1.10 on 2012-05-22 at 17:45 (GMT+02:00)-->
-<!--Last edited by Ukelele version 2.2.8 on 2014-12-28 at 22:55 (CET)-->
+<!--Last edited by Ukelele version 2.2.8 on 2015-01-02 at 02:04 (CET)-->
 <keyboard group="0" id="5591" name="British - PC - accent" maxout="1">
     <layouts>
         <layout first="0" last="0" modifiers="30" mapSet="138"/>
@@ -174,7 +174,7 @@
             <key code="16" action="17"/>
             <key code="17" output="T"/>
             <key code="18" output="!"/>
-            <key code="19" output="&#x0022;"/>
+            <key code="19" action="&#x0022;"/>
             <key code="20" output="£"/>
             <key code="21" output="$"/>
             <key code="22" output="^"/>
@@ -423,7 +423,7 @@
             <key code="41" output="…"/>
             <key code="42" output="«"/>
             <key code="43" output="≤"/>
-            <key code="44" output="÷"/>
+            <key code="44" output="¿"/>
             <key code="45" output="ñ"/>
             <key code="46" output="µ"/>
             <key code="47" output="≥"/>
@@ -938,6 +938,9 @@
         </keyMap>
     </keyMapSet>
     <actions>
+        <action id="&#x0022;">
+            <when state="none" next="Umlaut"/>
+        </action>
         <action id="0">
             <when state="none" next="State 1"/>
         </action>
@@ -972,7 +975,7 @@
         </action>
         <action id="7">
             <when state="none" output="a"/>
-            <when state="Acute" output="à"/>
+            <when state="Acute" output="á"/>
             <when state="Grave" output="à"/>
             <when state="State 1" output="á"/>
             <when state="State 2" output="ä"/>
@@ -1016,10 +1019,11 @@
             <when state="State 2" output="ü"/>
             <when state="State 3" output="û"/>
             <when state="State 5" output="ù"/>
+            <when state="Umlaut" output="ü"/>
         </action>
         <action id="12">
             <when state="none" output="A"/>
-            <when state="Acute" output="À"/>
+            <when state="Acute" output="Á"/>
             <when state="Grave" output="À"/>
             <when state="State 1" output="Á"/>
             <when state="State 2" output="Ä"/>
@@ -1054,6 +1058,7 @@
             <when state="State 2" output="Ü"/>
             <when state="State 3" output="Û"/>
             <when state="State 5" output="Ù"/>
+            <when state="Umlaut" output="Ü"/>
         </action>
         <action id="16">
             <when state="none" output="y"/>
@@ -1086,5 +1091,6 @@
         <when state="State 3" output="^"/>
         <when state="State 4" output="~"/>
         <when state="State 5" output="`"/>
+        <when state="Umlaut" output="&#x0022;"/>
     </terminators>
 </keyboard>
