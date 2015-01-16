@@ -1,9 +1,9 @@
 #!/bin/sh
 #
-# Copyright (C) 2010, 2011, 2012, 2014 by Massimo Lauria <lauria.massimo@gmail.com>
+# Copyright (C) 2010, 2011, 2012, 2014, 2015 by Massimo Lauria <lauria.massimo@gmail.com>
 #
 # Created   : "2011-03-05, sabato 01:03 (CET) Massimo Lauria"
-# Time-stamp: "2014-12-08, 01:33 (CET) Massimo Lauria"
+# Time-stamp: "2015-01-16, 14:54 (CET) Massimo Lauria"
 
 # Description::
 #
@@ -242,6 +242,9 @@ $LN -s $PWD/jedrc $HOME/.jedrc
 
 $RM -f $HOME/.mpdconf
 $LN -s $PWD/mpdconf $HOME/.mpdconf
+
+$RM -f $HOME/.gdbinit
+$LN -s $PWD/gdbinit $HOME/.gdbinit
 
 if [ -d $HOME/Library/LaunchAgents/ ]; then
     $RM $HOME/Library/LaunchAgents/offlineimap.daemon.plist
