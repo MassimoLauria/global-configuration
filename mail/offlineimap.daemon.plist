@@ -9,7 +9,7 @@
 	<key>EnvironmentVariables</key>
 	<dict>
       <key>PATH</key>
-      <string>/opt/local/bin:/sbin:/usr/sbin:/bin:/usr/bin</string>
+      <string>/usr/local/bin:/sbin:/usr/sbin:/bin:/usr/bin</string>
     </dict>
     <key>Label</key>
     <string>offlineimap.daemon</string>
