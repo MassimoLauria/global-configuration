@@ -27,15 +27,7 @@ c = get_config()
 # Pre-load matplotlib and numpy for interactive use, selecting a particular
 # matplotlib backend and loop integration.
 
-try:
-    import matplotlib
-    import sys
-    if sys.platform == 'darwin':
-        c.TerminalIPythonApp.pylab = 'osx'
-    else:
-        c.TerminalIPythonApp.pylab = 'auto'
-except ImportError:
-    pass
+c.TerminalIPythonApp.pylab = None
 
 # Suppress warning messages about legacy config files
 c.TerminalIPythonApp.ignore_old_config = True
@@ -177,18 +169,6 @@ c.TerminalInteractiveShell.autocall = 1
 
 #
 # c.TerminalInteractiveShell.prompts_pad_left = True
-
-# The part of the banner to be printed before the profile
-c.TerminalInteractiveShell.banner1 = """
-Python 2.7.1+ (r271:86832, Apr 11 2011, 18:05:24)
-Type"copyright", "credits" or "license" for more information.
-
-IPython 0.11 -- An enhanced Interactive Python.
-?  -> Introduction and overview of IPython's features.
-%quickref -> Quick reference.
-help -> Python's own help system.
-object?  -> Details about 'object', use 'object??' for extra details.
-"""
 
 c.TerminalInteractiveShell.readline_parse_and_bind = [
     'tab: complete',
