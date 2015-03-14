@@ -151,7 +151,7 @@ c.TerminalInteractiveShell.autoindent = True
 # it is not applied if there are no more arguments on the line, and '2' for
 # 'full' autocall, where all callable objects are automatically called (even if
 # no arguments are present). The default is '1'.
-c.TerminalInteractiveShell.autocall = 1
+c.TerminalInteractiveShell.autocall = 0
 
 # Number of lines of your screen, used to control printing of very
 # long strings.  Strings longer than this number of lines will be sent
@@ -218,7 +218,7 @@ c.TerminalInteractiveShell.logstart = False
 # c.TerminalInteractiveShell.pager = 'most'
 
 # Enable magic commands to be called without the leading %.
-# c.TerminalInteractiveShell.automagic = True
+c.TerminalInteractiveShell.automagic = False
 
 #
 c.TerminalInteractiveShell.readline_use = True
