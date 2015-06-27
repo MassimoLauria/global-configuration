@@ -1,0 +1,28 @@
+Few fixes are necessary in order to use Mac OSX
+
+* Install iTerm terminal program
+
+  Toggle off “Draw bold text in bold  font” if the ZSH prompt has gaps
+  between the lines.
+
+  If Option and Command keys are  swapped at global level, do not swap
+  them inside iTerm.
+
+* Developer tools
+
+  It  is possible  to  install command  line  developer tools  without
+  xcode, by simply launching, say, 'git' and answer the dialog box.
+
+* Brew
+
+  install brew and then various utilities.
+
+* Window managing
+
+  Install Amethyst.
+
+  Set up  the Command+n  keys to move  between spaces,  since Amethyst
+  cannot  set them.  Still  haven't  figure it  out  how  to move  app
+  between spaces.
+
+  (Figure out how to configure with a text file, which is possible)
