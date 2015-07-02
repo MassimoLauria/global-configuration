@@ -1,3 +1,4 @@
+# -*- mode: org -*-
 Few fixes are necessary in order to use Mac OSX
 
 * Install iTerm terminal program
@@ -7,6 +8,9 @@ Few fixes are necessary in order to use Mac OSX
 
   If Option and Command keys are  swapped at global level, do not swap
   them inside iTerm.
+
+  Preferences    ->   General    ->   load    setting   from    folder
+  $HOME/config/macosx
 
 * Developer tools
 
