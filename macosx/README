@@ -19,7 +19,13 @@ Few fixes are necessary in order to use Mac OSX
 
 * Brew
 
-  install brew and then various utilities.
+  - install brew and then various utilities.
+
+  - link ~/config/macosx/pydistutils.cfg to ~/.pydistutils.cfg 
+
+  the  last   step  is  needed   because  homebrew  setup   may  couse
+  trouble otherwise (it does with anaconda-mode).
+
 
 * Window managing
 
