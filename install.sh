@@ -1,9 +1,9 @@
 #!/bin/sh
 #
-# Copyright (C) 2010, 2011, 2012, 2014, 2015 by Massimo Lauria <lauria.massimo@gmail.com>
+# Copyright (C) 2010, 2011, 2012, 2014, 2015, 2016 by Massimo Lauria <lauria.massimo@gmail.com>
 #
 # Created   : "2011-03-05, sabato 01:03 (CET) Massimo Lauria"
-# Time-stamp: "2015-01-16, 14:54 (CET) Massimo Lauria"
+# Time-stamp: "2016-07-22, 14:13 (CEST) Massimo Lauria"
 
 # Description::
 #
@@ -220,17 +220,6 @@ $RM -f $HOME/.matplotlib/matplotlibrc
 $MKDIR -p $HOME/.matplotlib/
 $LN -s $PWD/pythonrc/matplotlibrc $HOME/.matplotlib/matplotlibrc
 
-
-# EMAIL
-$RM -f $HOME/.offlineimaprc
-$LN -s $PWD/mail/offlineimaprc $HOME/.offlineimaprc
-$RM -f $HOME/.msmtprc
-$LN -s $PWD/mail/msmtprc $HOME/.msmtprc
-$RM -f $HOME/.muttrc
-$LN -s $PWD/mutt/muttrc $HOME/.muttrc
-$RM -f $HOME/.goobookrc
-$LN -s $PWD/mail/goobookrc $HOME/.goobookrc
-
 # Alternative editors
 $RM -f $HOME/.vimrc
 $LN -s $PWD/vimrc $HOME/.vimrc
@@ -245,11 +234,6 @@ $LN -s $PWD/mpdconf $HOME/.mpdconf
 
 $RM -f $HOME/.gdbinit
 $LN -s $PWD/gdbinit $HOME/.gdbinit
-
-if [ -d $HOME/Library/LaunchAgents/ ]; then
-    $RM $HOME/Library/LaunchAgents/offlineimap.daemon.plist
-    $LN $PWD/mail/offlineimap.daemon.plist $HOME/Library/LaunchAgents/
-fi
 
 $RM -f $HOME/.rsync-exclude
 $LN -s $PWD/rsync-exclude.txt $HOME/.rsync-exclude
