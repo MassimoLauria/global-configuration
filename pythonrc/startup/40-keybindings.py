@@ -24,6 +24,20 @@ def bind(action,*keys):
 
 
 
+def kill_whole_line(event):
+    " Kill the whole line"
+    buff = event.current_buffer
+
+    deletedBefore = buff.delete_before_cursor(count=-buff.document.get_start_of_line_position())
+    deletedAfter  = buff.delete(count=buff.document.get_end_of_line_position())
+
+    if buff.document.current_char == '\n':
+        deletedNL = buff.delete(1)
+    else:
+        deletedNL = ""
+    event.cli.clipboard.set_text(deletedBefore+deletedAfter+deletedNL)
+
+        
 ######################################
 #                                    #
 #   Basic Keyboard Key settings      #
@@ -37,7 +51,6 @@ def bind(action,*keys):
 # i = Up
 # k = Down
 #
-# u = Home
 # o = End
 #
 # b = Prev
@@ -74,7 +87,7 @@ bind("backward-delete-char", Keys.Escape,u"d")
 bind("delete-char",          Keys.Escape,u"f")
 bind("backward-kill-word",   Keys.Escape,u"e")
 bind("kill-word",            Keys.Escape,u"r")
-bind("kill-line",            Keys.Escape,u"w")
+bind(kill_whole_line,        Keys.Escape,u"w")
 
 # ##################
 # # Cut/Paste/Undo #
