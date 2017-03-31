@@ -1,9 +1,9 @@
 #!/bin/sh
 #
-# Copyright (C) 2016 by Massimo Lauria
+# Copyright (C) 2016, 2017 by Massimo Lauria
 #
 # Created   : "2016-11-21, Monday 16:21 (CET) Massimo Lauria"
-# Time-stamp: "2016-11-21, 16:45 (CET) Massimo Lauria"
+# Time-stamp: "2017-03-29, 03:15 (CEST) Massimo Lauria"
 #
 # Description::
 #
@@ -54,24 +54,44 @@ exit_on_missing_program() {
 
 # Basic 
 echo "# 1. Basic utilities"
-xcode-select --install
+xcode-select --install || echo "Already installed."
 
 # Homebrew
 echo "# 2. Setup Homebrew"
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+type brew >/dev/null && echo "Already installed." || \
+        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
 # Taps
+echo "# 3. Setup Homebrew Taps"
 brew tap caskroom/cask
 brew tap mht208/formal
 
 
 # Homebrew packages
-brew cask install skype
-brew cask install iterm2
-brew cask install quicksilver
-brew cask install amethist
+echo "# 4. Install packages"
+# brew cask install skype
+# brew cask install iterm2
+# brew cask install quicksilver
+# brew cask install amethist
 
 
 
+# Fixing Keyboard (global)
+#
+# Syntax is
+# defaults write <AppName> NSUserKeyEquivalents -dict-add "Menu Item" -string "@$~^k"
+#
+# where <AppName> is "-g" for global shortcuts
+#
+# Modifiers: @ -> Command ;  $ -> Shift ; ~ -> Alt ; ^ -> Control
+#
+echo "# 5. Fix keyboard"
+# Cut and Paste
+defaults -currentHost write -g NSUserKeyEquivalents -dict-add "Cut"   -string "^x"
+defaults -currentHost write -g NSUserKeyEquivalents -dict-add "Copy"  -string "^c"
+defaults -currentHost write -g NSUserKeyEquivalents -dict-add "Paste" -string "^v"
+defaults -currentHost write -g NSUserKeyEquivalents -dict-add "Undo"  -string "^z"
+defaults -currentHost write -g NSUserKeyEquivalents -dict-add "Redo"  -string "$^z"
 # Local Variables:
 # fill-column: 80
 # End:
