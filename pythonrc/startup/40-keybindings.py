@@ -12,9 +12,21 @@ from prompt_toolkit.key_binding.bindings.scroll import scroll_backward,scroll_fo
 ip = get_ipython()
 insert_mode = EmacsInsertMode() | ViInsertMode()
 
+# Unicode is not a type in python3
+#
+# From python 3 there is not special unicode string
+# In python < 2 probably there is no concept of unicode (maybe?) 
+#
+import sys
+if sys.version_info[0]==2: #python 2
+    string_types = (str,unicode)
+else:
+    string_types = (str)
+
+
 # Register the shortcut if IPython is using prompt_toolkit
 def bind(action,*keys):
-    if isinstance(action,(str,unicode)):
+    if isinstance(action,string_types):
         action = get_by_name(action)
     if getattr(ip, 'pt_cli'):
         registry = ip.pt_cli.application.key_bindings_registry
@@ -68,7 +80,7 @@ bind("forward-word",Keys.Escape,u"o")
 
 # Home/End on home row
 bind("beginning-of-line",Keys.Escape,u"g")
-bind("end-of-line",Keys.Escape,u"e")
+bind("end-of-line",Keys.Escape,u"h")
 
 # Paragraphs
 bind(scroll_backward,Keys.Escape,u"b")
