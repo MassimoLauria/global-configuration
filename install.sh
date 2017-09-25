@@ -1,9 +1,9 @@
 #!/bin/sh
 #
-# Copyright (C) 2010, 2011, 2012, 2014, 2015, 2016 by Massimo Lauria <lauria.massimo@gmail.com>
+# Copyright (C) 2010, 2011, 2012, 2014, 2015, 2016, 2017 by Massimo Lauria <lauria.massimo@gmail.com>
 #
 # Created   : "2011-03-05, sabato 01:03 (CET) Massimo Lauria"
-# Time-stamp: "2016-07-22, 14:13 (CEST) Massimo Lauria"
+# Time-stamp: "2017-09-25, 19:27 (CEST) Massimo Lauria"
 
 # Description::
 #
@@ -199,9 +199,12 @@ echo "OK."
 echo -n "# 5. installing new config files.."
 
 # GNUPG
-$RM -f $HOME/.gnupg/gpg.conf
-$MKDIR -p $HOME/.gnupg/
+$RM -f  $HOME/.gnupg/gpg.conf
+$RM -fr $HOME/.gnupg/private-keys-v1.d/
+$MKDIR -p $HOME/.gnupg/private-keys-v1.d/
 $LN -s $PWD/gpg.conf $HOME/.gnupg/gpg.conf
+$LN -s $HOME/personal/keys/private-keys-v1.d/ $HOME/.gnupg/
+
 
 # (I)PYTHON AND SAGEMATH
 $RM -f $HOME/.sage/init.sage
