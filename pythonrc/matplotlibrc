@@ -47,7 +47,7 @@ timezone     : UTC        # a pytz timezone string, eg US/Central or Europe/Pari
 ### LINES
 # See http://matplotlib.sourceforge.net/api/artist_api.html#module-matplotlib.lines for more
 # information on line properties.
-lines.linewidth   : 1.0     # line width in points
+lines.linewidth   : 2.0     # line width in points
 #lines.linestyle   : -       # solid line
 #lines.color       : blue
 #lines.marker      : None    # the default marker
@@ -201,7 +201,7 @@ axes.linewidth      : 1.0      # edge linewidth
 axes.grid           : True     # display grid or not
 axes.titlesize      : x-large  # fontsize of the axes title
 axes.labelsize      : large    # fontsize of the x any y labels
-axes.labelcolor     : 555555
+axes.labelcolor     : black #555555
 axes.axisbelow      : True    # whether axis gridlines and ticks are below
                               # the axes elements (lines, text, etc)
 #axes.formatter.limits : -7, 7 # use scientific notation if log10
@@ -210,7 +210,8 @@ axes.axisbelow      : True    # whether axis gridlines and ticks are below
 #axes.unicode_minus  : True    # use unicode for the minus symbol
                                # rather than hypen.  See http://en.wikipedia.org/wiki/Plus_sign#Plus_sign
 
-axes.color_cycle : 348ABD, 7A68A6, A60628, 467821, CF4457, 188487, E24A33
+axes.color_cycle : blue, red, green
+# axes.color_cycle : 348ABD, 7A68A6, A60628, 467821, CF4457, 188487, E24A33
                       # E24A33 : orange
                       # 7A68A6 : purple
                       # 348ABD : blue
@@ -228,7 +229,7 @@ xtick.major.size     : 0      # major tick size in points
 xtick.minor.size     : 0      # minor tick size in points
 xtick.major.pad      : 6      # distance to major tick label in points
 xtick.minor.pad      : 6      # distance to the minor tick label in points
-xtick.color          : 555555      # color of the tick labels
+xtick.color          : black # 555555      # color of the tick labels
 #xtick.labelsize      : medium # fontsize of the tick labels
 xtick.direction      : in     # direction: in or out
 
@@ -236,7 +237,7 @@ ytick.major.size     : 0      # major tick size in points
 ytick.minor.size     : 0      # minor tick size in points
 ytick.major.pad      : 6      # distance to major tick label in points
 ytick.minor.pad      : 6      # distance to the minor tick label in points
-ytick.color          : 555555      # color of the tick labels
+ytick.color          : black #555555      # color of the tick labels
 #ytick.labelsize      : medium # fontsize of the tick labels
 ytick.direction      : in     # direction: in or out
 
