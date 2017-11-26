@@ -773,16 +773,18 @@
 	<string>306 415 606 456 0 0 1440 877 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>410 364 620 392 0 0 1440 877 </string>
+	<key>NSWindow Frame SessionsPreferences</key>
+	<string>269 126 606 469 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>275 297 958 451 0 0 1440 877 </string>
+	<string>275 258 918 512 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>225 94 905 710 0 0 1440 877 </string>
+	<string>0 191 905 686 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>59 168 905 686 0 0 1440 877 </string>
+	<string>0 65 1345 812 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>0 190 890 687 0 0 1440 877 </string>
+	<string>0 0 1345 812 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>550 190 890 687 0 0 1440 877 </string>
+	<string>0 62 800 515 0 0 800 577 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
 	<string>0 190 890 687 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
@@ -3232,7 +3234,7 @@
 			<key>Columns</key>
 			<integer>60</integer>
 			<key>Command</key>
-			<string>/usr/local/bin/python3 </string>
+			<string>/usr/local/bin/ipython3 </string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -3890,7 +3892,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-10-18T15:16:19Z</date>
+	<date>2017-11-24T09:33:24Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -3939,9 +3941,11 @@
 	<string>/-+\~_.</string>
 	<key>findIgnoreCase_iTerm</key>
 	<true/>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.3</string>
+	<string>3.1.5</string>
 </dict>
 </plist>
