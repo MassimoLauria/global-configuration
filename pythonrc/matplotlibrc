@@ -210,7 +210,7 @@ axes.axisbelow      : True    # whether axis gridlines and ticks are below
 #axes.unicode_minus  : True    # use unicode for the minus symbol
                                # rather than hypen.  See http://en.wikipedia.org/wiki/Plus_sign#Plus_sign
 
-axes.color_cycle : blue, red, green
+axes.prop_cycle : cycler('color', ['b', 'r', 'g', 'c', 'm', 'y', 'k'])
 # axes.color_cycle : 348ABD, 7A68A6, A60628, 467821, CF4457, 188487, E24A33
                       # E24A33 : orange
                       # 7A68A6 : purple
