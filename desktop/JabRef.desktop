@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=JabRef (4.2)
+GenericName=BibTex Bibliography Manager
+Comment=Graphical editor for BibTex bibliographies
+MimeType=text/x-bibtex;
+Keywords=BibTex;
+StartupWMClass=org-jabref-JabRefMain
+Exec=/home/massimo/.local/bin/jabref.sh %f
+Icon=/home/massimo/.local/share/jabref/JabRef-icon-256.png
+Type=Application
+Terminal=false
+Categories=Office;Database;
