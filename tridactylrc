@@ -1,0 +1,56 @@
+" Pentadactyl configuration   -*- vimrc -*-
+
+
+" Uncomment next line to make setting volatile, so that they are
+" always back to default when the rc file is read.
+"sanitise tridactyllocal tridactylsync
+
+
+" Eternal applications
+set editorcmd emacsclient -c
+set browser firefox --new-tab
+
+" Basic
+bind <A-x> fillcmdline
+bind <Space> fillcmdline
+
+
+" Setup basic movement keys
+unbind h
+unbind j
+unbind k
+unbind l
+unbind u
+unbind o
+bind k	scrollline 10
+bind i	scrollline -10
+bind <A-k>	scrollline 50
+bind <A-i>	scrollline -50
+bind o	tabnext
+bind u	tabprev
+bind <A-g>	scrollto 0
+bind <A-h>	scrollto 100
+
+bind <A-j>	back
+bind <A-l>	forward
+
+" Open close tabs
+unbind d
+unbind t
+bind tt fillcmdline tabopen
+bind e  fillcmdline open
+bind dd tabclose
+bind rr undo
+
+unbind p
+unbind P
+bind p clipboard tabopen
+
+" Search
+unbind s 
+unbind S 
+bind s fillcmdline tabopen search
+
+" Gui
+set theme dark
+guiset tabs always
