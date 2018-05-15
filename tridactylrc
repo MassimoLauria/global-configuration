@@ -24,15 +24,15 @@ unbind u
 unbind o
 bind k	scrollline 10
 bind i	scrollline -10
-bind <A-k>	scrollline 50
-bind <A-i>	scrollline -50
+bind K	scrollline 50
+bind I	scrollline -50
 bind o	tabnext
 bind u	tabprev
-bind <A-g>	scrollto 0
-bind <A-h>	scrollto 100
+bind G	scrollto 0
+bind H	scrollto 100
 
-bind <A-j>	back
-bind <A-l>	forward
+bind J	back
+bind L	forward
 
 " Open close tabs
 unbind d
@@ -45,6 +45,19 @@ bind rr undo
 unbind p
 unbind P
 bind p clipboard tabopen
+
+
+" Zoom
+unbind zi
+unbind zo
+bind - zoom -0.1 true
+bind + zoom  0.1 true
+bind = zoom  0.1 true
+bind 0 zoom  0.1 true
+
+
+
+
 
 " Search
 unbind s 
