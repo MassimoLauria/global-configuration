@@ -1,6 +1,3 @@
-[submodule "awesome"]
-	path = awesome
-	url = git://github.com/MassimoLauria/awesome.git
 [submodule "xsession"]
 	path = xsession
 	url = git://github.com/MassimoLauria/xsession.git
@@ -10,6 +7,3 @@
 [submodule "emacs"]
 	path = emacs
 	url = git://github.com/MassimoLauria/dotemacs.git
-[submodule "pentadactyl"]
-	path = pentadactyl
-	url = git://github.com/MassimoLauria/pentadactyl.git
