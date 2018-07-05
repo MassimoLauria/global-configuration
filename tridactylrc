@@ -14,7 +14,6 @@ set browser firefox --new-tab
 bind <A-x> fillcmdline
 bind <Space> fillcmdline
 
-
 " Setup basic movement keys
 unbind h
 unbind j
@@ -37,8 +36,9 @@ bind L	forward
 " Open close tabs
 unbind d
 unbind t
+unbind T
 bind tt fillcmdline tabopen
-bind e  fillcmdline open
+bind e  composite get_current_url | fillcmdline_notrail open
 bind dd tabclose
 bind rr undo
 
@@ -53,7 +53,7 @@ unbind zo
 bind - zoom -0.1 true
 bind + zoom  0.1 true
 bind = zoom  0.1 true
-bind 0 zoom  0.1 true
+bind 0 zoom  1.0 false
 
 
 
@@ -65,5 +65,6 @@ unbind S
 bind s fillcmdline tabopen search
 
 " Gui
-set theme dark
-guiset tabs always
+set theme default
+guiset gui none
+guiset navbar none
