@@ -66,5 +66,4 @@ bind s fillcmdline tabopen search
 
 " Gui
 set theme default
-guiset gui none
-guiset navbar none
+" guiset gui none
