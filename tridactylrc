@@ -68,3 +68,7 @@ bind s fillcmdline tabopen search
 set theme default
 guiset navbar none
 guiset hoverlink none
+
+
+" Webpages were Tridactyl is inactive
+autocmd DocStart www.typing.com/student/lesson/ mode ignore
