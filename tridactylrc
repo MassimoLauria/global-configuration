@@ -100,7 +100,7 @@ set searchurls.t https://pinboard.in/u:massimol/t:%s/
 set searchurls.p https://pinboard.in/search/u:massimol?query=%s
 
 " Libgen, 1337x, Subscene
-set searchurls.gen http://libgen.io/search.php?req=%s
+set searchurls.gen http://libgen.is/search.php?req=%s
 set searchurls.tz  http://1337x.to/search/%s/1/
 set searchurls.sub http://subscene.com/subtitles/title?q=%s 
 
