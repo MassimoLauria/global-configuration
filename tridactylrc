@@ -37,6 +37,7 @@ bind L	forward
 unbind d
 unbind t
 unbind T
+unbind r
 bind tt fillcmdline tabopen
 bind e  composite get_current_url | fillcmdline_notrail open
 bind dd tabclose
