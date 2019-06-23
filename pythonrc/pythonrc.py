@@ -8,27 +8,30 @@ import os
 import atexit
 
 
-# Persisten history file to  ~\.pythonhistory
-histfile = os.path.join(os.environ['HOME'], ".pythonhistory")
-
 # Bind 'TAB' to complete
 try:
+    import rlcompleter
     import readline
 except ImportError:
     print("Readline not available")
 else:
     # Tab completion
-    import rlcompleter
     readline.parse_and_bind("tab:complete")
 
-    # Attempt read of histfile
-    try:
-        readline.read_history_file(histfile)
-    except IOError:
-        pass
+    # Enable History File. Default at ~\.pythonhistory
+    history_file = os.environ.get(
+        "PYTHON_HISTORY_FILE", os.path.join(os.environ['HOME'],
+        '.pythonhistory'))
 
-# Write history file at shell exit
-atexit.register(readline.write_history_file, histfile)
+    if os.path.isfile(history_file):
+        readline.read_history_file(history_file)
+    else:
+        open(history_file, 'a').close()
+
+    atexit.register(readline.write_history_file, history_file)
+
+    del readline,rlcompleter
 
 # Cleanup of the environment, do not pollute interpreter locals
-del os, histfile, readline, rlcompleter
+del os
+del atexit
