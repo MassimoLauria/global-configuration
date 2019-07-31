@@ -21,6 +21,13 @@ VICIIPALOddLinePhase=730
 VICIIPALOddLineOffset=390
 SidEngine=1
 SidModel=1
+KeySet1North=273
+KeySet1East=275
+KeySet1South=274
+KeySet1West=276
+KeySet1Fire=310
+KeySetEnable=0
+JoyDevice1=2
 JoyDevice2=4
 Acia1Base=56832
 
