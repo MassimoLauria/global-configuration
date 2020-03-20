@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# Bash configuration for my remote shells (.bash_logout)
+#
+
+(emacsclient -e '(kill-emacs)' &)
+

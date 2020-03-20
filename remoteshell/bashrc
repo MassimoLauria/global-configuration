@@ -1,25 +1,71 @@
-#!/bin/bash
+#!/bin/sh
+#
+# Bash configuration for my remote shells (.bashrc)
+#
+
+# This only applies to Terastat cluster
+TERABASHRC=/afs/sta.uniroma1.it/system/uenv7/bashrc.common
+if [ -f $TERABASHRC ]; then
+    source $TERABASHRC
+fi
+    
+# colors
+green="\[\e[1;32m\]"
+blue="\[\e[1;34m\]"
+red="\[\e[1;31m\]"
+reset="\[\e[0m\]"
+
+# Colored return value
+function nonzero_return() {
+	RET=$?
+	if [[ $RET -eq 0 ]]; then
+            echo -ne "\033[0;32m$RET\033[0m";
+        else
+            echo -ne "\033[0;31m$RET\033[0m";
+        fi;
+}
 
 
-# If not running interactively, don't do anything:
-[ -z "$PS1" ] && return
-
-# Update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-
-PS1='\u@\h:\w\$ '
-
-
-# If this is an xterm set the title to user@host:dir
 case "$TERM" in
-xterm*|rxvt*|eterm*)
-    PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
-    ;;
-
-*)
-    ;;
+    "dumb")
+        PS1='$ '
+        ;;        
+    xterm*|rxvt*|eterm*)
+        PS1="${green}\u@\h${reset}:${blue}\w${reset} <\`nonzero_return\`>\\$ "
+        ;;
+    *)
+        PS1='$ '
+        ;;
 esac
 
+export PS1
 
-## Shell independent enviroment
-source ~/remoteshell/shenv-common
+# {{{ Pager --------------------------------------------------------------------
+if type most >/dev/null 2>&1; then
+    PAGER=most
+else
+    PAGER=more
+fi
+export PAGER
+# }}} --------------------------------------------------------------------------
+
+
+# {{{ Editor -------------------------------------------------------------------
+EDITOR="emacsclient"
+TEXEDIT='emacsclient -t +%d %s'
+
+if type emacs >/dev/null 2>&1; then
+    EDITOR="emacsclient"
+    ALTERNATE_EDITOR="emacs"
+else
+    EDITOR="vim"
+    ALTERNATE_EDITOR="vim"
+fi
+
+export EDITOR
+export ALTERNATE_EDITOR
+export TEXEDIT
+
+if [ -f ~/.bash_aliases ]; then
+    source ~/.bash_aliases
+fi

@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# Bash configuration for my remote shells (.bash_aliases)
+#
+alias ec="emacsclient -t"
+alias rm="rm -iv"
+
+
+
+
+# Dircolors
+case "$TERM" in
+    xterm*|rxvt*|eterm*)
+        alias ls='ls --color=auto'
+        alias grep='grep --color=auto'
+        alias fgrep='fgrep --color=auto'
+        alias egrep='egrep --color=auto'
+        ;;
+    *)
+        ;;
+esac
+
