@@ -1,9 +1,9 @@
 #!/bin/sh
 #
-# Copyright (C) 2010, 2011, 2012, 2014, 2015, 2016, 2017 by Massimo Lauria <lauria.massimo@gmail.com>
+# Copyright (C) 2010, 2011, 2012, 2014, 2015, 2016, 2017, 2020 by Massimo Lauria <lauria.massimo@gmail.com>
 #
 # Created   : "2011-03-05, sabato 01:03 (CET) Massimo Lauria"
-# Time-stamp: "2017-09-25, 19:27 (CEST) Massimo Lauria"
+# Time-stamp: "2020-04-27, 13:19 (CEST) Massimo Lauria"
 
 # Description::
 #
@@ -130,7 +130,6 @@ ConfirmOrExit
 
 
 echo "# 2. Check out all submodules"
-#echo "# 2. Determines read/write privileges on the repo."
 $GIT submodule init
 $GIT submodule update
 echo ""
@@ -171,75 +170,41 @@ done
 echo ""
 echo ""
 
-echo "# 5. Install other config files"
-echo -n "# 5. backing up old config files..."
+# Do install
+echo "# 5. installing new config files.."
+
+
 
 # GNUPG config file
-backup_maybe $HOME/.gnupg/gpg.conf
-# Python config files
-backup_maybe $HOME/.sage/init.sage
-backup_maybe $HOME/.ipython/profile_default/ipython_config.py
-backup_maybe $HOME/.ipython/profile_default/ipython_qtconsole_config.py
-# Matplotlib
-backup_maybe $HOME/.matplotlib/matplotlibrc
-# Email
-backup_maybe $HOME/.offlineimaprc
-backup_maybe $HOME/.msmtprc
-backup_maybe $HOME/.muttrc
-backup_maybe $HOME/.goobookrc
-# Alternative editors
-backup_maybe $HOME/.vimrc
-backup_maybe $HOME/.jedrc
-# Others
-backup_maybe $HOME/.mpdconf
-backup_maybe $HOME/.rsync-exclude
-echo "OK."
-
-# Do install
-echo -n "# 5. installing new config files.."
-
-# GNUPG
-$RM -f  $HOME/.gnupg/gpg.conf
-$RM -fr $HOME/.gnupg/private-keys-v1.d/
-$MKDIR -p $HOME/.gnupg/private-keys-v1.d/
-$LN -s $PWD/gpg.conf $HOME/.gnupg/gpg.conf
-$LN -s $HOME/personal/keys/private-keys-v1.d/ $HOME/.gnupg/
+# backup_maybe $HOME/.gnupg/gpg.conf
+# $RM -f  $HOME/.gnupg/gpg.conf
+# $RM -fr $HOME/.gnupg/private-keys-v1.d/
+# $MKDIR -p $HOME/.gnupg/private-keys-v1.d/
+# $LN -s $PWD/gpg.conf $HOME/.gnupg/gpg.conf
+# $LN -s $HOME/personal/keys/private-keys-v1.d/ $HOME/.gnupg/
 
 
-# (I)PYTHON AND SAGEMATH
-$RM -f $HOME/.sage/init.sage
-$RM -f $HOME/.ipython/profile_default/ipython_config.py
-$RM -f $HOME/.ipython/profile_default/ipython_qtconsole_config.py
+# ipython
+$RM -fr $HOME/.ipython/
+$LN -s $PWD/pythonrc/ipython $HOME/.ipython
 
-$MKDIR -p $HOME/.sage/ipython/
-$LN -s $PWD/pythonrc/init.sage        $HOME/.sage/init.sage
-
-$MKDIR -p $HOME/.ipython/profile_default/
-$LN -s $PWD/pythonrc/ipython_config.py $HOME/.ipython/profile_default/ipython_config.py
-$LN -s $PWD/pythonrc/ipython_qtconsole_config.py $HOME/.ipython/profile_default/ipython_qtconsole_config.py
-
-# MATPLOTLIB
+# matplotlib
 $RM -f $HOME/.matplotlib/matplotlibrc
 $MKDIR -p $HOME/.matplotlib/
 $LN -s $PWD/pythonrc/matplotlibrc $HOME/.matplotlib/matplotlibrc
 
-# Alternative editors
+# sagemath
+$RM -f $HOME/.sage/init.sage
+$MKDIR -p $HOME/.sage/
+$LN -s $PWD/pythonrc/init.sage        $HOME/.sage/init.sage
+
+# Vim
 $RM -f $HOME/.vimrc
 $LN -s $PWD/vimrc $HOME/.vimrc
-$RM -f $HOME/.jedrc
-$LN -s $PWD/jedrc $HOME/.jedrc
 
-
-# OTHERS
-
-$RM -f $HOME/.mpdconf
-$LN -s $PWD/mpdconf $HOME/.mpdconf
-
+# GDB
 $RM -f $HOME/.gdbinit
 $LN -s $PWD/gdbinit $HOME/.gdbinit
-
-$RM -f $HOME/.rsync-exclude
-$LN -s $PWD/rsync-exclude.txt $HOME/.rsync-exclude
 
 echo "OK"
 

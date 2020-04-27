@@ -11,13 +11,15 @@ The following files are used to initialize python shell environments.
   See =man python(1)=
 
 
-* IPython Shell (=ipython_config.py=) AND (=ipython_qtconsole_config.py=)
+* IPython Shell (=ipython/=)
 
-  These  are  configuration  for  "default"  profile  in  both
-  terminal and qtconsole command line.
+  Configuration profiles for IPython (>6.0).
 
-  Located in =$IPYTHONDIR/profile_default/=
+  To activate that you should either set =IPYTHONDIR= to this path, or
+  to link this path to =~/.ipython=
 
+  There  are few  files  here  that are  not  under  GIT because  they
+  are volatile.
 
 * Matplotlib (=matplotlibrc=)
 

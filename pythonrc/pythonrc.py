@@ -20,8 +20,8 @@ else:
 
     # Enable History File. Default at ~\.pythonhistory
     history_file = os.environ.get(
-        "PYTHON_HISTORY_FILE", os.path.join(os.environ['HOME'],
-        '.pythonhistory'))
+        "PYTHON_HISTORY_FILE",
+        os.path.join(os.environ['HOME'], '.pythonhistory'))
 
     if os.path.isfile(history_file):
         readline.read_history_file(history_file)
@@ -30,7 +30,7 @@ else:
 
     atexit.register(readline.write_history_file, history_file)
 
-    del readline,rlcompleter
+    del readline, rlcompleter
 
 # Cleanup of the environment, do not pollute interpreter locals
 del os
