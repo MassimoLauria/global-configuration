@@ -1,5 +1,4 @@
-
-The following files are used to initialize python shell environments.
+#+TITLE: Python configuration
 
 
 * CPython Interpreter (=pythonrc.py=)
@@ -16,27 +15,30 @@ The following files are used to initialize python shell environments.
   Configuration profiles for IPython (>6.0).
 
   To activate that you should either set =IPYTHONDIR= to this path, or
-  to link this path to =~/.ipython=
+  link this path to =~/.ipython=
 
   There  are few  files  here  that are  not  under  GIT because  they
   are volatile.
 
-* Matplotlib (=matplotlibrc=)
 
+* Matplotlib (=matplotlib/=)
+
+  Configuration file for  the python mathematical plot  library. It is
+  activated  and confgured  by  default when  ipython  is called  with
+  =-pylab= option.
+
+  To activate that you should either set =MPLCONFIGDIR= to this path, or
+  link this path to =~/.matplotlib=
+
+  There  are few  files  here  that are  not  under  GIT because  they
+  are volatile.
   Configuration file for the  python mathematical plot library.  It is
   activated  and confgured  by  default when  ipython  is called  with
   =-pylab= option.
 
-  Loading path order is (1) current dir (2) =.matplotlib/matplotlibrc=
-
   See http://matplotlib.sourceforge.net/users/customizing.html
 
-
-
-
-
-
-* Sage math (=init.sage=) AND (=ipythonrc-sage=)
+* Sage math (=init.sage=)
 
   =init.sage=  sets up  LaTeX properly  for drawing  graphs  and loads
   packages from my own directory.

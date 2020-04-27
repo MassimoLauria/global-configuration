@@ -1,0 +1,5 @@
+profile_*/history.sqlite
+profile_*/db/
+profile_*/log/
+profile_*/pid/
+profile_*/security/

@@ -3,7 +3,7 @@
 # Copyright (C) 2010, 2011, 2012, 2014, 2015, 2016, 2017, 2020 by Massimo Lauria <lauria.massimo@gmail.com>
 #
 # Created   : "2011-03-05, sabato 01:03 (CET) Massimo Lauria"
-# Time-stamp: "2020-04-27, 13:19 (CEST) Massimo Lauria"
+# Time-stamp: "2020-04-27, 13:34 (CEST) Massimo Lauria"
 
 # Description::
 #
@@ -185,18 +185,17 @@ echo "# 5. installing new config files.."
 
 
 # ipython
-$RM -fr $HOME/.ipython/
-$LN -s $PWD/pythonrc/ipython $HOME/.ipython
+$RM -fr $HOME/.ipython
+$LN -s $PWD/python/ipython $HOME/.ipython
 
 # matplotlib
-$RM -f $HOME/.matplotlib/matplotlibrc
-$MKDIR -p $HOME/.matplotlib/
-$LN -s $PWD/pythonrc/matplotlibrc $HOME/.matplotlib/matplotlibrc
+$RM -fr $HOME/.matplotlib
+$LN -s $PWD/python/matplotlib $HOME/.matplotlib
 
 # sagemath
 $RM -f $HOME/.sage/init.sage
 $MKDIR -p $HOME/.sage/
-$LN -s $PWD/pythonrc/init.sage        $HOME/.sage/init.sage
+$LN -s $PWD/python/init.sage        $HOME/.sage/init.sage
 
 # Vim
 $RM -f $HOME/.vimrc
