@@ -50,3 +50,11 @@
 
   Pylint  is an  utility for  checking the  quality and  the style  of
   python code, in order to avoid common problems and pitfalls.
+
+* Flake8 python checker (=flake8=)
+
+  Flake8  is an  utility for  checking the  quality and  the style  of
+  python code, in order to avoid common problems and pitfalls.
+
+  Install it with: =pip install flake8=
+  Link the configuration file into =~/.config/flake8=
