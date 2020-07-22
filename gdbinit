@@ -8,7 +8,7 @@ python
 import sys
 from os.path import expanduser,join
 
-pprinter_path = 'config/pythonrc/gdb_pprinter/'
+pprinter_path = 'config/python/gdb_pprinter/'
 
 sys.path.insert(0, join(expanduser("~"),pprinter_path))
 
