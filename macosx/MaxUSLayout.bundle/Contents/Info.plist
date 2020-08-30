@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleIdentifier</key>
+	<string>org.sil.ukelele.keyboardlayout.maxuslayout</string>
+	<key>CFBundleName</key>
+	<string>MaxUSLayout</string>
+	<key>CFBundleVersion</key>
+	<string></string>
+	<key>KLInfo_Massimo(US)</key>
+	<dict>
+		<key>TICapsLockLanguageSwitchCapable</key>
+		<false/>
+		<key>TISInputSourceID</key>
+		<string>org.sil.ukelele.keyboardlayout.maxuslayout.massimo(us)</string>
+		<key>TISIntendedLanguage</key>
+		<string>en</string>
+	</dict>
+</dict>
+</plist>
