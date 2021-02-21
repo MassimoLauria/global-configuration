@@ -516,3 +516,6 @@ flycheck_*.el
 /network-security.data
 
 # End of https://www.toptal.com/developers/gitignore/api/emacs
+
+# CCLS server for C++ 
+/.ccls-cache/
