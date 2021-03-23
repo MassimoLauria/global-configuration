@@ -1,0 +1,4 @@
+# -*- mode: python -*-
+
+# Append a breakpoint to the local pdbrc
+alias bsave with open("./.pdbrc", "a") as pdbrc: pdbrc.write("break " + __file__ + ":%1\n")
