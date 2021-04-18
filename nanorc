@@ -1,0 +1,6 @@
+# -*- mode: conf -*-
+set mouse
+set autoindent
+set linenumbers
+set tabsize 4
+
