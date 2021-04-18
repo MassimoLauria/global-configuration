@@ -1,9 +1,9 @@
 #!/bin/sh
 #
-# Copyright (C) 2013 by Massimo Lauria
+# Copyright (C) 2013, 2021 by Massimo Lauria
 #
 # Created   : "2013-04-17, Wednesday 17:55 (CEST) Massimo Lauria"
-# Time-stamp: "2013-04-17, 18:22 (CEST) Massimo Lauria"
+# Time-stamp: "2021-04-19, 01:44 (CEST) Massimo Lauria"
 #
 # Description::
 #
@@ -12,13 +12,14 @@
 
 # Configuration
 QUERY_TOOL="recoll -b -t"
-PROMPT_THEME='-nf #dcdcdc -nb #2f2f2f -sb #a6c292 -sf black'
+#PROMPT_THEME='-nf #dcdcdc -nb #2f2f2f -sb #a6c292 -sf black'
+PROMPT_THEME=Monokai
 
 # Code::
 
 # Use argument or query interactively.
 if [ -z "$@" ]; then
-    QUERY=`dmenu $PROMPT_THEME -p "Search in documents:" </dev/null` 
+    QUERY=`rofi -dmenu -l 0 -p "Search" -theme $PROMPT_THEME </dev/null`
 else
     QUERY="$@"
 fi
@@ -26,8 +27,8 @@ fi
 DOC=$($QUERY_TOOL "$QUERY"  | grep 'file://' \
       | sed -e 's|^ *file://||' | sed -e "s|$HOME/||" \
       | perl -e 'use URI::Escape; print uri_unescape(<STDIN>);' \
-      | dmenu -p 'Choose file:' \
-              -i $PROMPT_THEME -l 30)
+      | rofi -dmenu -p 'Choose file' \
+              -l 30 -show-icons -theme $PROMPT_THEME )
 
 
 if [ "x$DOC" != x ]; then
