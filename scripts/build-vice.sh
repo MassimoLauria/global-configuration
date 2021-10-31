@@ -3,7 +3,7 @@
 # Copyright (C) 2021 by Massimo Lauria
 #
 # Created   : "2021-10-31, domenica 15:57 (CET) Massimo Lauria"
-# Time-stamp: "2021-10-31, 16:09 (CET) Massimo Lauria"
+# Time-stamp: "2021-10-31, 16:50 (CET) Massimo Lauria"
 #
 # Description::
 #
@@ -25,9 +25,9 @@ BUILDOPTS="--enable-arch=native --with-resid --enable-native-gtk3ui --enable-eth
 # Download
 if [ ! -s "${SRCDIR}/${VERSION}" ]; then
     cd ~/queue/
-    wget -c https://sourceforge.net/projects/vice-emu/files/releases/${VERSION}.tar.gz/download
+    wget -c https://sourceforge.net/projects/vice-emu/files/releases/${VERSION}.tar.gz/download -o ${VERSION}.tar.gz
     cd "${SRCDIR}"
-    tar vzfx "~/queue/${VERSION}.tar.gz"
+    tar zfx "~/queue/${VERSION}.tar.gz"
 fi
 
 cd "${SRCDIR}/${VERSION}"
