@@ -1,9 +1,0 @@
-[submodule "xsession"]
-	path = xsession
-	url = https://github.com/MassimoLauria/xsession.git
-[submodule "shell"]
-	path = shell
-	url = https://github.com/MassimoLauria/shell.git
-[submodule "emacs"]
-	path = emacs
-	url = https://github.com/MassimoLauria/dotemacs.git

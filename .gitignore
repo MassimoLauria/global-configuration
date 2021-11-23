@@ -3,3 +3,8 @@
 # better avoid to put the on github
 
 fonts/*.*
+
+# Configurations living in external repositories
+xsession
+shell
+emacs
