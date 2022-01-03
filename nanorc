@@ -3,4 +3,28 @@ set mouse
 set autoindent
 set linenumbers
 set tabsize 4
+set quickblank
+
+# top line color
+set titlecolor yellow,blue
+
+# line number color
+set numbercolor white,normal
+
+# bottom line
+set functioncolor white,normal
+set keycolor white,blue
+
+# status bar
+set statuscolor white,blue
+
+# keybindings
+unbind ^X main
+bind ^Q exit main
+
+bind ^V paste main
+bind ^C copy  main
+bind ^X cut   main
+bind ^Z undo  main
+bind ^R redo  main
 
