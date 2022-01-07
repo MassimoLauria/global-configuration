@@ -1,9 +1,9 @@
 #!/bin/sh
 #
-# Copyright (C) 2013, 2021 by Massimo Lauria
+# Copyright (C) 2013, 2021, 2022 by Massimo Lauria
 #
 # Created   : "2013-04-17, Wednesday 17:55 (CEST) Massimo Lauria"
-# Time-stamp: "2021-04-19, 01:44 (CEST) Massimo Lauria"
+# Time-stamp: "2022-01-07, 12:45 (CET) Massimo Lauria"
 #
 # Description::
 #
@@ -19,7 +19,7 @@ PROMPT_THEME=Monokai
 
 # Use argument or query interactively.
 if [ -z "$@" ]; then
-    QUERY=`rofi -dmenu -l 0 -p "Search" -theme $PROMPT_THEME </dev/null`
+    QUERY=`rofi -dmenu -l 0 -p "File search" -theme $PROMPT_THEME </dev/null`
 else
     QUERY="$@"
 fi
