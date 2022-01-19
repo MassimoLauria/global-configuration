@@ -97,7 +97,7 @@ bind s fillcmdline tabopen search
 " Gui
 set theme default
 guiset_quiet hoverlink top-right
-guiset_quite tabs always
+guiset_quiet tabs always
 
 set modeindicator true
 set modeindicatorshowkeys true
@@ -105,11 +105,13 @@ set modeindicatorshowkeys true
 " Webpages were Tridactyl is inactive
 autocmd DocStart www.typing.com/student/lesson/ mode ignore
 autocmd DocStart meet.google.com mode ignore
-
+autocmd DocStart meet.google.com mode ignore
+autocmd DocStart https://www.powerlanguage.co.uk/wordle/ mode ignore
 
 "
 " Search engine keywords
 "
+" use then with :open <engine_key> <query> 
 
 " basic
 set searchurls.g   https://www.google.com/search?q=%s
@@ -138,6 +140,7 @@ set searchurls.gen http://libgen.is/search.php?req=%s
 set searchurls.com https://libgen.lc/comics/index.php?s=%s
 set searchurls.tz  http://1337x.to/search/%s/1/
 set searchurls.sub http://subscene.com/subtitles/title?q=%s 
+set searchurls.zl  https://it.book4you.org/s/%s?
 
 " Google maps
 set searchurls.map https://www.google.it/maps/search/%s/?hl=it
@@ -166,6 +169,10 @@ bind <Space>i open https://www.instapaper.com/u
 bind <Space>r open https://www.inoreader.com/
 bind <Space>y open https://www.youtube.com/user/MassimoLauria/playlists
 bind <Space>p open https://pinboard.in/u:massimol
+
+bind <Space>t open https://www.twitter.com
+bind <Space>t open https://www.twitter.com
+
 
 " Bookmarklets
 
