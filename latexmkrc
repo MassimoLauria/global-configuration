@@ -1,4 +1,5 @@
 # Config
+$pdf_mode=1;
 $pdf_previewer = 'xdg-open';
-$pdflatex = 'pdflatex -synctex=1 -interaction=nonstopmode';
+$pdflatex = 'pdflatex -synctex=1 -interaction=nonstopmode --shell-escape %O %S';
 @generated_exts = (@generated_exts, 'synctex.gz');
