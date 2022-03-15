@@ -1,0 +1,13 @@
+# mode:
+
+# Default 'alacritty' is little known
+env:
+    TERM: xterm-256color
+
+# Font configuration
+font:
+    size: 16
+
+# Color theme
+import:
+    - ~/config/alacritty/color-tango.yml
