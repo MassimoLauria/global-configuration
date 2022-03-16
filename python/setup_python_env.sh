@@ -2,23 +2,38 @@
 
 # List of packages to install
 Packages="
+autopep8
+black
 cffi
+cnfgen
+gdbgui
 ipython
+jc
 jedi
+jq
 jupyter
 jupyterlab
 keras
+keyring
+manim
 matplotlib
+mxnet
 mypy
 mypy-extensions
+networkx
 notebook
 numpy
 pandas
-Pillow
+Pillow-SIMD
+pinboard
+pybind11
 Pygments
 pylint
 pyparsing
+python-sat
+python-lsp-server[all]
 qiskit
+rich
 scipy
 seaborn
 Sphinx
@@ -26,10 +41,12 @@ sphinx-rtd-theme
 sympy
 tensorflow
 torch
+tornado
 thonny
 urllib3
 yapf
-youtube-dl"
+youtube-dl
+z3-solver"
 
 CFG=$HOME/config/python
 PYENV_ROOT="$HOME/.pyenv"

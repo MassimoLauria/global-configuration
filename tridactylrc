@@ -109,6 +109,7 @@ autocmd DocStart meet.google.com mode ignore
 autocmd DocStart https://www.nytimes.com/games/wordle/ mode ignore
 autocmd DocStart https://pietroppeter.github.io/wordle-it/ mode ignore
 autocmd DocStart https://nerdlegame.com/ mode ignore
+autocmd DocStart https://octordle.com/ mode ignore
 
 "
 " Search engine keywords
