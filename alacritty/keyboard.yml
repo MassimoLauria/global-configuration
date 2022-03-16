@@ -1,0 +1,56 @@
+# -*- mode: conf[colon] -*-
+key_bindings:
+
+  # Start/Close Visual mode for cut/paste
+  - { key: Space,   mods: Control,                action: ToggleViMode   }
+  - { key: G,       mods: Control,    mode: Vi,   action: ToggleViMode   }
+  - { key: Escape,                    mode: Vi,   action: ToggleViMode   }
+
+  # Paste/Copy
+  - { key: Paste,                                action: Paste           }
+  - { key: Copy,                                 action: Copy            }
+  - { key: Y,                         mode:  Vi, action: Copy            }
+  - { key: Y,                         mode:  Vi, action: ClearSelection  }
+  - { key: C,       mods: Control,    mode:  Vi, action: Copy            }
+  - { key: C,       mods: Control,    mode:  Vi, action: ClearSelection  }
+  - { key: V,       mods: Control,    mode: ~Vi, action: Paste           }
+  # Switch Selection type
+  - { key: V,                            mode: Vi, action: ToggleNormalSelection   }
+  - { key: V,      mods: Shift,          mode: Vi, action: ToggleLineSelection     }
+  - { key: V,      mods: Control,        mode: Vi, action: ToggleBlockSelection    }
+  - { key: V,      mods: Alt,            mode: Vi, action: ToggleSemanticSelection }
+  # Paste primary selection (as in middle click)
+  - { key: Insert,   mods: Shift,                action: PasteSelection  }
+
+  # Clear screen
+  - { key: L,         mods: Control,             action: ClearLogNotice }
+  - { key: L,         mods: Control, mode: ~Vi,  chars: "\x0c"          }
+
+  # Scroll buffer
+  - { key: PageUp,    mods: Shift,   mode: ~Alt, action: ScrollPageUp,  }
+  - { key: PageDown,  mods: Shift,   mode: ~Alt, action: ScrollPageDown }
+  - { key: Home,      mods: Shift,   mode: ~Alt, action: ScrollToTop,   }
+  - { key: End,       mods: Shift,   mode: ~Alt, action: ScrollToBottom }
+
+  # Vi Mode
+  - { key: Return,                       mode: Vi, action: Open                    }
+  - { key: U,                            mode: Vi, action: SemanticLeft            }
+  - { key: O,                            mode: Vi, action: SemanticRight           }
+  - { key: I,                            mode: Vi, action: Up                      }
+  - { key: K,                            mode: Vi, action: Down                    }
+  - { key: J,                            mode: Vi, action: Left                    }
+  - { key: L,                            mode: Vi, action: Right                   }
+  - { key: Up,                           mode: Vi, action: Up                      }
+  - { key: Down,                         mode: Vi, action: Down                    }
+  - { key: Left,                         mode: Vi, action: Left                    }
+  - { key: Right,                        mode: Vi, action: Right                   }
+
+  # Font size
+  - { key: Key0,      mods: Control,                 action: ResetFontSize    }
+  - { key: Equals,    mods: Control,                 action: IncreaseFontSize }
+  - { key: Plus,      mods: Control,                 action: IncreaseFontSize }
+  - { key: Minus,     mods: Control,                 action: DecreaseFontSize }
+  - { key: Key0,      mods: Alt,                     action: ResetFontSize    }
+  - { key: Equals,    mods: Alt,                     action: IncreaseFontSize }
+  - { key: Plus,      mods: Alt,                     action: IncreaseFontSize }
+  - { key: Minus,     mods: Alt,                     action: DecreaseFontSize }

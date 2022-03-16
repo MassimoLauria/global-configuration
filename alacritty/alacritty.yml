@@ -12,6 +12,7 @@ font:
 # Color theme
 import:
     - ~/config/alacritty/color-tango.yml
+    - ~/config/alacritty/keyboard.yml
 
 # key_bindings:
 # - { key: Return, mods: Alt, action: CreateNewWindow }
