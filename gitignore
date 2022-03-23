@@ -55,4 +55,6 @@ _minted-*/
 *.toc
 *.vtc
 *.bbl
+*.fls
+*.fdb_latexmk
 auto/
