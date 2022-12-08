@@ -8,6 +8,8 @@ env:
 # Font configuration
 font:
     size: 16
+    normal:
+        family: "monospace"
 
 # Color theme
 import:
