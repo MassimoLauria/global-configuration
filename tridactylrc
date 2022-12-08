@@ -114,7 +114,7 @@ autocmd DocStart https://octordle.com/ mode ignore
 "
 " Search engine keywords
 "
-" use then with :open <engine_key> <query> 
+" use them with :open <engine_key> <query> 
 
 " basic
 set searchurls.g   https://www.google.com/search?q=%s
@@ -173,7 +173,7 @@ bind <Space>r open https://www.inoreader.com/
 bind <Space>y open https://www.youtube.com/user/MassimoLauria/playlists
 bind <Space>p open https://pinboard.in/u:massimol
 
-bind <Space>t open https://www.twitter.com
+bind <Space>u open https://mastodon.uno/web/
 bind <Space>t open https://www.twitter.com
 
 
