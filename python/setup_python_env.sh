@@ -76,6 +76,9 @@ if [ ! -d $PYENV_ROOT ]; then
     echo "$(pyenv root)"
     git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
     eval "$(pyenv virtualenv-init -)"
+    git clone https://github.com/pyenv/pyenv-update.git $(pyenv root)/plugins/pyenv-update
+else
+    pyenv update
 fi
 
 PYENV_PYVERSION=$(pyenv install -l | grep '[[:space:]]3.[[:digit:]]*.[[:digit:]]*$' | grep -v 'rc\|dev' | tail -1)
