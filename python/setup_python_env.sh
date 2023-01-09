@@ -46,7 +46,9 @@ thonny
 urllib3
 yapf
 youtube-dl
-z3-solver"
+z3-solver
+ical2orgpy
+"
 
 CFG=$HOME/config/python
 PYENV_ROOT="$HOME/.pyenv"
