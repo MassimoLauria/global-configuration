@@ -69,6 +69,7 @@ ln -s $CFG/pylintrc $HOME/.pylintrc
 rm -f $HOME/.config/flake8
 ln -s $CFG/flake8 $HOME/.config/flake8
 
+# Install pyenv if necessary
 if [ ! -d $PYENV_ROOT ]; then
     echo "Pyenv not found: installing"
     git clone https://github.com/pyenv/pyenv.git $PYENV_ROOT
@@ -76,13 +77,22 @@ if [ ! -d $PYENV_ROOT ]; then
     eval "$(pyenv init --path)"
     eval "$(pyenv init -)"
     echo "$(pyenv root)"
-    git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
-    eval "$(pyenv virtualenv-init -)"
-    git clone https://github.com/pyenv/pyenv-update.git $(pyenv root)/plugins/pyenv-update
-else
-    pyenv update
 fi
 
+# Install pyenv support for virtual environments
+if [ ! -d $(pyenv root)/plugins/pyenv-virtualenv ];then
+    git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
+    eval "$(pyenv virtualenv-init -)"
+fi
+
+# Install pyenv support for updating
+if [ ! -d $(pyenv root)/plugins/pyenv-update ];then
+    git clone https://github.com/pyenv/pyenv-update.git $(pyenv root)/plugins/pyenv-update
+fi
+
+
+# Update the system
+pyenv update
 PYENV_PYVERSION=$(pyenv install -l | grep '[[:space:]]3.[[:digit:]]*.[[:digit:]]*$' | grep -v 'rc\|dev' | tail -1)
 echo "Maybe install release $PYENV_PYVERSION in pyenv"
 yes n | pyenv install $PYENV_PYVERSION
