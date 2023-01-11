@@ -1,0 +1,57 @@
+# Packages for my python setup
+autopep8
+black
+cffi
+ipython
+jc
+jedi
+jq
+jupyter
+jupyterlab
+keras
+keyring
+manim
+matplotlib
+mxnet
+mypy
+mypy-extensions
+networkx<3.0
+notebook
+numpy
+pandas
+Pillow-SIMD
+pinboard
+pybind11
+Pygments
+pylint
+pyparsing
+python-lsp-server[all]
+rich
+scipy
+seaborn
+Sphinx<6
+sphinx-rtd-theme
+sympy
+tornado
+thonny
+urllib3
+yapf
+youtube-dl
+
+# SAT solving
+python-sat
+cnfgen
+z3-solver
+
+
+# Local utils
+ical2orgpy
+pinboard
+gdbgui
+
+# ML
+tensorflow
+torch
+
+# Quantum Computing
+qiskit

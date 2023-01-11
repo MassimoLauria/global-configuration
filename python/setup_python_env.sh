@@ -1,55 +1,5 @@
 #!/bin/bash
 
-# List of packages to install
-Packages="
-autopep8
-black
-cffi
-cnfgen
-gdbgui
-ipython
-jc
-jedi
-jq
-jupyter
-jupyterlab
-keras
-keyring
-manim
-matplotlib
-mxnet
-mypy
-mypy-extensions
-networkx
-notebook
-numpy
-pandas
-Pillow-SIMD
-pinboard
-pybind11
-Pygments
-pylint
-pyparsing
-python-sat
-python-lsp-server[all]
-qiskit
-rich
-scipy
-seaborn
-Sphinx
-sphinx-rtd-theme
-sympy
-tensorflow
-torch
-tornado
-thonny
-urllib3
-yapf
-youtube-dl
-z3-solver
-ical2orgpy
-"
-
 CFG=$HOME/config/python
 PYENV_ROOT="$HOME/.pyenv"
 
@@ -93,11 +43,12 @@ fi
 
 # Update the system
 pyenv update
-PYENV_PYVERSION=$(pyenv install -l | grep '[[:space:]]3.[[:digit:]]*.[[:digit:]]*$' | grep -v 'rc\|dev' | tail -1)
+#PYENV_PYVERSION=$(pyenv install -l | grep '[[:space:]]3.[[:digit:]]*.[[:digit:]]*$' | grep -v 'rc\|dev' | tail -1)
+PYENV_PYVERSION=$(pyenv install -l | grep '[[:space:]]3.10.[[:digit:]]*$' | grep -v 'rc\|dev' | tail -1)
 echo "Maybe install release $PYENV_PYVERSION in pyenv"
 yes n | pyenv install $PYENV_PYVERSION
-pyenv global $PYENV_PYVERSION
+pyenv local $PYENV_PYVERSION
 
 # Update pip and install all packages
 pip install -U pip
-pip install ${Packages}
+pip install -U -r requirements.txt
