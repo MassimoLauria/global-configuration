@@ -1,9 +1,9 @@
 #!/bin/sh
 #
-# Copyright (C) 2010, 2011, 2012, 2014, 2015, 2016, 2017, 2020 by Massimo Lauria <lauria.massimo@gmail.com>
+# Copyright (C) 2010, 2011, 2012, 2014, 2015, 2016, 2017, 2020, 2023 by Massimo Lauria <lauria.massimo@gmail.com>
 #
 # Created   : "2011-03-05, sabato 01:03 (CET) Massimo Lauria"
-# Time-stamp: "2020-04-27, 13:34 (CEST) Massimo Lauria"
+# Time-stamp: "2023-02-28, 23:11 (CET) Massimo Lauria"
 
 # Description::
 #
@@ -204,6 +204,10 @@ $LN -s $PWD/vimrc $HOME/.vimrc
 # GDB
 $RM -f $HOME/.gdbinit
 $LN -s $PWD/gdbinit $HOME/.gdbinit
+
+# TMUX
+$RM -f $HOME/.tmux.conf
+$LN -s $PWD/tmux.conf $HOME/.tmux.conf
 
 echo "OK"
 
