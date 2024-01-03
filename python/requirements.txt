@@ -1,7 +1,11 @@
-#Important
-dbus-python
+# System utils
 keyring
 pinboard
+
+#Back in time
+dbus-python
+pyqt5
+
 
 # Packages for my python setup
 autopep8
