@@ -9,7 +9,8 @@ env:
 font:
     size: 16
     normal:
-        family: "monospace"
+        family: "DejaVuSansM Nerd Font"
+        #family: "monospace"
 
 # Color theme
 import:
