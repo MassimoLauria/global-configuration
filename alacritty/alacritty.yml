@@ -24,9 +24,10 @@ mouse:
   hide_when_typing: true
 
 cursor:
-  style: Block            #  ▇ block cursor
+  style: Beam             #  | vertical cursor normally
   unfocused_hollow: true  #  a hollow box when the window is not focused.
-  
+  vi_mode_style: Block    #  █ block cursor when in vi-mode
+
 
 # Hintings
 hints:
