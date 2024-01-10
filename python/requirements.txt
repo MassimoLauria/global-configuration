@@ -55,10 +55,9 @@ z3-solver
 ical2orgpy
 pinboard
 gdbgui
+flashfocus
 
-# ML
-tensorflow
-torch
-
-# Quantum Computing
-qiskit
+# ML / Quantum / Hype
+# tensorflow
+# torch
+# qiskit
