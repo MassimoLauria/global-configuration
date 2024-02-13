@@ -1,55 +1,57 @@
-# System utils
+# System utils (high priority)
 keyring
 pinboard
+Pygments
 
-#Back in time
+#Back in time (high priority)
 dbus-python
 pyqt5
 
-
-# Packages for my python setup
-autopep8
-black
-cffi
-ipython
-jc
-jedi
-jq
-jupyter
-jupyterlab
-keras
-manim
-matplotlib
-mxnet
+# Python devel
+pyright
 mypy
 mypy-extensions
-networkx<3.0
-notebook
-numpy
-pandas
-Pillow-SIMD
-pybind11
-Pygments
+black
 pylint
 pyparsing
-python-lsp-server[all]
-rich
+yapf
+autopep8
+
+
+# Other utils
+youtube-dl
+
+# JSON utils
+jc
+jq
+
+
+# Packages for my python setup
+manim
+matplotlib
+networkx<3.0
+Pillow-SIMD
+pybind11
 scipy
-seaborn
 Sphinx<6
 sphinx-rtd-theme
 sympy
 tornado
-thonny
 urllib3
-yapf
-youtube-dl
+
+# Science/Teaching
+thonny
+ipython
+jupyter
+jupyterlab
+notebook
+numpy
+pandas
 
 # SAT solving
 python-sat
 cnfgen
 z3-solver
-
 
 # Local utils
 ical2orgpy
@@ -58,6 +60,7 @@ gdbgui
 flashfocus
 
 # ML / Quantum / Hype
+# keras
 # tensorflow
 # torch
 # qiskit
