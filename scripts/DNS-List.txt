@@ -1,0 +1,8 @@
+DNS SERVERS
+
+Quad9: 9.9.9.11  
+OpenDNS: 208.67.222.222
+Google: 8.8.8.8
+CloudFlare: 1.0.0.1
+
+TIM: 85.38.28.32,85.38.28.33
