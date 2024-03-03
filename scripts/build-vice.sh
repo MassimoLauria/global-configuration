@@ -1,9 +1,9 @@
 #!/bin/bash
 #
-# Copyright (C) 2021 by Massimo Lauria
+# Copyright (C) 2021, 2024 by Massimo Lauria
 #
 # Created   : "2021-10-31, domenica 15:57 (CET) Massimo Lauria"
-# Time-stamp: "2021-10-31, 16:50 (CET) Massimo Lauria"
+# Time-stamp: "2024-03-03, 23:08 (CET) Massimo Lauria"
 #
 # Description::
 #
@@ -16,7 +16,7 @@ set -euo pipefail
 IFS=$'\n\t'
 
 # Code::
-VERSION=vice-3.5
+VERSION=vice-3.8
 PREFIX=${HOME}/.local/
 SRCDIR=${PREFIX}/src
 BUILDOPTS="--enable-arch=native --with-resid --enable-native-gtk3ui --enable-ethernet --with-pulse --with-alsa --enable-vte --with-fast-sid --with-jpeg --enable-static-ffmpeg --enable-desktop-files --enable-x64"
