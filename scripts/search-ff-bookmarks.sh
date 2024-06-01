@@ -31,7 +31,7 @@ sqlite3 -separator $sqlitesep /tmp/bookmarks.sqlite \
           GROUP BY t.itemId
         ' |
     awk -F $sqlitesep '{printf "\x1b[36m%-'$cols's\t\x1b[33m%-'$cols's\t\x1b[m%-'$cols's\t---\t\x1b[34m%-'$cols's\n", $1, $2, $3, $4}' |
-    fzf --query="$1 $2 $3 $4" -e -i --ansi --reverse -m \
+    fzf --query="$@" -e -i --ansi --reverse -m \
         --tabstop=4 -d '\t' \
         --prompt='Bookmarks> ' \
         --preview-window down:6:wrap --bind '?:toggle-preview,ctrl-s:toggle-sort' \
