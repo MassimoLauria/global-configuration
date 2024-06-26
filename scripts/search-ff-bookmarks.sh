@@ -24,11 +24,12 @@ cp ~/.mozilla/firefox/*/weave/bookmarks.sqlite /tmp
 
 sqlite3 -separator $sqlitesep /tmp/bookmarks.sqlite \
         '
-          SELECT DATE(ROUND(i.dateAdded / 1000), "unixepoch","localtime"),
+          SELECT DATE(ROUND(i.dateAdded / 1000), "unixepoch","localtime") as MYDATE,
                  REPLACE(GROUP_CONCAT(t.tag), ",", ", "),
                  i.title, u.url
           FROM items i  JOIN urls u ON i.urlId = u.id  LEFT OUTER JOIN tags t ON i.id = t.itemId
           GROUP BY t.itemId
+          ORDER BY MYDATE DESC
         ' |
     awk -F $sqlitesep '{printf "\x1b[36m%-'$cols's\t\x1b[33m%-'$cols's\t\x1b[m%-'$cols's\t---\t\x1b[34m%-'$cols's\n", $1, $2, $3, $4}' |
     fzf --query="$@" -e -i --ansi --reverse -m \
