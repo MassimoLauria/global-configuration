@@ -1,6 +1,5 @@
 # System utils (high priority)
 keyring
-pinboard
 Pygments
 
 #Back in time (high priority)
@@ -16,7 +15,8 @@ pylint
 pyparsing
 yapf
 autopep8
-
+ruff
+flake8
 
 # Other utils
 youtube-dl
@@ -29,7 +29,7 @@ jq
 # Packages for my python setup
 manim
 matplotlib
-networkx<3.0
+networkx
 Pillow-SIMD
 pybind11
 scipy
@@ -55,7 +55,6 @@ z3-solver
 
 # Local utils
 ical2orgpy
-pinboard
 gdbgui
 flashfocus
 

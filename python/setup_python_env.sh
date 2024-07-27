@@ -2,7 +2,7 @@
 
 CFG=$HOME/config/python
 PYENV_ROOT="$HOME/.pyenv"
-
+PYENV_VERSION=3.12.4
 
 echo "Installing basic python config files"
 rm -f $HOME/.pythonrc.py
@@ -43,11 +43,9 @@ fi
 
 # Update the system
 pyenv update
-#PYENV_PYVERSION=$(pyenv install -l | grep '[[:space:]]3.[[:digit:]]*.[[:digit:]]*$' | grep -v 'rc\|dev' | tail -1)
-PYENV_PYVERSION=$(pyenv install -l | grep '[[:space:]]3.10.[[:digit:]]*$' | grep -v 'rc\|dev' | tail -1)
 echo "Maybe install release $PYENV_PYVERSION in pyenv"
-yes n | pyenv install $PYENV_PYVERSION
-pyenv local $PYENV_PYVERSION
+yes n | pyenv install $ENV_PYVERSION
+pyenv local $PYENV_VERSION
 
 # Update pip and install all packages
 pip install -U pip
