@@ -3,8 +3,8 @@ keyring
 Pygments
 
 #Back in time (high priority)
-dbus-python
-pyqt5
+# dbus-python
+# pyqt5
 
 # Python devel
 pyright

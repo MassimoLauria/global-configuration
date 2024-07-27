@@ -48,5 +48,6 @@ yes n | pyenv install $ENV_PYVERSION
 pyenv local $PYENV_VERSION
 
 # Update pip and install all packages
-pip install -U pip
-pip install -U -r requirements.txt
+python -m ensurepip --upgrade
+python -m pip install -U pip
+python -m pip install -U -r requirements.txt
