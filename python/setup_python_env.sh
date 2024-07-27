@@ -40,6 +40,24 @@ if [ ! -d $(pyenv root)/plugins/pyenv-update ];then
     git clone https://github.com/pyenv/pyenv-update.git $(pyenv root)/plugins/pyenv-update
 fi
 
+# Issue an error if there is a locally installed pip or python
+# site-package in ~/.local
+if test -n "$(find ~/.local/bin -maxdepth 1 -name 'pip*' -print -quit)"
+then
+    echo "There is a pip in ~/.local/bin. This could cause issues."
+    echo "I'd rather stop."
+    exit 1
+fi
+
+if test -n "$(find ~/.local/lib -maxdepth 1 -name 'python*' -print -quit)"
+then
+    echo "There is a user local installation of python packages"
+    echo "in ~/.local/lib. This could cause issues and I'd rather stop."
+    exit 1
+fi
+
+
+
 
 # Update the system
 pyenv update
