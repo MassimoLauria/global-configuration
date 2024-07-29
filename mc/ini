@@ -4,7 +4,7 @@ shell_patterns=true
 auto_save_setup=true
 preallocate_space=false
 auto_menu=false
-use_internal_view=true
+use_internal_view=false
 use_internal_edit=false
 clear_before_exec=true
 confirm_delete=true
@@ -87,12 +87,12 @@ skin=default
 
 [Layout]
 output_lines=0
-left_panel_size=39
+left_panel_size=80
 top_panel_size=20
 message_visible=false
 keybar_visible=true
 xterm_title=false
-command_prompt=true
+command_prompt=false
 menubar_visible=true
 free_space=false
 horizontal_split=false
@@ -132,9 +132,9 @@ panel_scroll_pages=true
 panel_scroll_center=false
 mouse_move_pages=true
 filetype_mode=true
-permission_mode=false
+permission_mode=true
 torben_fj_mode=false
-quick_search_mode=2
+quick_search_mode=0
 select_flags=6
 
 simple_swap=false

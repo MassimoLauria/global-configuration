@@ -1,0 +1,6 @@
+ENTRY "NAS Video" URL "/media/massimo/diskstation/video"
+ENTRY "Home2" URL "/home/massimo/"
+ENTRY "NAS Documents" URL "/media/massimo/diskstation/docs"
+ENTRY "NAS Musica" URL "/media/massimo/diskstation/music"
+ENTRY "Home" URL "/home/massimo"
+ENTRY "massimolauria.net" URL "/sh://ml/home/massimo/public_html"
