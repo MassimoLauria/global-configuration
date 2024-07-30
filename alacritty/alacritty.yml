@@ -12,6 +12,10 @@ font:
         family: "DejaVuSansM Nerd Font"
         #family: "monospace"
 
+# From 0.0 (transparent) to 1.0 (fully opaque)
+window:
+  opacity: 1.0
+
 # Color theme
 import:
     - ~/config/alacritty/color-tango.yml
