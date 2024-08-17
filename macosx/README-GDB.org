@@ -1,0 +1,65 @@
+To make GDB  work in macos we need to do code signing.
+
+See: https://timnash.co.uk/getting-gdb-to-semi-reliably-work-on-mojave-macos/
+
+The following worked on Macosx Ventura
+
+* Creating a new certificate isn’t particularly complicated:
+
+   - Open up Keychain Access
+   - Select Certificate Assistant -> Create a Certificate
+   - give it a name gdb-cert, type is self-signed root and Certificate
+     Type is Code Signing. Finally, tick the Let me override defaults
+     (this is important)
+   - It will warn you, you are about to create a certificate (because
+     this might have been a shock) click continue
+   - For serial number and validity length, you can leave as, or
+     change. then click continue
+   - The other certificate information can be left blank and just
+     click continue
+   - 2048 Key size and Algorithm RSA which should be defaults just
+     click continue
+   - Next 3 you can just click Continue
+   - Specify a Location, make sure you choose the Keychain option of
+     System
+
+With a certificate created, *restart the machine*. Yes there are other
+ways to do this, but trust me its just easier to restart and be sure
+everything is working.
+
+* Sign the gdb binary
+
+Prepare an XML file ~gdb.xml~, because using it will let
+us use gdb without sudo. Such a file could be...
+
+#+BEGIN_SRC xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+"http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>com.apple.security.cs.allow-jit</key>
+    <true/>
+    <key>com.apple.security.cs.allow-unsigned-executable-memory</key>
+    <true/>
+    <key>com.apple.security.cs.allow-dyld-environment-variables</key>
+    <true/>
+    <key>com.apple.security.cs.disable-library-validation</key>
+    <true/>
+    <key>com.apple.security.cs.disable-executable-page-protection</key>
+    <true/>
+    <key>com.apple.security.cs.debugger</key>
+    <true/>
+    <key>com.apple.security.get-task-allow</key>
+    <true/>
+</dict>
+</plist>
+#+END_SRC
+
+Then run
+
+#+BEGIN_SRC sh
+codesign --entitlements gdb.xml -fs gdb-cert $(which gdb)
+#+END_SRC
+
+to sign gdb.
