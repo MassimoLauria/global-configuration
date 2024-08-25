@@ -1,7 +1,7 @@
 [Midnight-Commander]
 verbose=true
 shell_patterns=true
-auto_save_setup=true
+auto_save_setup=false
 preallocate_space=false
 auto_menu=false
 use_internal_view=false
