@@ -1,0 +1,13 @@
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+	. ~/.bashrc
+fi
+
+# Load modules
+module load aocc
+module load openmpi
+
+# Show job queue on login
+squeue -u `whoami`

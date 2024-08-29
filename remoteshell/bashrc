@@ -8,7 +8,7 @@ TERABASHRC=/afs/sta.uniroma1.it/system/uenv7/bashrc.common
 if [ -f $TERABASHRC ]; then
     source $TERABASHRC
 fi
-    
+
 # colors
 green="\[\e[1;32m\]"
 blue="\[\e[1;34m\]"
@@ -29,9 +29,9 @@ function nonzero_return() {
 case "$TERM" in
     "dumb")
         PS1='$ '
-        ;;        
+        ;;
     xterm*|rxvt*|eterm*)
-        PS1="${green}\u@\h${reset}:${blue}\w${reset} <\`nonzero_return\`>\\$ "
+        PS1="[${green}\h${reset}]${blue}\w${reset} <\`nonzero_return\`>\\$ "
         ;;
     *)
         PS1='$ '
@@ -40,6 +40,8 @@ esac
 
 export PS1
 
+
+
 # {{{ Pager --------------------------------------------------------------------
 if type most >/dev/null 2>&1; then
     PAGER=most
@@ -47,25 +49,28 @@ else
     PAGER=more
 fi
 export PAGER
-# }}} --------------------------------------------------------------------------
+
+
+# {{{ Alias --------------------------------------------------------------------
+alias ec="emacsclient -t"
+alias rm="rm -iv"
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 
 
 # {{{ Editor -------------------------------------------------------------------
-EDITOR="emacsclient"
-TEXEDIT='emacsclient -t +%d %s'
-
 if type emacs >/dev/null 2>&1; then
-    EDITOR="emacsclient"
-    ALTERNATE_EDITOR="emacs"
-else
-    EDITOR="vim"
+    EDITOR="emacs"
+    ALTERNATE_EDITOR="nano"
+elif type nano >/dev/null 2>&1; then
+    EDITOR="nano"
     ALTERNATE_EDITOR="vim"
 fi
 
 export EDITOR
 export ALTERNATE_EDITOR
-export TEXEDIT
 
-if [ -f ~/.bash_aliases ]; then
-    source ~/.bash_aliases
-fi
+# {{{ Local --------------------------------------------------------------------
+[ -f ~/.bashrc.local ] && source ~/.bashrc.local

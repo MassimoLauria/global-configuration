@@ -1,9 +1,0 @@
-#!/bin/sh
-#
-# Bash configuration for my remote shells (.bash_profile)
-#
-
-(emacs --daemon 2>/dev/null >/dev/null &)
-
-source .bashrc
-
