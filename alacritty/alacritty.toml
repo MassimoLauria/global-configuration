@@ -1,0 +1,38 @@
+import = ["/home/massimo/config/alacritty/color-tango.toml", "/home/massimo/config/alacritty/keyboard.toml"]
+live_config_reload = true
+
+[cursor]
+style = "Beam"
+unfocused_hollow = true
+vi_mode_style = "Block"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 16
+
+[font.normal]
+family = "DejaVuSansM Nerd Font"
+
+[hints]
+alphabet = "jfkdls;a"
+
+[[hints.enabled]]
+command = "xdg-open"
+post_processing = true
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|ssh:|ftp:)[^\u0000-\u001F\u007F-<>\"\\s{-}\\^⟨⟩`]+|[a-zA-Z0-9-_^.]*.(txt|tex|pdf|png|jpg|mvk|doc|docx|xls|xlsx|odt)"
+
+[hints.enabled.binding]
+key = "Return"
+mods = "Alt"
+
+[hints.enabled.mouse]
+enabled = true
+mods = "None"
+
+[mouse]
+hide_when_typing = true
+
+[window]
+opacity = 1.0

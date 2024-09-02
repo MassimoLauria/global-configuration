@@ -1,0 +1,209 @@
+[[keyboard.bindings]]
+action = "ToggleViMode"
+key = "Space"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ToggleViMode"
+key = "G"
+mode = "Vi"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ToggleViMode"
+key = "Escape"
+mode = "Vi"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "Paste"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "Copy"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "Y"
+mode = "Vi"
+
+[[keyboard.bindings]]
+action = "ClearSelection"
+key = "Y"
+mode = "Vi"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mode = "Vi"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ClearSelection"
+key = "C"
+mode = "Vi"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mode = "~Vi"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ToggleNormalSelection"
+key = "V"
+mode = "Vi"
+
+[[keyboard.bindings]]
+action = "ToggleLineSelection"
+key = "V"
+mode = "Vi"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ToggleBlockSelection"
+key = "V"
+mode = "Vi"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ToggleSemanticSelection"
+key = "V"
+mode = "Vi"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "PasteSelection"
+key = "Insert"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ClearLogNotice"
+key = "L"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\f"
+key = "L"
+mode = "~Vi"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ScrollPageUp"
+key = "PageUp"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollPageDown"
+key = "PageDown"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollToTop"
+key = "Home"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollToBottom"
+key = "End"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "Open"
+key = "Return"
+mode = "Vi"
+
+[[keyboard.bindings]]
+action = "SemanticLeft"
+key = "U"
+mode = "Vi"
+
+[[keyboard.bindings]]
+action = "SemanticRight"
+key = "O"
+mode = "Vi"
+
+[[keyboard.bindings]]
+action = "Up"
+key = "I"
+mode = "Vi"
+
+[[keyboard.bindings]]
+action = "Down"
+key = "K"
+mode = "Vi"
+
+[[keyboard.bindings]]
+action = "Left"
+key = "J"
+mode = "Vi"
+
+[[keyboard.bindings]]
+action = "Right"
+key = "L"
+mode = "Vi"
+
+[[keyboard.bindings]]
+action = "Up"
+key = "Up"
+mode = "Vi"
+
+[[keyboard.bindings]]
+action = "Down"
+key = "Down"
+mode = "Vi"
+
+[[keyboard.bindings]]
+action = "Left"
+key = "Left"
+mode = "Vi"
+
+[[keyboard.bindings]]
+action = "Right"
+key = "Right"
+mode = "Vi"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Key0"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Equals"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Plus"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Key0"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Equals"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Plus"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Alt"
