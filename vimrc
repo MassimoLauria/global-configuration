@@ -12,6 +12,7 @@ anoremenu 1.13 PopUp.&Ripristina <C-R>
 :set expandtab
 :set smarttab
 :set softtabstop=4
+:set scrolloff=7
 :au FileType make   :set noexpandtab "Makefile's are tab-sensitive
 filetype indent on 
 
