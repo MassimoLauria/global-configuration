@@ -1,3 +1,5 @@
+# -*- mode: gdb-script -*-
+
 # GDB startup code
 set print pretty on
 set print array  on
@@ -36,3 +38,26 @@ except ImportError:
   print("WARNING: libc++ pretty printers not found.")
   pass
 end
+
+# Safe load go stuff
+add-auto-load-safe-path /usr/share/go-1.21/src/runtime/runtime-gdb.py
+
+
+# Display locals
+define toggle-local
+  if $toggle_hook_enabled == 0
+    set $toggle_hook_enabled = 1
+    define hook-stop
+      info local
+      printf "---------------------\n"
+    end
+    printf "display-local enabled.\n"
+  else
+    set $toggle_hook_enabled = 0
+    define hook-stop
+    end
+    printf "display-local disabled.\n"
+  end
+end
+
+set $toggle_hook_enabled = 0
