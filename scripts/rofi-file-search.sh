@@ -3,7 +3,7 @@
 # Copyright (C) 2013, 2021, 2022, 2024 by Massimo Lauria
 #
 # Created   : "2013-04-17, Wednesday 17:55 (CEST) Massimo Lauria"
-# Time-stamp: "2024-12-01, 15:47 (CET) Massimo Lauria"
+# Time-stamp: "2024-12-02, 12:19 (CET) Massimo Lauria"
 #
 # Description::
 #
@@ -28,7 +28,7 @@ DOC=$(fdfind --type f "$QUERY" $HOME \
 
 
 if [ "x$DOC" != x ]; then
-    xdg-open "$DOC"
+    xdg-open "$DOC" &
 fi
 
 # Local Variables:
