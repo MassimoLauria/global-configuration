@@ -1,3 +1,5 @@
+live_config_reload = true
+import = ["/home/massimo/config/alacritty/color-tango.toml", "/home/massimo/config/alacritty/keyboard.toml"]
 
 [cursor]
 style = "Beam"
@@ -35,6 +37,3 @@ hide_when_typing = true
 [window]
 opacity = 1.0
 
-[general]
-live_config_reload = true
-import = ["/home/massimo/config/alacritty/color-tango.toml", "/home/massimo/config/alacritty/keyboard.toml"]
