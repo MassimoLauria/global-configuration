@@ -3,7 +3,7 @@
 # Copyright (C) 2010, 2011, 2012, 2014, 2015, 2016, 2017, 2020, 2023, 2025 by Massimo Lauria <lauria.massimo@gmail.com>
 #
 # Created   : "2011-03-05, sabato 01:03 (CET) Massimo Lauria"
-# Time-stamp: "2025-04-29, 13:18 (CEST) Massimo Lauria"
+# Time-stamp: "2025-04-29, 16:03 (CEST) Massimo Lauria"
 
 # Description::
 #
@@ -62,13 +62,15 @@ fi
 
 # X session stuff
 echo "Xsession config files"
-if [ -f $CONF/xsession ]; then
+if [ -d $CONF/xsession ]; then
     ln -sf $CONF/xsession/xsession    $HOME/.xsession
     ln -sf $CONF/xsession/autostart/*.desktop   $HOME/.config/autostart
     mkdir -p $HOME/.config/i3
     mkdir -p $HOME/.config/i3status
     ln -sf $CONF/xsession/i3-config $HOME/.config/i3/config
     ln -sf $CONF/xsession/i3status-config $HOME/.config/i3status/config
+    mkdir -p $HOME/.config/gtk-3.0/
+    ln -sf $CONF/xsession/gtk3-settings.ini $HOME/.config/gtk-3.0/settings.ini
 fi
 
 # GNUPG/SSH/GIT personal config files
