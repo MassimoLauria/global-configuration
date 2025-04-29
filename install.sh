@@ -3,7 +3,7 @@
 # Copyright (C) 2010, 2011, 2012, 2014, 2015, 2016, 2017, 2020, 2023, 2025 by Massimo Lauria <lauria.massimo@gmail.com>
 #
 # Created   : "2011-03-05, sabato 01:03 (CET) Massimo Lauria"
-# Time-stamp: "2025-04-29, 16:03 (CEST) Massimo Lauria"
+# Time-stamp: "2025-04-30, 01:44 (CEST) Massimo Lauria"
 
 # Description::
 #
@@ -16,25 +16,10 @@ PERSONAL=$HOME/personal
 MYREPO=$PERSONAL/myrepositories
 
 if [ -f "$MYREPO" ]; then
-    # try to download/update repos
+    # try to download missing repos
     $MYREPO clone
-    $MYREPO pull
-else
-    echo "No repos download."
 fi
 
-
-# Python stuff
-echo "Python stuff"
-rm -fr $HOME/.ipython
-rm -fr $HOME/.matplotlib
-ln -s $CONF/python/ipython     $HOME/.ipython
-ln -s $CONF/python/matplotlib  $HOME/.matplotlib
-mkdir -p $HOME/.config/pip
-ln -fs $CONF/python/pip.conf $HOME/.config/pip/pip.conf
-if [ -d $PERSONAL ]; then
-    ln -sf $PERSONAL/conf/pypirc $HOME/.pypirc
-fi
 
 #  Emacs and Vim/Nano/GDB
 echo "Editor config files"
@@ -84,10 +69,31 @@ if [ -d $PERSONAL ]; then
     ln -sf $PERSONAL/conf/gitconfig $HOME/.gitconfig
 fi
 
-# Other apps
-cp -rf $PERSONAL/conf/calibre $HOME/.config/
-ln -sf $HOME/games/retroarch/ $HOME/.config/
+# Python stuff
+echo "Python stuff"
+rm -fr $HOME/.ipython
+rm -fr $HOME/.matplotlib
+ln -s $CONF/python/ipython     $HOME/.ipython
+ln -s $CONF/python/matplotlib  $HOME/.matplotlib
+mkdir -p $HOME/.config/pip
+ln -fs $CONF/python/pip.conf $HOME/.config/pip/pip.conf
+if [ -d $PERSONAL ]; then
+    ln -sf $PERSONAL/conf/pypirc $HOME/.pypirc
+fi
 
+# Latexmk
+mkdir -p $HOME/.config/latexmk
+ln -fs $CONF/latexmkrc  $HOME/.config/latexmk/
+
+# Other apps and games
+if [ -d $PERSONAL ]; then
+    cp -rf $PERSONAL/conf/calibre $HOME/.config/
+fi
+if [ -d $HOME/games/ ]; then
+    ln -sf $HOME/games/retroarch/ $HOME/.config/
+    ln -sf $HOME/games/c64/vice/  $HOME/.config/
+    ln -sf $HOME/games/scummvm/scummvmrc  $HOME/.scummvmrc
+fi
 
 
 # Local Variables:
