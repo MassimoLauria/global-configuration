@@ -1,0 +1,43 @@
+# Font
+font-family = "DejaVuSansM Nerd Font"
+font-size = 20
+
+# Theme
+# 0-3   dark:   black, red, green, yellow
+# 4-7   dark:   blue, magenta, cyan, white   
+# 8-15  bright versions
+palette = 0=#000000
+palette = 1=#cc0000
+palette = 2=#4e9a06
+palette = 3=#c4a000
+palette = 4=#3465a4
+palette = 5=#75507b
+palette = 6=#06989a
+palette = 7=#d3d7cf
+palette = 8=#555753
+palette = 9=#ef2929
+palette =10=#8ae234
+palette =11=#fce94f
+palette =12=#729fcf
+palette =13=#ad7fa8
+palette =14=#34e2e2
+palette =15=#eeeeec
+
+background = "#000000"
+foreground = "#d3d7cf"
+selection-invert-fg-bg = true
+bold-is-bright = false
+
+# Env
+term = "xterm-256color"
+
+# Window setup
+background-opacity = 1
+window-decoration = none
+window-padding-balance = true
+window-padding-color = "extend"
+
+# Utils
+mouse-hide-while-typing = true
+link-url=true
+
