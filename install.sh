@@ -3,7 +3,7 @@
 # Copyright (C) 2010, 2011, 2012, 2014, 2015, 2016, 2017, 2020, 2023, 2025 by Massimo Lauria <lauria.massimo@gmail.com>
 #
 # Created   : "2011-03-05, sabato 01:03 (CET) Massimo Lauria"
-# Time-stamp: "2025-04-30, 01:44 (CEST) Massimo Lauria"
+# Time-stamp: "2025-05-02, 16:23 (CEST) Massimo Lauria"
 
 # Description::
 #
@@ -56,6 +56,7 @@ if [ -d $CONF/xsession ]; then
     ln -sf $CONF/xsession/i3status-config $HOME/.config/i3status/config
     mkdir -p $HOME/.config/gtk-3.0/
     ln -sf $CONF/xsession/gtk3-settings.ini $HOME/.config/gtk-3.0/settings.ini
+    ln -sf $CONF/xsession/mimeapps.list $HOME/.config/mimeapps.list
 fi
 
 # GNUPG/SSH/GIT personal config files
