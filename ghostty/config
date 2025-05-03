@@ -42,3 +42,8 @@ confirm-close-surface = false
 mouse-hide-while-typing = true
 link-url=true
 
+# Needed for macosx
+macos-option-as-alt=true
+macos-titlebar-style=tabs
+keybind=ctrl+alt+c=copy_to_clipboard
+keybind=ctrl+alt+v=paste_from_clipboard
