@@ -33,7 +33,7 @@ term = "xterm-256color"
 
 # Window setup
 background-opacity = 1
-window-decoration = none
+# window-decoration = none
 window-padding-balance = true
 window-padding-color = "extend"
 
