@@ -62,6 +62,6 @@ esac
 
 if [ -z "$filename" ]; then
     echo "No file associated to entry [$selected]"
-elif
+else
     $opencmd "$PAPERSDIR/$filename" &
 fi
