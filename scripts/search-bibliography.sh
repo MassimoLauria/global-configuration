@@ -48,6 +48,10 @@ selected=$($LS $BIBFILE | fzf -d'@' \
                    --bind '?:toggle-preview' \
                    -e --reverse --ansi $query | cut -d@ -f2 )
 
+if [ -z "$selected" ]; then
+    exit 1
+fi
+
 fileline=$(awk 'BEGIN {RS="\n@"} /'$selected'/{print "@" $0}' $BIBFILE |
                      grep -Po 'file\s*=\s*{\K[^}]*' )
 
