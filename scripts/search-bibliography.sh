@@ -8,6 +8,14 @@ LS=bibtex-ls
 BIBFILE=$HOME/lavori/latex/bibliografia.bib
 PAPERSDIR=$HOME/cloud/Papers
 
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)     opencmd=xdg-open;;
+    Darwin*)    opencmd=open;;
+    *)          opencmd=xdg-open
+esac
+
+
 _bib_check_runtime() {
     local fail=0
 
@@ -54,6 +62,6 @@ esac
 
 if [ -z "$filename" ]; then
     echo "No file associated to entry [$selected]"
-else
-    xdg-open "$PAPERSDIR/$filename" &
+elif
+    $opencmd "$PAPERSDIR/$filename" &
 fi
