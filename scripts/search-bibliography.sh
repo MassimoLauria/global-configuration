@@ -6,7 +6,7 @@
 
 LS=bibtex-ls
 BIBFILE=$HOME/lavori/latex/bibliografia.bib
-TMPLS=`mktemp`
+PAPERSDIR=$HOME/cloud/Papers
 
 _bib_check_runtime() {
     local fail=0
@@ -20,11 +20,6 @@ _bib_check_runtime() {
     type fzf >/dev/null 2>&1 ||
         { echo >&2 "Required 'fzf' command is missing."; fail=1; }
 
-    local server_running=`emacsclient -e '(server-running-p)'`
-    if [ $server_running = "nil" ]; then
-        echo >&2 "Emacs server is not running. Please start it."
-        fail=1
-    fi
     return $fail
 }
 
@@ -39,11 +34,26 @@ if [ "$#" -ge 1 ]; then
 fi
 
 # Choose file and build command line
-$LS $BIBFILE | fzf -d'@' \
+selected=$($LS $BIBFILE | fzf -d'@' \
                    --preview "bibtool -- select\{\\\$key\\ \\\"^{2}\\\$\\\"\} -q -i $BIBFILE 2>/dev/null" \
                    --preview-window down:wrap \
                    --bind '?:toggle-preview' \
-                   -e --reverse --ansi $query |
-    awk -F '@' 'BEGIN { printf "(citar-open-files (list " } {printf " \""$2"\"" } END { printf("))")}' > $TMPLS
-emacsclient -cne "(load-file \"$TMPLS\")"  >/dev/null
-rm -f $TMPLS
+                   -e --reverse --ansi $query | cut -d@ -f2 )
+
+fileline=$(awk 'BEGIN {RS="\n@"} /'$selected'/{print "@" $0}' $BIBFILE |
+                     grep -Po 'file\s*=\s*{\K[^}]*' )
+
+case "$fileline" in
+  *:PDF*)
+    filename=$(echo $fileline|cut -d: -f2)
+    ;;
+  *)
+    filename=$fileline
+    ;;
+esac
+
+if [ -z "$filename" ]; then
+    echo "No file associated to entry [$selected]"
+else
+    xdg-open "$PAPERSDIR/$filename" &
+fi
