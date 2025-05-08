@@ -10,9 +10,14 @@ PAPERSDIR=$HOME/cloud/Papers
 
 unameOut="$(uname -s)"
 case "${unameOut}" in
-    Linux*)     opencmd=xdg-open;;
-    Darwin*)    opencmd=open;;
+    Linux*)     opencmd=xdg-open
+                grepcmd=grep
+                ;;
+    Darwin*)    opencmd=open
+                grepcmd=ggrep
+                ;;
     *)          opencmd=xdg-open
+                grepcmd=grep
 esac
 
 
@@ -27,6 +32,9 @@ _bib_check_runtime() {
 
     type fzf >/dev/null 2>&1 ||
         { echo >&2 "Required 'fzf' command is missing."; fail=1; }
+
+    type $grepcmp >/dev/null 2>&1 ||
+        { echo >&2 "You miss '$grepcmd'. Maybe you need gnu grep on MacOSX?."; fail=1; }
 
     return $fail
 }
@@ -53,7 +61,7 @@ if [ -z "$selected" ]; then
 fi
 
 fileline=$(awk 'BEGIN {RS="\n@"} /'$selected'/{print "@" $0}' $BIBFILE |
-                     grep -Po 'file\s*=\s*{\K[^}]*' )
+                     $grepcmd -Po 'file\s*=\s*{\K[^}]*' )
 
 case "$fileline" in
   *:PDF*)
