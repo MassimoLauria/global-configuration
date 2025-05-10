@@ -24,7 +24,7 @@ filetype indent on
 " Fast save shortcuts (Ctrl-s)
 :inoremap <C-s> <Esc>:w<Cr>i
 :nnoremap <C-s> :w<Cr>
-
+ 
 " Link opening
 :nnoremap <C-CR>    <C-]>
 :nnoremap <C-Backspace> <C-t>
@@ -73,4 +73,16 @@ filetype indent on
 :nnoremap <F8>   :make<CR>
 :nnoremap <F9>   :make run<CR>
 
-" vim: set filetype=vim 
+set laststatus=2
+set statusline=\ 
+set statusline+=%([%M%R]\ %)
+set statusline+=%f\                           " File path
+set statusline+=%y\                           " Filetype
+set statusline+=%{&fileencoding!='utf-8'?','.&fileencoding:''}\ " Show encoding if not utf-8
+set statusline+=%{&fileformat!='unix'?','.&fileformat:''}\ " Show fileformat if not unix
+set statusline+=%=
+set statusline+=[%02c\ %03l/%03L\ %04Bh]              " Current line / total line
+
+
+" vim: set filetype=vim
+
