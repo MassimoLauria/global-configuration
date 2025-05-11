@@ -78,8 +78,8 @@ set statusline=\
 set statusline+=%([%M%R]\ %)
 set statusline+=%f\                           " File path
 set statusline+=%y\                           " Filetype
-set statusline+=%{&fileencoding!='utf-8'?','.&fileencoding:''}\ " Show encoding if not utf-8
-set statusline+=%{&fileformat!='unix'?','.&fileformat:''}\ " Show fileformat if not unix
+set statusline+=%{&fileencoding!='utf-8'?&fileencoding:''}\ " Show encoding if not utf-8
+set statusline+=%{&fileformat!='unix'?&fileformat:''}\ " Show fileformat if not unix
 set statusline+=%=
 set statusline+=[%02c\ %03l/%03L\ %04Bh]              " Current line / total line
 
