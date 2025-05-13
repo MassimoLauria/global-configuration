@@ -47,6 +47,7 @@ __pycache__/
 .ipynb_checkpoints
 *.egg-info/
 .python-version
+.venv
 
 # Latex stuff
 _minted-*/
