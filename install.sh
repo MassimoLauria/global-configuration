@@ -3,7 +3,7 @@
 # Copyright (C) 2010, 2011, 2012, 2014, 2015, 2016, 2017, 2020, 2023, 2025 by Massimo Lauria <lauria.massimo@gmail.com>
 #
 # Created   : "2011-03-05, sabato 01:03 (CET) Massimo Lauria"
-# Time-stamp: "2025-05-06, 18:14 (CEST) Massimo Lauria"
+# Time-stamp: "2025-05-20, 09:33 (CEST) Massimo Lauria"
 
 # Description::
 #
@@ -58,6 +58,8 @@ if [ -d $CONF/xsession ]; then
     ln -sf $CONF/xsession/gtk3-settings.ini $HOME/.config/gtk-3.0/settings.ini
     ln -sf $CONF/xsession/mimeapps.list $HOME/.config/mimeapps.list
     ln -sf $CONF/xsession/user-dirs.dirs $HOME/.config/user-dirs.dirs
+    mkdir -p $HOME/.config/flashfocus
+    ln -sf $CONF/xsession/flashfocus.yml $HOME/.config/flashfocus/flashfocus.yml
 fi
 
 # GNUPG/SSH/GIT personal config files
