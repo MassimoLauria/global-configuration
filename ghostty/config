@@ -37,6 +37,11 @@ background-opacity = 1
 window-padding-balance = true
 window-padding-color = "extend"
 
+# Cursor
+cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor
+
 # Utils
 confirm-close-surface = false
 mouse-hide-while-typing = true
