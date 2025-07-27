@@ -52,6 +52,3 @@ macos-option-as-alt=true
 macos-titlebar-style=tabs
 keybind=ctrl+alt+c=copy_to_clipboard
 keybind=ctrl+alt+v=paste_from_clipboard
-
-# local config files
-config-file = ?~/.config/ghostty.tuxedo
